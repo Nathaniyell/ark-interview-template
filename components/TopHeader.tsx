@@ -1,5 +1,6 @@
 import { useId } from "react";
 import { SearchIcon } from "lucide-react";
+import Image from "next/image";
 
 // import Logo from "@/components/navbar-components/logo";
 import logo from "@/app/logo.svg";
@@ -104,7 +105,7 @@ export default function TopHeader() {
               className="text-primary hover:text-primary/90 flex items-center gap-1"
             >
               {/* <Logo /> */}
-              <img src={logo.src} alt="logo" className="w-8 h-8" />
+              <Image src={logo} alt="ARK Logo" className="w-8 h-8" />
               <p className="text-white/80 text-xs font-semibold">ARK</p>
             </a>
           </div>

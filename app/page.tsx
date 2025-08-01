@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 import grid1 from "../assets/grid-img-1.svg";
 import grid2 from "../assets/grid-img-2.svg";
@@ -215,7 +216,7 @@ export default function Home() {
 
   const faqs = [
     {
-      question: "What are ARK's seller fees?",
+      question: "What are ARK&apos;s seller fees?",
       answer:
         "ARK offers competitive seller fees designed to maximize your profits while providing excellent service. Contact us for detailed pricing information.",
     },
@@ -292,9 +293,9 @@ export default function Home() {
           <div className=" grid md:grid-cols-3 gap-x-4 md:gap-y-0 gap-y-6 mt-10">
             <div>
               <div className="mx-4 md:mx-0 ">
-                <img
-                  src={grid1.src}
-                  alt=""
+                <Image
+                  src={grid1}
+                  alt="Reach 468 Million Faith Driven Consumers"
                   className="w-full md:rounded-none rounded-3xl"
                 />
               </div>
@@ -314,9 +315,9 @@ export default function Home() {
 
             <div>
               <div className="mx-4 md:mx-0 ">
-                <img
-                  src={grid2.src}
-                  alt=""
+                <Image
+                  src={grid2}
+                  alt="Shipping Worldwide"
                   className="w-full md:rounded-none rounded-3xl"
                 />
               </div>
@@ -336,9 +337,9 @@ export default function Home() {
             </div>
             <div>
               <div className="mx-4 md:mx-0 ">
-                <img
-                  src={grid3.src}
-                  alt=""
+                <Image
+                  src={grid3}
+                  alt="Keep More Profits"
                   className="w-full md:rounded-none rounded-3xl"
                 />
               </div>
@@ -364,7 +365,7 @@ export default function Home() {
           </div>
 
           <div className="mt-16">
-            <img src={group.src} alt="" className="w-full " />
+            <Image src={group} alt="Get Started Seamlessly with ARK Setup" className="w-full " />
           </div>
 
           <div className=" grid md:grid-cols-3 gap-x-4 md:gap-y-0 gap-y-6 mt-10">
@@ -386,7 +387,7 @@ export default function Home() {
                   God Wants to Bless & Prosper You
                 </p>
                 <p className="text-sm mt-1 leading-6 text-primary/70">
-                  We're going to educate you in the scriptures to the truth that
+                  We&apos;re going to educate you in the scriptures to the truth that
                   obedience will bring you favor in the marketplace and lead you
                   to a life of victory
                 </p>
@@ -546,7 +547,7 @@ export default function Home() {
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           ARK offers our Faith Driven Retailers greater viral
                           reach through social media as a portion of your
-                          listings are promoted on ARK's & our partners social
+                          listings are promoted on ARK&apos;s & our partners social
                           profiles to Christian shoppers worldwide!
                         </p>
                       </div>
@@ -575,7 +576,7 @@ export default function Home() {
                   Christian shopping just got a huge upgrade. 🤩
                 </h2>
                 <p className="text-muted-foreground leading-relaxed text-base text-justify">
-                  ARK's consumer-focused engagement platform and mobile apps
+                  ARK&apos;s consumer-focused engagement platform and mobile apps
                   offer strategic retail and product placement opportunities
                   providing Faith Driven Consumers with unique Christian
                   products, gifts & content. ARK offers ARKcoupons and blessed
@@ -640,7 +641,7 @@ export default function Home() {
           </div>
 
           <div className="mt-20">
-            <img src={questions.src} alt="" />
+            <Image src={questions} alt="Still have questions?" />
           </div>
         </div>
       </div>
