@@ -41,8 +41,8 @@ export default function TopHeader() {
   const id = useId();
 
   return (
-    <header className="border-b ">
-      <div className="flex h-16 bg-secondary shadow-md items-center justify-between gap-4 px-4 md:px-6">
+    <header className="bg-[#202020] ">
+      <div className="flex h-20 bg-[#232323] shadows z-10   items-center justify-between gap-4 px-4 md:px-[40px]">
         {/* Left side */}
         <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
@@ -105,28 +105,42 @@ export default function TopHeader() {
               className="text-primary hover:text-primary/90 flex items-center gap-1"
             >
               {/* <Logo /> */}
-              <Image src={logo} alt="ARK Logo" className="w-8 h-8" />
-              <p className="text-white/80 text-xs font-semibold">ARK</p>
+              <Image src={logo} alt="ARK Logo" className="w-10 h-10" />
+              <p className="text-white/80 text-sm tracking-wider font-semibold">
+                ARK
+              </p>
             </a>
           </div>
         </div>
+
         {/* Middle area */}
         <div className="grow  hidden md:block">
           {/* Search form */}
-          <div className="relative mx-auto w-full max-w-md">
+          <div className="relative mx-auto w-full max-w-2xl">
             <Input
               id={id}
-              className="peer h-8 ps-8 pe-10"
-              placeholder="Search..."
+              className="peer h-8 ps-10 pe-10 bg-[#353637] border-0"
+              placeholder="Search ARK"
               type="search"
             />
-            <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-2 peer-disabled:opacity-50">
-              <SearchIcon size={16} />
+            <div className="text-muted-foreground/80  pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center w-10 peer-disabled:opacity-50">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className=" w-5 h-5 mt-[2px]"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.37 15.835l6.43-6.63C19.201 8.79 18.958 8 18.43 8H5.57c-.528 0-.771.79-.37 1.205l6.43 6.63c.213.22.527.22.74 0"
+                />
+              </svg>
+
+              <div className="h-full py-1 ml-1">
+                <div className="h-full w-[2px] bg-[#8f9396] "></div>
+              </div>
             </div>
-            <div className="text-muted-foreground pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center pe-2">
-              <kbd className="text-muted-foreground/70 inline-flex h-5 max-h-full items-center rounded border px-1 font-[inherit] text-[0.625rem] font-medium">
-                ⌘K
-              </kbd>
+            <div className="text-muted-foreground bg-[#818588] rounded-r-lg pointer-events-none absolute inset-y-0 end-0 flex items-center justify-center w-8">
+              <SearchIcon className=" text-black" size={16} />
             </div>
           </div>
         </div>
@@ -139,9 +153,8 @@ export default function TopHeader() {
           <NotificationMenu />
         </div>
       </div>
-      {/* Bottom navigation */}
-      <div className="border-t  bg-secondary py-1 max-md:hidden px-5">
-        {/* Navigation menu */}
+
+      <div className="  bg-[#202020] mt-[2px] max-md:hidden px-12">
         <NavigationMenu className="w-full">
           <NavigationMenuList className=" flex justify-between w-full">
             {navigationLinks.map((link, index) => (
@@ -149,7 +162,7 @@ export default function TopHeader() {
                 <NavigationMenuLink
                   active={link.active}
                   href={link.href}
-                  className="text-white/80   hover:text-primary py-1.5 font-semibold text-xs"
+                  className="text-white/80   hover:text-primary py-2 font-semibold text-xs"
                 >
                   {link.label}
                 </NavigationMenuLink>

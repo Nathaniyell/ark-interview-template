@@ -183,7 +183,7 @@ const TestimonialCarousel = () => {
                 </p>
                 <p className="text-muted-foreground text-sm">
                   Shop{" "}
-                  <span className="text-green-400">
+                  <span className="text-[#4de209]">
                     {currentTestimonial.shop}
                   </span>{" "}
                   - {currentTestimonial.location}
@@ -244,14 +244,14 @@ export default function Home() {
 
   return (
     <div>
-      <div className="md:max-w-5xl md:mt-16 mt-6 mx-auto">
+      <div className="md:max-w-5xl md:mt-10 mt-6 mx-auto">
         <div className="flex justify-end items-end md:mr-0 mr-3 ">
           <div className=" gap-4 flex md:flex-row  flex-col-reverse items-center">
             <Link className=" md:text-base text-sm" href="#">
               {" "}
               Ready to open your store?
             </Link>
-            <Button className=" bg-secondary text-primary  hover:bg-secondary/80 h-11 px-3 cursor-pointer  tracking-wide gap-3">
+            <Button className=" bg-secondary text-primary  hover:bg-secondary/80 h-11 px-3 cursor-pointer  tracking-wide gap-3" style={{background: 'linear-gradient(0deg, rgba(0,0,0,0.12) 0%, rgba(255,255,255,0.12) 100%)'}}>
               <svg
                 width="25"
                 height="27"
@@ -286,7 +286,7 @@ export default function Home() {
           </div>
         </div>
         <div className="md:mt-24 mt-20 ">
-          <div className="text-center md:text-[40px] text-3xl  font-medium">
+          <div className="text-center md:text-[40px] text-3xl  font-google-medium">
             <h1>ARK Provides Reach, Shipping & Profits</h1>
           </div>
 
@@ -365,7 +365,11 @@ export default function Home() {
           </div>
 
           <div className="mt-16">
-            <Image src={group} alt="Get Started Seamlessly with ARK Setup" className="w-full " />
+            <Image
+              src={group}
+              alt="Get Started Seamlessly with ARK Setup"
+              className="w-full "
+            />
           </div>
 
           <div className=" grid md:grid-cols-3 gap-x-4 md:gap-y-0 gap-y-6 mt-10">
@@ -387,9 +391,9 @@ export default function Home() {
                   God Wants to Bless & Prosper You
                 </p>
                 <p className="text-sm mt-1 leading-6 text-primary/70">
-                  We&apos;re going to educate you in the scriptures to the truth that
-                  obedience will bring you favor in the marketplace and lead you
-                  to a life of victory
+                  We&apos;re going to educate you in the scriptures to the truth
+                  that obedience will bring you favor in the marketplace and
+                  lead you to a life of victory
                 </p>
               </div>
             </div>
@@ -460,10 +464,10 @@ export default function Home() {
                         </p>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#4de209] rounded-full"></div>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#cc0000] rounded-full"></div>
                       </div>
                     </div>
                   </div>
@@ -483,10 +487,10 @@ export default function Home() {
                         </p>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#4de209] rounded-full"></div>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#cc0000] rounded-full"></div>
                       </div>
                     </div>
                   </div>
@@ -506,10 +510,10 @@ export default function Home() {
                         </p>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#4de209] rounded-full"></div>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#cc0000] rounded-full"></div>
                       </div>
                     </div>
                   </div>
@@ -529,10 +533,10 @@ export default function Home() {
                         </p>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#4de209] rounded-full"></div>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#cc0000] rounded-full"></div>
                       </div>
                     </div>
                   </div>
@@ -547,15 +551,15 @@ export default function Home() {
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           ARK offers our Faith Driven Retailers greater viral
                           reach through social media as a portion of your
-                          listings are promoted on ARK&apos;s & our partners social
-                          profiles to Christian shoppers worldwide!
+                          listings are promoted on ARK&apos;s & our partners
+                          social profiles to Christian shoppers worldwide!
                         </p>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-green-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#4de209] rounded-full"></div>
                       </div>
                       <div className="flex justify-center">
-                        <div className="w-4 h-4 bg-red-500 rounded-full"></div>
+                        <div className="w-4 h-4 bg-[#cc0000] rounded-full"></div>
                       </div>
                     </div>
                   </div>
@@ -576,18 +580,18 @@ export default function Home() {
                   Christian shopping just got a huge upgrade. 🤩
                 </h2>
                 <p className="text-muted-foreground leading-relaxed text-base text-justify">
-                  ARK&apos;s consumer-focused engagement platform and mobile apps
-                  offer strategic retail and product placement opportunities
-                  providing Faith Driven Consumers with unique Christian
-                  products, gifts & content. ARK offers ARKcoupons and blessed
-                  savings from anointed sellers in an accelerating and emerging
-                  US$15 billion dollar global Christian retail market.
+                  ARK&apos;s consumer-focused engagement platform and mobile
+                  apps offer strategic retail and product placement
+                  opportunities providing Faith Driven Consumers with unique
+                  Christian products, gifts & content. ARK offers ARKcoupons and
+                  blessed savings from anointed sellers in an accelerating and
+                  emerging US$15 billion dollar global Christian retail market.
                 </p>
               </div>
 
               <div className="flex flex-wrap items-center gap-4">
                 <span className="text-white">Ready to open your store?</span>
-                <Button className=" bg-background text-primary hover:bg-secondary/80 h-11 px-4 cursor-pointer tracking-wide gap-3">
+                <Button className=" bg-background text-primary hover:bg-secondary/80 h-11 px-4 cursor-pointer tracking-wide gap-3" style={{background: 'linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.12) 100%)'}}>
                   <svg
                     width="20"
                     height="22"
