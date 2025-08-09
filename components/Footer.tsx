@@ -2,25 +2,48 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 pt-16 pb-5 px-4" style={{backgroundColor: "#202020"}}>
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+    <footer
+      className="border-t border-white/10 pt-16 pb-5 px-4"
+      style={{ backgroundColor: "#202020" }}
+    >
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 justify-items-center">
           {/* Support Column */}
-          <div>
-            <h3 className="font-semibold mb-3" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>Support</h3>
-            <ul className="space-y-2" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>
+          <div className="text-left">
+            <h3
+              className="font-semibold mb-3"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
+              Support
+            </h3>
+            <ul
+              className="space-y-2"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Verification
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   ARKcovenant
                 </Link>
               </li>
@@ -28,7 +51,8 @@ const Footer = () => {
                 <Link
                   href="https://billygrahamlibrary.org/continue-the-journey-from-home/need-prayer/"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   Prayer Line
                 </Link>
@@ -37,13 +61,18 @@ const Footer = () => {
                 <Link
                   href="https://peacewithgod.net/"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   Peace with God
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Report a Concern
                 </Link>
               </li>
@@ -51,14 +80,23 @@ const Footer = () => {
           </div>
 
           {/* FAITHx Column */}
-          <div>
-            <h3 className="font-semibold mb-3" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>FAITHx</h3>
-            <ul className="space-y-2" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>
+          <div className="text-left">
+            <h3
+              className="font-semibold mb-3"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
+              FAITHx
+            </h3>
+            <ul
+              className="space-y-2"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
               <li>
                 <Link
                   href="https://faithx.events/"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   Home
                 </Link>
@@ -67,7 +105,8 @@ const Footer = () => {
                 <Link
                   href="https://faithx.events/about-faithx/"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   About
                 </Link>
@@ -76,7 +115,8 @@ const Footer = () => {
                 <Link
                   href="https://faithx.events/faithx-ministry-and-outreach/"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   Ministry
                 </Link>
@@ -85,7 +125,8 @@ const Footer = () => {
                 <Link
                   href="https://faithx.events/faithx-sponsorship/"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   Sponsorship
                 </Link>
@@ -94,7 +135,8 @@ const Footer = () => {
                 <Link
                   href="https://faithx.events/contact-faithx/"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   Contact
                 </Link>
@@ -103,7 +145,8 @@ const Footer = () => {
                 <Link
                   href="https://www.eventbrite.ca/e/faithx-vancouver-2026-a-night-of-hope-education-encouragement-tickets-363890154247"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   FAITHx Vancouver 2026
                 </Link>
@@ -112,36 +155,68 @@ const Footer = () => {
           </div>
 
           {/* Selling Column */}
-          <div>
-            <h3 className="font-semibold mb-3" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>Selling</h3>
-            <ul className="space-y-2" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>
+          <div className="text-left">
+            <h3
+              className="font-semibold mb-3"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
+              Selling
+            </h3>
+            <ul
+              className="space-y-2"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   ARK Your Business
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   ARKcovenant for Sellers
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   ARK Shipping (FBA)
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Explore Seller Resources
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Visit Our Ekklesia Forum
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   How to Sell Responsibly
                 </Link>
               </li>
@@ -149,26 +224,50 @@ const Footer = () => {
           </div>
 
           {/* ARK Column */}
-          <div>
-            <h3 className="font-semibold mb-3" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>ARK</h3>
-            <ul className="space-y-2" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>
+          <div className="text-left">
+            <h3
+              className="font-semibold mb-3"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
+              ARK
+            </h3>
+            <ul
+              className="space-y-2"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Newsroom
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Learn About New Features
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Letter From Our Founder
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Careers
                 </Link>
               </li>
@@ -176,13 +275,18 @@ const Footer = () => {
                 <Link
                   href="https://christiandiscovery.typeform.com/to/QieYJTT0"
                   target="_blank"
-                  className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
                 >
                   Faith Driven Investors
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Gift Cards
                 </Link>
               </li>
@@ -191,28 +295,51 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-6">
+        <div className="border-t border-white/10 pt-5">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             {/* Left Side - Copyright and Links */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4" style={{color: "#D9D9D9", fontSize: "0.8rem"}}>
+            <div
+              className="flex flex-col md:flex-row items-start md:items-center gap-4"
+              style={{ color: "#D9D9D9", fontSize: "0.8rem" }}
+            >
               <span>© ARK 2026</span>
-              <span style={{color: "#D9D9D9"}}>•</span>
-              <span style={{color: "#D9D9D9"}}>Jesus is Lord</span>
-              <span style={{color: "#D9D9D9"}}>•</span>
+              <span style={{ color: "#D9D9D9" }}>•</span>
+              <span style={{ color: "#D9D9D9" }}>Jesus is Lord</span>
+              <span style={{ color: "#D9D9D9" }}>•</span>
               <div className="flex items-center gap-4">
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Terms
                 </Link>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Sitemap
                 </Link>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   Privacy
                 </Link>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   English (US)
                 </Link>
-                <Link href="#" className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}>
+                <Link
+                  href="#"
+                  className="hover:text-white transition-colors"
+                  style={{ color: "#D9D9D9" }}
+                >
                   $USD
                 </Link>
               </div>
@@ -224,7 +351,8 @@ const Footer = () => {
               <Link
                 href="https://x.com/FollowARKonX"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -245,7 +373,8 @@ const Footer = () => {
               <Link
                 href="https://www.tiktok.com/@faithdrivenmarketplace"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -262,7 +391,8 @@ const Footer = () => {
               <Link
                 href="https://www.youtube.com/@FaithDrivenMarketplace"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -279,7 +409,8 @@ const Footer = () => {
               <Link
                 href="https://www.instagram.com/followark/"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -296,7 +427,8 @@ const Footer = () => {
               <Link
                 href="https://medium.com/@FaithDrivenMarketplace"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -316,7 +448,8 @@ const Footer = () => {
               <Link
                 href="https://www.facebook.com/FaithDrivenMarketplace/"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -333,7 +466,8 @@ const Footer = () => {
               <Link
                 href="https://www.pinterest.com/FaithDrivenMarketplace/"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -352,7 +486,8 @@ const Footer = () => {
               <Link
                 href="https://www.linkedin.com/company/faithdrivenmarketplace/"
                 target="_blank"
-                className="hover:text-white transition-colors" style={{color: "#D9D9D9"}}
+                className="hover:text-white transition-colors"
+                style={{ color: "#D9D9D9" }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
