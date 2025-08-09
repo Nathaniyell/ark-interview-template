@@ -25,9 +25,9 @@ const FAQItem = ({
   <div className="border-b border-white/20">
     <button
       onClick={onToggle}
-      className="w-full py-6 text-left flex justify-between items-center text-white hover:text-gray-300 transition-colors"
+      className="w-full py-5 text-left flex justify-between items-center text-white hover:text-gray-300 transition-colors"
     >
-      <span className="text-lg font-medium">{question}</span>
+      <span className="text-lg font-medium text-[#bcc0c5]">{question}</span>
       <svg
         className={`w-6 h-6 transition-transform ${isOpen ? "rotate-180" : ""}`}
         fill="none"
@@ -44,7 +44,7 @@ const FAQItem = ({
     </button>
     {isOpen && (
       <div className="pb-6">
-        <p className="text-muted-foreground leading-relaxed">{answer}</p>
+        <p className="text-[#bcc0c5] leading-relaxed">{answer}</p>
       </div>
     )}
   </div>
@@ -105,7 +105,7 @@ const TestimonialCarousel = () => {
       <div className=" rounded-2xl py-14 md:px-20 px-4  bg-accent backdrop-blur-sm">
         <div className="flex flex-wrap items-center justify-between border-b-2 pb-2 border-white  mb-6">
           <div>
-            <p className="text-muted-foreground text-sm mb-2">
+            <p className="text-[#bcc0c5] text-sm mb-2">
               Ekklesia Comments, Praises & Testimonies
             </p>
             <h3 className="text-3xl font-semibold text-white">
@@ -133,7 +133,7 @@ const TestimonialCarousel = () => {
               </svg>
             </button>
 
-            <span className="text-muted-foreground text-sm">
+            <span className="text-[#bcc0c5] text-sm">
               {String(currentSlide + 1).padStart(2, "0")} /{" "}
               {String(testimonials.length).padStart(2, "0")}
             </span>
@@ -181,7 +181,7 @@ const TestimonialCarousel = () => {
                 <p className="text-white font-medium">
                   {currentTestimonial.name}
                 </p>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-[#bcc0c5] text-sm">
                   Shop{" "}
                   <span className="text-[#4de209]">
                     {currentTestimonial.shop}
@@ -216,7 +216,7 @@ export default function Home() {
 
   const faqs = [
     {
-      question: "What are ARK&apos;s seller fees?",
+      question: `What are ARK's seller fees?`,
       answer:
         "ARK Store Fees:\n$30 Monthly Store Fee (Amazon and Shopify's $40 Monthly Store Fee is 25% More Expensive)\n\nARK Velocity Fees:\n$104.25 Annual Velocity Membership Fee (Amazon's Prime $139 Annual Membership Fee is 33% More Expensive)\n$139 for Monthly Velocity Membership Fee (Amazon's Prime $179.88 Monthly Membership Fee is 29% More Expensive)\n\nARK Transaction Fees:\n20% Transaction Fee on Total Order Price When Seller Ships (FBS)\n37% Transaction Fee on Total Order Price When ARK Ships (FBA)\n\nARK Shipping Fees (FBA):\nWarehouse rates vary from $0.78 – $4.28 per cubic foot depending on product size and time of year (peak vs. off-peak). Learn more here.",
     },
@@ -292,7 +292,7 @@ export default function Home() {
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Why do Faith Driven Entrepreneurs, startups, brands and
-                  Fortune 500’s want to sell on ARK? To reach a potential 468
+                  Fortune 500's want to sell on ARK? To reach a potential 468
                   million FDC who are blessed with an annual purchasing power of
                   US$10 trillion in the global marketplace, plus an additional
                   2.132 billion Christian shoppers in the US, EU and worldwide!
@@ -313,11 +313,11 @@ export default function Home() {
                 <p className=" text-sm mt-6 font-medium">Shipping Worldwide</p>
 
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-justify">
-                  As a valued Faith Driven Retailer you’ve got two options for
+                  As a valued Faith Driven Retailer you've got two options for
                   fulfillment. Fulfillment by ARK which includes packaging,
                   labeling, shipping, tracking packages, delivery confirmation,
                   and 1-click returns, or, you can choose to package and ship
-                  your products and save with lower transaction fees. It’s up to
+                  your products and save with lower transaction fees. It's up to
                   you!
                 </p>
               </div>
@@ -335,7 +335,7 @@ export default function Home() {
 
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-left">
                   At ARK, our focus is to empower all Sellers in their retail
-                  ministries to experience God’s favor and prosperity according
+                  ministries to experience God's favor and prosperity according
                   to Deut 8:18 while respecting their bottom line. We offer
                   industry-best store and transaction fees, Christian categories
                   and engagement tools to lead you into the fullness of your
@@ -378,9 +378,9 @@ export default function Home() {
                   God Wants to Bless & Prosper You
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
-                  We&apos;re going to educate you in the scriptures to the truth
-                  that obedience will bring you favor in the marketplace and
-                  lead you to a life of victory
+                  We're going to educate you in the scriptures to the truth that
+                  obedience will bring you favor in the marketplace and lead you
+                  to a life of victory
                 </p>
               </div>
             </div>
@@ -443,7 +443,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2">
                           Shopper Identity Verification
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           Our comprehensive verification partner checks details
                           such as name, address, government ID and more to
                           confirm the identity of Faith Driven Consumers who
@@ -466,7 +466,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2">
                           2-Day Shipping
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARK offers two-day shipping fulfillment for all our
                           Faith Driven Retailers and Sellers via our Velocity®
                           Membership. Post-sale we package, print label, pay
@@ -489,7 +489,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2">
                           iOS & Android Apps
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARK offers our Faith Driven Consumers mobility with
                           our iOS & Android apps for shopping on the go. You can
                           browse and order products, receive shipping
@@ -512,7 +512,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2">
                           Seller Engagement Tools
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARK offers our Faith Driven Retailers the ability to
                           engage with faith driven consumers and Christian
                           shoppers worldwide via discounts, coupons offers, and
@@ -535,11 +535,11 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2">
                           Social Media Promotions
                         </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARK offers our Faith Driven Retailers greater viral
                           reach through social media as a portion of your
-                          listings are promoted on ARK&apos;s & our partners
-                          social profiles to Christian shoppers worldwide!
+                          listings are promoted on ARK's & our partners social
+                          profiles to Christian shoppers worldwide!
                         </p>
                       </div>
                       <div className="flex justify-center">
@@ -567,12 +567,12 @@ export default function Home() {
                   Christian shopping just got a huge upgrade. 🤩
                 </h2>
                 <p className="text-[#bcc0c5] leading-relaxed text-base text-justify">
-                  ARK&apos;s consumer-focused engagement platform and mobile
-                  apps offer strategic retail and product placement
-                  opportunities providing Faith Driven Consumers with unique
-                  Christian products, gifts & content. ARK offers ARKcoupons and
-                  blessed savings from anointed sellers in an accelerating and
-                  emerging US$15 billion dollar global Christian retail market.
+                  ARK's consumer-focused engagement platform and mobile apps
+                  offer strategic retail and product placement opportunities
+                  providing Faith Driven Consumers with unique Christian
+                  products, gifts & content. ARK offers ARKcoupons and blessed
+                  savings from anointed sellers in an accelerating and emerging
+                  US$15 billion dollar global Christian retail market.
                 </p>
               </div>
 
