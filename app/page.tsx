@@ -252,10 +252,13 @@ export default function Home() {
               Ready to open your store?
             </Link>
             <button
-              className=" bg-secondary flex items-center hover:text-[#4de209] text-primary rounded-md  h-12 px-4 cursor-pointer  tracking-wide gap-1"
+              className="bg-secondary flex items-center justify-center hover:text-[#4de209] text-primary rounded-md h-12 cursor-pointer tracking-wide gap-1 font-bold"
               style={{
                 background:
-                  "linear-gradient(0deg, rgba(0,0,0,0.12) 0%, rgba(255,255,255,0.12) 100%)",
+                  "linear-gradient(0deg, rgba(18, 18, 18, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%)",
+                backgroundColor: "#121212",
+                paddingLeft: "20px",
+                paddingRight: "20px",
               }}
             >
               <svg
@@ -368,7 +371,7 @@ export default function Home() {
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Retailers can open an account, get verified efficiently
                   through our registeration process and begin listing your
-                  products immediately
+                  products immediately.
                 </p>
               </div>
             </div>
@@ -380,7 +383,7 @@ export default function Home() {
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   We're going to educate you in the scriptures to the truth that
                   obedience will bring you favor in the marketplace and lead you
-                  to a life of victory
+                  to a life of victory.
                 </p>
               </div>
             </div>
@@ -392,7 +395,7 @@ export default function Home() {
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   New and current Faith Driven Retailers & Sellers can access
                   our Ekklesia support who can help with account issues,
-                  questions, billing and more
+                  questions, billing and more.
                 </p>
               </div>
             </div>
@@ -558,13 +561,13 @@ export default function Home() {
       </div>
       {/* New Section with Content and FAQ */}
       <div className=" bg-secondary md:px-0 px-4">
-        <div className="md:mt-24 mt-20 md:max-w-5xl mx-auto py-20">
+        <div className="md:mt-24 mt-20 md:max-w-[65rem] mx-auto py-20">
           <div className="grid md:grid-cols-7 md:gap-16 items-start">
             {/* Left Content */}
             <div className="space-y-8 col-span-3">
               <div>
                 <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
-                  Christian shopping just got a huge upgrade. 🤩
+                  Christian shopping just got a huge upgrade. 🥳
                 </h2>
                 <p className="text-[#bcc0c5] leading-relaxed text-base text-justify">
                   ARK's consumer-focused engagement platform and mobile apps
@@ -581,10 +584,13 @@ export default function Home() {
                   Ready to open your store?
                 </span>
                 <button
-                  className=" bg-background flex items-center text-primary hover:bg-secondary/80 h-11 px-4 cursor-pointer tracking-wide gap-1 rounded-md"
+                  className="bg-background flex items-center justify-center text-primary hover:bg-secondary/80 h-11 cursor-pointer tracking-wide gap-1 rounded-md font-bold"
                   style={{
                     background:
-                      "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.12) 100%)",
+                      "linear-gradient(0deg, rgba(18, 18, 18, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%)",
+                    backgroundColor: "#121212",
+                    paddingLeft: "20px",
+                    paddingRight: "20px",
                   }}
                 >
                   <svg

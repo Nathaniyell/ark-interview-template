@@ -22,7 +22,7 @@ export default function UserMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="h-9 border border-input p-0 flex gap-1 items-center px-1   rounded-full  bg-muted">
+        <div className="h-9 p-0 flex gap-1 items-center px-1 rounded-full" style={{backgroundColor: "#353637"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className=" hover:opacity-90 opacity-70 size-5"
@@ -36,7 +36,7 @@ export default function UserMenu() {
               d="M5 6h14M5 12h14M5 18h14"
             ></path>
           </svg>
-          <Avatar className=" size-7 border border-input">
+          <Avatar className=" size-7">
             <AvatarImage
               className=" object-cover   object-bottom"
               src="https://images.pexels.com/photos/1080213/pexels-photo-1080213.jpeg"
