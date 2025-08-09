@@ -25,18 +25,26 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Prayer line
+                <Link
+                  href="https://billygrahamlibrary.org/continue-the-journey-from-home/need-prayer/"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
+                  Prayer Line
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="https://peacewithgod.net/"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
                   Peace with God
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  Report a concern
+                  Report a Concern
                 </Link>
               </li>
             </ul>
@@ -47,32 +55,56 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">FAITHx</h3>
             <ul className="space-y-3 text-muted-foreground">
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="https://faithx.events/"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="https://faithx.events/about-faithx/"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="https://faithx.events/faithx-ministry-and-outreach/"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
                   Ministry
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
-                  Scriptures
+                <Link
+                  href="https://faithx.events/faithx-sponsorship/"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
+                  Sponsorship
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="https://faithx.events/contact-faithx/"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="https://www.eventbrite.ca/e/faithx-vancouver-2026-a-night-of-hope-education-encouragement-tickets-363890154247"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
                   FAITHx Vancouver 2026
                 </Link>
               </li>
@@ -85,32 +117,32 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  ARK your business
+                  ARK Your Business
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  ARKcovenant for sellers
+                  ARKcovenant for Sellers
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  ARK Fulfillment
+                  ARK Shipping (FBA)
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  Explore seller resources
+                  Explore Seller Resources
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  Visit our Ekklesia forum
+                  Visit Our Ekklesia Forum
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  How to sell responsibly
+                  How to Sell Responsibly
                 </Link>
               </li>
             </ul>
@@ -127,12 +159,12 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  Learn about new features
+                  Learn About New Features
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition-colors">
-                  Letter from our founder
+                  Letter From Our Founder
                 </Link>
               </li>
               <li>
@@ -141,7 +173,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="https://christiandiscovery.typeform.com/to/QieYJTT0"
+                  target="_blank"
+                  className="hover:text-white transition-colors"
+                >
                   Faith Driven Investors
                 </Link>
               </li>
@@ -158,10 +194,12 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             {/* Left Side - Copyright and Links */}
-            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 text-muted-foreground text-sm">
-              <span>© ARK 2025</span>
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-4 text-[#B0B3B8] text-sm">
+              <span>© ARK 2026</span>
+              <span className="text-[#B0B3B8]">•</span>
+              <span className="text-[#B0B3B8]">Jesus is Lord</span>
+              <span className="text-[#B0B3B8]">•</span>
               <div className="flex items-center gap-4">
-                <span className="text-[#4de209]">Jesus is Lord</span>
                 <Link href="#" className="hover:text-white transition-colors">
                   Terms
                 </Link>
@@ -171,30 +209,22 @@ const Footer = () => {
                 <Link href="#" className="hover:text-white transition-colors">
                   Privacy
                 </Link>
+                <Link href="#" className="hover:text-white transition-colors">
+                  English (US)
+                </Link>
+                <Link href="#" className="hover:text-white transition-colors">
+                  $USD
+                </Link>
               </div>
-            </div>
-
-            {/* Center - Language and Currency */}
-            <div className="flex items-center gap-4 text-muted-foreground text-sm">
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                </svg>
-                <span>English (US)</span>
-              </div>
-              <span>$USD</span>
             </div>
 
             {/* Right Side - Social Icons */}
             <div className="flex items-center gap-4">
-              {/* Twitter */}
+              {/* X (Twitter) */}
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-white transition-colors"
+                href="https://x.com/FollowARKonX"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -213,8 +243,9 @@ const Footer = () => {
               </Link>
               {/* TikTok */}
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-white transition-colors"
+                href="https://www.tiktok.com/@faithdrivenmarketplace"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -229,8 +260,9 @@ const Footer = () => {
               </Link>
               {/* YouTube */}
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-white transition-colors"
+                href="https://www.youtube.com/@FaithDrivenMarketplace"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -245,12 +277,30 @@ const Footer = () => {
               </Link>
               {/* Instagram */}
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-white transition-colors"
+                href="https://www.instagram.com/followark/"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                  />
+                </svg>
+              </Link>
+              {/* Medium */}
+              <Link
+                href="https://medium.com/@FaithDrivenMarketplace"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -262,10 +312,11 @@ const Footer = () => {
                   ></path>
                 </svg>
               </Link>
-              {/* More social icons */}
+              {/* Facebook */}
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-white transition-colors"
+                href="https://www.facebook.com/FaithDrivenMarketplace/"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -273,18 +324,16 @@ const Footer = () => {
                   viewBox="0 0 24 24"
                 >
                   <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                  ></path>
+                    fill="currentColor"
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669c1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
                 </svg>
               </Link>
+              {/* Pinterest */}
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-white transition-colors"
+                href="https://www.pinterest.com/FaithDrivenMarketplace/"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -299,9 +348,11 @@ const Footer = () => {
                   </g>
                 </svg>
               </Link>
+              {/* LinkedIn */}
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-white transition-colors"
+                href="https://www.linkedin.com/company/faithdrivenmarketplace/"
+                target="_blank"
+                className="text-[#B0B3B8] hover:text-white transition-colors"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

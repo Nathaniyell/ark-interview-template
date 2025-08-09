@@ -218,75 +218,62 @@ export default function Home() {
     {
       question: "What are ARK&apos;s seller fees?",
       answer:
-        "ARK offers competitive seller fees designed to maximize your profits while providing excellent service. Contact us for detailed pricing information.",
+        "ARK Store Fees:\n$30 Monthly Store Fee (Amazon and Shopify's $40 Monthly Store Fee is 25% More Expensive)\n\nARK Velocity Fees:\n$104.25 Annual Velocity Membership Fee (Amazon's Prime $139 Annual Membership Fee is 33% More Expensive)\n$139 for Monthly Velocity Membership Fee (Amazon's Prime $179.88 Monthly Membership Fee is 29% More Expensive)\n\nARK Transaction Fees:\n20% Transaction Fee on Total Order Price When Seller Ships (FBS)\n37% Transaction Fee on Total Order Price When ARK Ships (FBA)\n\nARK Shipping Fees (FBA):\nWarehouse rates vary from $0.78 – $4.28 per cubic foot depending on product size and time of year (peak vs. off-peak). Learn more here.",
     },
     {
       question: "When and how do I get paid as a seller?",
       answer:
-        "Sellers receive payments on a regular schedule after successful transactions. We offer multiple payment methods for your convenience.",
+        "As an ARK Seller you are paid monthly until you have established an ARK Seller Rating of 99%+ for a minimum of 90 consecutive days or 300 purchases, whichever comes first. After having established said ARK Seller Rating over 90 consecutive days, you will be paid every two weeks.\n\nSales Periods Are:\n1st through 15th\n16th through End of Month\n\nPay Periods Are:\n22nd of Every Month (for all total orders from the 1st through 15th)\n7th of Every Month (for all total orders from the 16th through End of Month)\n\nHow You Are Paid:\nARK will pays sellers electronically through their bank account on Pay Periods (provided all items sold during previous Sales Period have reached ARK buyers successfully and/or there are no reports of poor quality, damaged items, potential fraud, etc).\n\nFunds are transferred from the customer's payment method to ARK at time of purchase (shoppers choose their preferred payment method: credit card, digital wallets, PayPal, etc during initial ARK registration or during the check-out process of first ARK purchase).\n\nARK then transfers total sales revenue from the previous Sales Period to the Seller's bank account, minus all ARK seller fees, on designated Pay Periods (if you use FBA, warehouse fees will be deducted as well).",
     },
     {
       question: "What kind of products can I sell on ARK?",
       answer:
-        "ARK welcomes faith-driven products including books, apparel, home goods, gifts, and other Christian-focused merchandise that align with our values.",
+        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam, LGBTQ, Trans, Atheism, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
     },
     {
       question: "How does ARK fulfill shipping for me?",
       answer:
-        "Through our Velocity® Membership, we handle packaging, labeling, shipping, and tracking. You can also choose to fulfill orders yourself for lower fees.",
+        "ARK sellers can choose 'Fulfilled by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\nHow do I get my products shipped for me?\nAs an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n\nOnce they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
     },
     {
       question: "Is ID verification required of all sellers?",
       answer:
-        "Yes, all sellers undergo our comprehensive verification process to ensure a trusted marketplace for Faith Driven Consumers.",
+        "Yes. All sellers undergo our comprehensive verification process to ensure a God-honoring marketplace of integrity for Faith Driven Consumers. This includes submitting your passport from your country of residence to ARK's verification partner. Turn-around time is usually 24 to 72 hours. While you're waiting for final verification approval to begin selling, you can begin uploading products and creating your listings. You'll be notified by email when you have been fully verified.",
     },
   ];
 
   return (
     <div>
-      <div className="md:max-w-5xl md:mt-10 mt-6 mx-auto">
+      <div className="md:max-w-5xl md:mt-14 mt-6 mx-auto">
         <div className="flex justify-end items-end md:mr-0 mr-3 ">
           <div className=" gap-4 flex md:flex-row  flex-col-reverse items-center">
             <Link className=" md:text-base text-sm" href="#">
               {" "}
               Ready to open your store?
             </Link>
-            <Button className=" bg-secondary text-primary  hover:bg-secondary/80 h-11 px-3 cursor-pointer  tracking-wide gap-3" style={{background: 'linear-gradient(0deg, rgba(0,0,0,0.12) 0%, rgba(255,255,255,0.12) 100%)'}}>
+            <button
+              className=" bg-secondary flex items-center hover:text-[#4de209] text-primary rounded-md  h-12 px-4 cursor-pointer  tracking-wide gap-1"
+              style={{
+                background:
+                  "linear-gradient(0deg, rgba(0,0,0,0.12) 0%, rgba(255,255,255,0.12) 100%)",
+              }}
+            >
               <svg
-                width="25"
-                height="27"
-                viewBox="0 0 25 27"
-                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="w-10"
+                viewBox="0 0 24 24"
               >
-                <rect width="25" height="27" fill="url(#pattern0_1_188)" />
-                <defs>
-                  <pattern
-                    id="pattern0_1_188"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
-                    <use
-                      xlinkHref="#image0_1_188"
-                      transform="scale(0.04 0.037037)"
-                    />
-                  </pattern>
-                  <image
-                    id="image0_1_188"
-                    width="25"
-                    height="27"
-                    preserveAspectRatio="none"
-                    xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAbCAMAAAC+/9RaAAAAAXNSR0IB2cksfwAAAV9QTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////KD66oAAAAHV0Uk5TAAaX+5QFPf87TUtKSQcJCFDh5ERF5eJRWfetAfg875IExMINDL8DbMgTEMoLvfA3NTQ/86N223OpYon0GRz6iJngFeaVFuqWeiT8flVfZVov8sDBMJ39Y2f+oUjs+UKbRsuTLg4xmMUqzJ8lF7GqAlva8ccPrjZiEwAAAZNJREFUeJxt0tsrhEEYBvDnyaGcNoVWu+QYpXVIytqSTYgIJYciXCgulH9EyQUXLiRq48JeIJLQoiSnNluLKIdoXRBCyto1s+vz+WQuppn5zdvM+84QP42yfahTVcLFmO//SYQPCHn7T6K8QNjLH4nhsyo6Pv1IrDj6XpF4Mbn7lkQ+II43QTH675Hg9QQkWW5JvFRiUsSq3n8tJJW3gJHnimTyCjCEnRLZF0Aa3UDkJxD6CuTwDEg9oYmnyKZTHFcgNOdQDArpQpafMvPcPXlDo4HcCSRhPpS1KjnQ5Bdo+kcZaNlHEbe0UipizbRuw+Jxa6VcbC1hxSZ0uWtaqaQDVlavozhqSSs1XEUF61aAqnmt1C8D1WzkImrtWmlagCmNaJ5DA2d+QxvtaLIR7T47mo+cKsgKt3BSVKBrGigzTCgQbXEA1mX5CpVJNsDbRYcoZA95LCrUveEOvFwfx0XfsFs02+fIk5fJtI58v3Y/x37foNclMw/+kAFyVFnP16cPA+qvyvC0Pm12THUO6XoGgytf4P5xPTR6W00AAAAASUVORK5CYII="
-                  />
-                </defs>
+                <path
+                  fill="currentColor"
+                  d="M11.5 18.573a6.46 6.46 0 0 1-4.596-1.903C5.677 15.442 5 13.81 5 12.073s.677-3.369 1.904-4.597A.999.999 0 1 1 8.318 8.89C7.468 9.741 7 10.871 7 12.073s.468 2.333 1.318 3.183s1.979 1.317 3.182 1.317s2.332-.468 3.182-1.317c.851-.85 1.318-1.98 1.318-3.183s-.468-2.333-1.318-3.183a.999.999 0 1 1 1.414-1.414C17.323 8.705 18 10.337 18 12.073s-.677 3.369-1.904 4.597a6.46 6.46 0 0 1-4.596 1.903m0-7.573a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v5a1 1 0 0 1-1 1"
+                ></path>
               </svg>
               ARK Retailer Setup
-            </Button>
+            </button>
           </div>
         </div>
         <div className="md:mt-24 mt-20 ">
-          <div className="text-center md:text-[40px] text-3xl  font-google-medium">
+          <div className="text-center md:text-[40px] text-4xl  font-google-medium">
             <h1>ARK Provides Reach, Shipping & Profits</h1>
           </div>
 
@@ -303,7 +290,7 @@ export default function Home() {
                 <p className=" text-sm mt-6 font-medium">
                   Reach 468 Million Faith Driven Consumers
                 </p>
-                <p className="text-sm mt-1 leading-6 text-primary/70">
+                <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Why do Faith Driven Entrepreneurs, startups, brands and
                   Fortune 500’s want to sell on ARK? To reach a potential 468
                   million FDC who are blessed with an annual purchasing power of
@@ -325,7 +312,7 @@ export default function Home() {
               <div className="md:px-3 px-4">
                 <p className=" text-sm mt-6 font-medium">Shipping Worldwide</p>
 
-                <p className="text-sm mt-1 leading-6 text-primary/70 text-justify">
+                <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-justify">
                   As a valued Faith Driven Retailer you’ve got two options for
                   fulfillment. Fulfillment by ARK which includes packaging,
                   labeling, shipping, tracking packages, delivery confirmation,
@@ -346,7 +333,7 @@ export default function Home() {
               <div className="md:px-3 px-4">
                 <p className=" text-sm mt-6 font-medium">Keep More Profits</p>
 
-                <p className="text-sm mt-1 leading-6 text-primary/70 text-left">
+                <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-left">
                   At ARK, our focus is to empower all Sellers in their retail
                   ministries to experience God’s favor and prosperity according
                   to Deut 8:18 while respecting their bottom line. We offer
@@ -378,7 +365,7 @@ export default function Home() {
                 <p className=" text-sm mt-6 font-medium">
                   Register & Begin Selling in 3... 2... 1...
                 </p>
-                <p className="text-sm mt-1 leading-6 text-primary/70">
+                <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Retailers can open an account, get verified efficiently
                   through our registeration process and begin listing your
                   products immediately
@@ -390,7 +377,7 @@ export default function Home() {
                 <p className=" text-sm mt-6 font-medium">
                   God Wants to Bless & Prosper You
                 </p>
-                <p className="text-sm mt-1 leading-6 text-primary/70">
+                <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   We&apos;re going to educate you in the scriptures to the truth
                   that obedience will bring you favor in the marketplace and
                   lead you to a life of victory
@@ -402,7 +389,7 @@ export default function Home() {
                 <p className=" text-sm mt-6 font-medium">
                   Specialized Seller Support From ARK
                 </p>
-                <p className="text-sm mt-1 leading-6 text-primary/70">
+                <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   New and current Faith Driven Retailers & Sellers can access
                   our Ekklesia support who can help with account issues,
                   questions, billing and more
@@ -579,7 +566,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-medium text-white mb-6">
                   Christian shopping just got a huge upgrade. 🤩
                 </h2>
-                <p className="text-muted-foreground leading-relaxed text-base text-justify">
+                <p className="text-[#bcc0c5] leading-relaxed text-base text-justify">
                   ARK&apos;s consumer-focused engagement platform and mobile
                   apps offer strategic retail and product placement
                   opportunities providing Faith Driven Consumers with unique
@@ -589,40 +576,29 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center gap-4">
-                <span className="text-white">Ready to open your store?</span>
-                <Button className=" bg-background text-primary hover:bg-secondary/80 h-11 px-4 cursor-pointer tracking-wide gap-3" style={{background: 'linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.12) 100%)'}}>
+              <div className="flex  items-center gap-4">
+                <span className="text-white text-sm">
+                  Ready to open your store?
+                </span>
+                <button
+                  className=" bg-background flex items-center text-primary hover:bg-secondary/80 h-11 px-4 cursor-pointer tracking-wide gap-1 rounded-md"
+                  style={{
+                    background:
+                      "linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.12) 100%)",
+                  }}
+                >
                   <svg
-                    width="20"
-                    height="22"
-                    viewBox="0 0 25 27"
-                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="w-10"
+                    viewBox="0 0 24 24"
                   >
-                    <rect width="25" height="27" fill="url(#pattern0_1_188)" />
-                    <defs>
-                      <pattern
-                        id="pattern0_1_188"
-                        patternContentUnits="objectBoundingBox"
-                        width="1"
-                        height="1"
-                      >
-                        <use
-                          xlinkHref="#image0_1_188"
-                          transform="scale(0.04 0.037037)"
-                        />
-                      </pattern>
-                      <image
-                        id="image0_1_188"
-                        width="25"
-                        height="27"
-                        preserveAspectRatio="none"
-                        xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAbCAMAAAC+/9RaAAAAAXNSR0IB2cksfwAAAV9QTFRF////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////KD66oAAAAHV0Uk5TAAaX+5QFPf87TUtKSQcJCFDh5ERF5eJRWfetAfg875IExMINDL8DbMgTEMoLvfA3NTQ/86N223OpYon0GRz6iJngFeaVFuqWeiT8flVfZVov8sDBMJ39Y2f+oUjs+UKbRsuTLg4xmMUqzJ8lF7GqAlva8ccPrjZiEwAAAZNJREFUeJxt0tsrhEEYBvDnyaGcNoVWu+QYpXVIytqSTYgIJYciXCgulH9EyQUXLiRq48JeIJLQoiSnNluLKIdoXRBCyto1s+vz+WQuppn5zdvM+84QP42yfahTVcLFmO//SYQPCHn7T6K8QNjLH4nhsyo6Pv1IrDj6XpF4Mbn7lkQ+II43QTH675Hg9QQkWW5JvFRiUsSq3n8tJJW3gJHnimTyCjCEnRLZF0Aa3UDkJxD6CuTwDEg9oYmnyKZTHFcgNOdQDArpQpafMvPcPXlDo4HcCSRhPpS1KjnQ5Bdo+kcZaNlHEbe0UipizbRuw+Jxa6VcbC1hxSZ0uWtaqaQDVlavozhqSSs1XEUF61aAqnmt1C8D1WzkImrtWmlagCmNaJ5DA2d+QxvtaLIR7T47mo+cKsgKt3BSVKBrGigzTCgQbXEA1mX5CpVJNsDbRYcoZA95LCrUveEOvFwfx0XfsFs02+fIk5fJtI58v3Y/x37foNclMw/+kAFyVFnP16cPA+qvyvC0Pm12THUO6XoGgytf4P5xPTR6W00AAAAASUVORK5CYII="
-                      />
-                    </defs>
+                    <path
+                      fill="currentColor"
+                      d="M11.5 18.573a6.46 6.46 0 0 1-4.596-1.903C5.677 15.442 5 13.81 5 12.073s.677-3.369 1.904-4.597A.999.999 0 1 1 8.318 8.89C7.468 9.741 7 10.871 7 12.073s.468 2.333 1.318 3.183s1.979 1.317 3.182 1.317s2.332-.468 3.182-1.317c.851-.85 1.318-1.98 1.318-3.183s-.468-2.333-1.318-3.183a.999.999 0 1 1 1.414-1.414C17.323 8.705 18 10.337 18 12.073s-.677 3.369-1.904 4.597a6.46 6.46 0 0 1-4.596 1.903m0-7.573a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v5a1 1 0 0 1-1 1"
+                    ></path>
                   </svg>
                   ARK Retailer Setup
-                </Button>
+                </button>
               </div>
             </div>
 

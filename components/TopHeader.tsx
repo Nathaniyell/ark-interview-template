@@ -42,7 +42,7 @@ export default function TopHeader() {
 
   return (
     <header className="bg-[#202020] ">
-      <div className="flex h-20 bg-[#232323] shadows z-10   items-center justify-between gap-4 px-4 md:px-[40px]">
+      <div className="flex h-[74px] bg-[#232323] shadows z-10   items-center justify-between gap-4 px-4 md:px-[40px]">
         {/* Left side */}
         <div className="flex flex-1 items-center gap-2">
           {/* Mobile menu trigger */}
@@ -105,7 +105,7 @@ export default function TopHeader() {
               className="text-primary hover:text-primary/90 flex items-center gap-1"
             >
               {/* <Logo /> */}
-              <Image src={logo} alt="ARK Logo" className="w-10 h-10" />
+              <Image src={logo} alt="ARK Logo" className="h-[40px]" />
               <p className="text-white/80 text-sm tracking-wider font-semibold">
                 ARK
               </p>
@@ -162,9 +162,11 @@ export default function TopHeader() {
                 <NavigationMenuLink
                   active={link.active}
                   href={link.href}
-                  className="text-white/80   hover:text-primary py-2 font-semibold text-xs"
+                  className="  hover:bg-none font-semibold text-sm"
                 >
-                  {link.label}
+                  <span className="mt-[-2px] text-white/80   hover:text-[#4de209]">
+                    {link.label}
+                  </span>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}

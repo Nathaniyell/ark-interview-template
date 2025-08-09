@@ -135,7 +135,7 @@ export default function NotificationMenu() {
           {unreadCount > 0 && (
             <div
               aria-hidden="true"
-              className="bg-[#4de303] text-black flex items-center justify-center text-sm absolute top-[-12px] right-[-12px] size-5 rounded-full"
+              className="bg-[#4de303] font-black text-black flex items-center justify-center text-sm absolute top-[-12px] right-[-12px] size-5 rounded-full"
             >
               {unreadCount}
             </div>
