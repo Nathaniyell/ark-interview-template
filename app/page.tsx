@@ -27,7 +27,7 @@ const FAQItem = ({
       onClick={onToggle}
       className="w-full py-5 text-left flex justify-between items-center text-white hover:text-gray-300 transition-colors"
     >
-      <span className="text-lg font-medium text-[#bcc0c5]">{question}</span>
+      <span className="text-lg font-medium text-white">{question}</span>
       <svg
         className={`w-6 h-6 transition-transform ${isOpen ? "rotate-180" : ""}`}
         fill="none"
@@ -44,7 +44,119 @@ const FAQItem = ({
     </button>
     {isOpen && (
       <div className="pb-6">
-        <p className="text-[#bcc0c5] leading-relaxed">{answer}</p>
+        <div className="text-[#bcc0c5] leading-snug tracking-tight">
+          {answer.split("\n\n").map((section, index) => {
+            const lines = section.split("\n");
+            const sectionTitle = lines[0];
+            const sectionContent = lines.slice(1);
+
+            // Check if this is a section with a title (ends with colon)
+            if (sectionTitle.endsWith(":")) {
+              return (
+                <div key={index} className="mb-4">
+                  <h4 className="font-semibold text-[#bcc0c5] mb-2">
+                    {sectionTitle}
+                  </h4>
+                  {sectionContent.map((line, lineIndex) => {
+                    // Check for numbered items (1., 2., 3., etc.)
+                    const numberedMatch = line.match(/^(\d+)\.\s*(.*)$/);
+                    if (numberedMatch) {
+                      return (
+                        <div
+                          key={lineIndex}
+                          className="ml-4 mb-2 flex items-start"
+                        >
+                          <span className="text-[#bcc0c5] mr-2 mt-0 font-medium min-w-[1.5rem]">
+                            {numberedMatch[1]}.
+                          </span>
+                          <span className="flex-1">{numberedMatch[2]}</span>
+                        </div>
+                      );
+                    } else if (
+                      line.startsWith("•") ||
+                      line.startsWith("$") ||
+                      line.match(/^\d+%/) ||
+                      line.startsWith("Warehouse") ||
+                      line.match(/^\d+(st|nd|rd|th) through/) ||
+                      line.match(/^\d+(st|nd|rd|th) of Every Month/)
+                    ) {
+                      return (
+                        <div
+                          key={lineIndex}
+                          className="ml-4 mb-1 flex items-start"
+                        >
+                          <span className="text-[#bcc0c5] mr-2 mt-[3px] text-sm leading-none">
+                            •
+                          </span>
+                          <span className="flex-1">
+                            {line.replace(/^[•$]\s*/, "")}
+                          </span>
+                        </div>
+                      );
+                    } else if (line.trim()) {
+                      return (
+                        <p key={lineIndex} className="mb-2">
+                          {line}
+                        </p>
+                      );
+                    }
+                    return null;
+                  })}
+                </div>
+              );
+            } else {
+              // Regular paragraph content
+              return (
+                <div key={index} className="mb-4">
+                  {lines.map((line, lineIndex) => {
+                    // Check for numbered items (1., 2., 3., etc.)
+                    const numberedMatch = line.match(/^(\d+)\.\s*(.*)$/);
+                    if (numberedMatch) {
+                      return (
+                        <div
+                          key={lineIndex}
+                          className="ml-4 mb-2 flex items-start"
+                        >
+                          <span className="text-[#bcc0c5] mr-2 mt-0 font-medium min-w-[1.5rem]">
+                            {numberedMatch[1]}.
+                          </span>
+                          <span className="flex-1">{numberedMatch[2]}</span>
+                        </div>
+                      );
+                    } else if (
+                      line.startsWith("•") ||
+                      line.match(/^\d+%/) ||
+                      line.startsWith("Warehouse") ||
+                      line.match(/^\d+(st|nd|rd|th) through/) ||
+                      line.match(/^\d+(st|nd|rd|th) of Every Month/)
+                    ) {
+                      return (
+                        <div
+                          key={lineIndex}
+                          className="ml-4 mb-1 flex items-start"
+                        >
+                          <span className="text-[#bcc0c5] mr-2 mt-[3px] text-sm leading-none">
+                            •
+                          </span>
+                          <span className="flex-1">
+                            {line.replace(/^•\s*/, "")}
+                          </span>
+                        </div>
+                      );
+                    } else if (line.trim()) {
+                      return (
+                        <p key={lineIndex} className="mb-2">
+                          {line}
+                        </p>
+                      );
+                    }
+                    return null;
+                  })}
+                </div>
+              );
+            }
+          })}
+        </div>
       </div>
     )}
   </div>
@@ -223,7 +335,7 @@ export default function Home() {
     {
       question: "When and how do I get paid as a seller?",
       answer:
-        "As an ARK Seller you are paid monthly until you have established an ARK Seller Rating of 99%+ for a minimum of 90 consecutive days or 300 purchases, whichever comes first. After having established said ARK Seller Rating over 90 consecutive days, you will be paid every two weeks.\n\nSales Periods Are:\n1st through 15th\n16th through End of Month\n\nPay Periods Are:\n22nd of Every Month (for all total orders from the 1st through 15th)\n7th of Every Month (for all total orders from the 16th through End of Month)\n\nHow You Are Paid:\nARK will pays sellers electronically through their bank account on Pay Periods (provided all items sold during previous Sales Period have reached ARK buyers successfully and/or there are no reports of poor quality, damaged items, potential fraud, etc).\n\nFunds are transferred from the customer's payment method to ARK at time of purchase (shoppers choose their preferred payment method: credit card, digital wallets, PayPal, etc during initial ARK registration or during the check-out process of first ARK purchase).\n\nARK then transfers total sales revenue from the previous Sales Period to the Seller's bank account, minus all ARK seller fees, on designated Pay Periods (if you use FBA, warehouse fees will be deducted as well).",
+        "As an ARK Seller you are paid monthly until you have established an ARK Seller Rating of 99%+ for a minimum of 90 consecutive days or 300 purchases, whichever comes first. After having established said ARK Seller Rating over 90 consecutive days, you will be paid every two weeks.\n\nSales Periods Are:\n1st through 15th\n16th through End of Month\n\nPay Periods Are:\n22nd of Every Month (for all total orders from the 1st through 15th)\n7th of Every Month (for all total orders from the 16th through End of Month)\n\nHow You Are Paid:\n1. ARK will pays sellers electronically through their bank account on Pay Periods (provided all items sold during previous Sales Period have reached ARK buyers successfully and/or there are no reports of poor quality, damaged items, potential fraud, etc).\n2. Funds are transferred from the customer's payment method to ARK at time of purchase (shoppers choose their preferred payment method: credit card, digital wallets, PayPal, etc during initial ARK registration or during the check-out process of first ARK purchase).\n3. ARK then transfers total sales revenue from the previous Sales Period to the Seller's bank account, minus all ARK seller fees, on designated Pay Periods (if you use FBA, warehouse fees will be deducted as well).",
     },
     {
       question: "What kind of products can I sell on ARK?",
@@ -233,7 +345,7 @@ export default function Home() {
     {
       question: "How does ARK fulfill shipping for me?",
       answer:
-        "ARK sellers can choose 'Fulfilled by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\nHow do I get my products shipped for me?\nAs an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n\nOnce they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
+        "ARK sellers can choose 'Fulfilled by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\nHow do I get my products shipped for me?\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
     },
     {
       question: "Is ID verification required of all sellers?",
