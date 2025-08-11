@@ -168,7 +168,7 @@ const TestimonialCarousel = () => {
     {
       id: 1,
       name: "Clare O.",
-      shop: "Praise &amp; Bloom",
+      shop: `Praise & Bloom`,
       location: "Northwich, UK",
       quote:
         "How do we set up a store with you please? This is so exciting we cannot wait to get started!!",
@@ -181,7 +181,7 @@ const TestimonialCarousel = () => {
     {
       id: 2,
       name: "Sarah M.",
-      shop: "Faith &amp; Crafts",
+      shop: `Faith & Crafts`,
       location: "Austin, TX",
       quote:
         "ARK has transformed our business! The support and platform are amazing for Christian entrepreneurs.",
