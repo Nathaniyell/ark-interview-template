@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
@@ -169,7 +168,7 @@ const TestimonialCarousel = () => {
     {
       id: 1,
       name: "Clare O.",
-      shop: "Praise & Bloom",
+      shop: "Praise &amp; Bloom",
       location: "Northwich, UK",
       quote:
         "How do we set up a store with you please? This is so exciting we cannot wait to get started!!",
@@ -182,7 +181,7 @@ const TestimonialCarousel = () => {
     {
       id: 2,
       name: "Sarah M.",
-      shop: "Faith & Crafts",
+      shop: "Faith &amp; Crafts",
       location: "Austin, TX",
       quote:
         "ARK has transformed our business! The support and platform are amazing for Christian entrepreneurs.",
@@ -218,7 +217,7 @@ const TestimonialCarousel = () => {
         <div className="flex flex-wrap items-center justify-between border-b-2 pb-2 border-white  mb-6">
           <div>
             <p className="text-[#bcc0c5] text-sm mb-2">
-              Ekklesia Comments, Praises & Testimonies
+              Ekklesia Comments, Praises &amp; Testimonies
             </p>
             <h3 className="text-3xl font-semibold text-white">
               {currentTestimonial.shop}
@@ -340,7 +339,7 @@ export default function Home() {
     {
       question: "What kind of products can I sell on ARK?",
       answer:
-        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam, LGBTQ, Trans, Atheism, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
+        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food &amp; Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam, LGBTQ, Trans, Atheism, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
     },
     {
       question: "How does ARK fulfill shipping for me?",
@@ -389,7 +388,7 @@ export default function Home() {
         </div>
         <div className="md:mt-24 mt-20 ">
           <div className="text-center md:text-[40px] text-4xl  font-google-medium">
-            <h1>ARK Provides Reach, Shipping & Profits</h1>
+            <h1>ARK Provides Reach, Shipping &amp; Profits</h1>
           </div>
 
           <div className=" grid md:grid-cols-3 gap-x-4 md:gap-y-0 gap-y-6 mt-10">
@@ -407,10 +406,11 @@ export default function Home() {
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Why do Faith Driven Entrepreneurs, startups, brands and
-                  Fortune 500's want to sell on ARK? To reach a potential 468
-                  million FDC who are blessed with an annual purchasing power of
-                  US$10 trillion in the global marketplace, plus an additional
-                  2.132 billion Christian shoppers in the US, EU and worldwide!
+                  Fortune 500&apos;s want to sell on ARK? To reach a potential
+                  468 million FDC who are blessed with an annual purchasing
+                  power of US$10 trillion in the global marketplace, plus an
+                  additional 2.132 billion Christian shoppers in the US, EU and
+                  worldwide!
                 </p>
               </div>
             </div>
@@ -428,12 +428,12 @@ export default function Home() {
                 <p className=" text-sm mt-6 font-medium">Shipping Worldwide</p>
 
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-justify">
-                  As a valued Faith Driven Retailer you've got two options for
-                  fulfillment. Fulfillment by ARK which includes packaging,
+                  As a valued Faith Driven Retailer you&apos;ve got two options
+                  for fulfillment. Fulfillment by ARK which includes packaging,
                   labeling, shipping, tracking packages, delivery confirmation,
                   and 1-click returns, or, you can choose to package and ship
-                  your products and save with lower transaction fees. It's up to
-                  you!
+                  your products and save with lower transaction fees. It&apos;s
+                  up to you!
                 </p>
               </div>
             </div>
@@ -450,11 +450,11 @@ export default function Home() {
 
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-left">
                   At ARK, our focus is to empower all Sellers in their retail
-                  ministries to experience God's favor and prosperity according
-                  to Deut 8:18 while respecting their bottom line. We offer
-                  industry-best store and transaction fees, Christian categories
-                  and engagement tools to lead you into the fullness of your
-                  destiny!
+                  ministries to experience God&apos;s favor and prosperity
+                  according to Deut 8:18 while respecting their bottom line. We
+                  offer industry-best store and transaction fees, Christian
+                  categories and engagement tools to lead you into the fullness
+                  of your destiny!
                 </p>
               </div>
             </div>
@@ -478,7 +478,7 @@ export default function Home() {
             <div>
               <div className="md:px-3 px-4">
                 <p className=" text-sm mt-6 font-medium">
-                  Register & Begin Selling in 3... 2... 1...
+                  Register &amp; Begin Selling in 3... 2... 1...
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Retailers can open an account, get verified efficiently
@@ -490,12 +490,12 @@ export default function Home() {
             <div>
               <div className="md:px-3 px-4">
                 <p className=" text-sm mt-6 font-medium">
-                  God Wants to Bless & Prosper You
+                  God Wants to Bless &amp; Prosper You
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
-                  We're going to educate you in the scriptures to the truth that
-                  obedience will bring you favor in the marketplace and lead you
-                  to a life of victory.
+                  We&apos;re going to educate you in the scriptures to the truth
+                  that obedience will bring you favor in the marketplace and
+                  lead you to a life of victory.
                 </p>
               </div>
             </div>
@@ -505,8 +505,8 @@ export default function Home() {
                   Specialized Seller Support From ARK
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
-                  New and current Faith Driven Retailers & Sellers can access
-                  our Ekklesia support who can help with account issues,
+                  New and current Faith Driven Retailers &amp; Sellers can
+                  access our Ekklesia support who can help with account issues,
                   questions, billing and more.
                 </p>
               </div>
@@ -600,13 +600,13 @@ export default function Home() {
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-lg">
-                          iOS & Android Apps
+                          iOS &amp; Android Apps
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARK offers our Faith Driven Consumers mobility with
-                          our iOS & Android apps for shopping on the go. You can
-                          browse and order products, receive shipping
-                          notifications & more!
+                          our iOS &amp; Android apps for shopping on the go. You
+                          can browse and order products, receive shipping
+                          notifications &amp; more!
                         </p>
                       </div>
                       <div className="flex justify-center">
@@ -651,8 +651,8 @@ export default function Home() {
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARK offers our Faith Driven Retailers greater viral
                           reach through social media as a portion of your
-                          listings are promoted on ARK's & our partners social
-                          profiles to Christian shoppers worldwide!
+                          listings are promoted on ARK&apos;s &amp; our partners
+                          social profiles to Christian shoppers worldwide!
                         </p>
                       </div>
                       <div className="flex justify-center">
@@ -680,12 +680,13 @@ export default function Home() {
                   Christian shopping just got a huge upgrade. 🥳
                 </h2>
                 <p className="text-[#bcc0c5] leading-relaxed text-base text-justify">
-                  ARK's consumer-focused engagement platform and mobile apps
-                  offer strategic retail and product placement opportunities
-                  providing Faith Driven Consumers with unique Christian
-                  products, gifts & content. ARK offers ARKcoupons and blessed
-                  savings from anointed sellers in an accelerating and emerging
-                  US$15 billion dollar global Christian retail market.
+                  ARK&apos;s consumer-focused engagement platform and mobile
+                  apps offer strategic retail and product placement
+                  opportunities providing Faith Driven Consumers with unique
+                  Christian products, gifts &amp; content. ARK offers ARKcoupons
+                  and blessed savings from anointed sellers in an accelerating
+                  and emerging US$15 billion dollar global Christian retail
+                  market.
                 </p>
               </div>
 
