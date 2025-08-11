@@ -382,7 +382,7 @@ export default function Home() {
       <div className="md:max-w-5xl md:mt-14 mt-6 mx-auto">
         <div className="flex justify-end items-end md:mr-0 mr-3 ">
           <div className=" gap-4 flex md:flex-row  flex-col-reverse items-center">
-            <Link className=" md:text-base font-bold text-sm" href="#">
+            <Link className=" md:text-[14px] font-bold text-sm" href="#">
               {" "}
               Ready to open your store?
             </Link>
