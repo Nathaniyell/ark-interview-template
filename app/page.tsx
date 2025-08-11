@@ -403,7 +403,7 @@ export default function Home() {
         </div>
 
         <div className="md:mt-24 mt-20 ">
-          <div className="text-center md:text-[40px] text-3xl  font-medium">
+          <div className="text-center md:text-[40px] text-3xl font-google-bold">
             <h1>
               <span className="text-[#4de303]">ark</span>convenant
             </h1>
@@ -414,9 +414,7 @@ export default function Home() {
 
           <div className=" mt-10">
             <div className="text-center md:text-[40px] text-3xl font-medium mb-16">
-              <h1 className="text-white">
-                ARK It with Top-to-Bottom Blessings
-              </h1>
+              <h1 className="text-white">ARK It with Commanded Blessings</h1>
             </div>
 
             {/* Comparison Table */}
@@ -443,14 +441,14 @@ export default function Home() {
                   <div className="py-5 border-b-2 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
-                        <h4 className="font-semibold text-white mb-2">
-                          Shopper Identity Verification
+                        <h4 className="font-semibold text-white mb-2 text-lg">
+                          ARKai Ad Spends
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
-                          Our comprehensive verification partner checks details
-                          such as name, address, government ID and more to
-                          confirm the identity of Faith Driven Consumers who
-                          shop and buy on ARK!
+                          ARKai Ads enpower Faith Driven retailers to reach
+                          Christian shoppers with AI-driven campaigns boosting
+                          visibility, engagement and sales using comprehensive
+                          buyer data from your top selling products!
                         </p>
                       </div>
                       <div className="flex justify-center">
@@ -466,7 +464,7 @@ export default function Home() {
                   <div className="py-5 border-b-2 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
-                        <h4 className="font-semibold text-white mb-2">
+                        <h4 className="font-semibold text-white mb-2 text-lg">
                           2-Day Shipping
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
@@ -489,7 +487,7 @@ export default function Home() {
                   <div className="py-5 border-b-2 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
-                        <h4 className="font-semibold text-white mb-2">
+                        <h4 className="font-semibold text-white mb-2 text-lg">
                           iOS & Android Apps
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
@@ -512,7 +510,7 @@ export default function Home() {
                   <div className="py-5 border-b-2 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
-                        <h4 className="font-semibold text-white mb-2">
+                        <h4 className="font-semibold text-white mb-2 text-lg">
                           Seller Engagement Tools
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
@@ -535,7 +533,7 @@ export default function Home() {
                   <div className="py-5 border-b-2 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
-                        <h4 className="font-semibold text-white mb-2">
+                        <h4 className="font-semibold text-white mb-2 text-lg">
                           Social Media Promotions
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">

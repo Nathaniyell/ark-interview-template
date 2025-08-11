@@ -162,7 +162,7 @@ export default function TopHeader() {
                 <NavigationMenuLink
                   active={link.active}
                   href={link.href}
-                  className="  hover:bg-none font-semibold text-sm"
+                  className="  hover:bg-[#202020] font-semibold text-sm"
                 >
                   <span className="mt-[-2px] text-white/80   hover:text-[#4de209]">
                     {link.label}
