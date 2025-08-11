@@ -25,7 +25,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-3">Support</h3>
             <ul
               className="space-y-2"
-              style={{ color: "#D9D9D9", fontSize: "0.9rem" }}
+              style={{ color: "#D9D9D9", fontSize: "0.85rem" }}
             >
               <li>
                 <Link
@@ -85,7 +85,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-3">FAITHx</h3>
             <ul
               className="space-y-2"
-              style={{ color: "#D9D9D9", fontSize: "0.9rem" }}
+              style={{ color: "#D9D9D9", fontSize: "0.85rem" }}
             >
               <li>
                 <Link
@@ -149,7 +149,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-3">Selling</h3>
             <ul
               className="space-y-2"
-              style={{ color: "#D9D9D9", fontSize: "0.9rem" }}
+              style={{ color: "#D9D9D9", fontSize: "0.85rem" }}
             >
               <li>
                 <Link
@@ -207,7 +207,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-3">ARK</h3>
             <ul
               className="space-y-2"
-              style={{ color: "#D9D9D9", fontSize: "0.9rem" }}
+              style={{ color: "#D9D9D9", fontSize: "0.85rem" }}
             >
               <li>
                 <Link
@@ -268,7 +268,7 @@ const Footer = () => {
             {/* Left Side - Copyright and Links */}
             <div
               className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4"
-              style={{ color: "#D9D9D9", fontSize: "0.9rem" }}
+              style={{ color: "#D9D9D9", fontSize: "0.85rem" }}
             >
               <span>© ARK 2025</span>
               <span style={{ color: "#D9D9D9" }}>•</span>
@@ -301,7 +301,7 @@ const Footer = () => {
             {/* Center - Language and Currency */}
             <div
               className="flex items-center gap-4"
-              style={{ color: "#D9D9D9", fontSize: "0.9rem" }}
+              style={{ color: "#D9D9D9", fontSize: "0.85rem" }}
             >
               <div className="flex items-center ">
                 <svg
