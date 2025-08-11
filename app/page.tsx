@@ -44,7 +44,7 @@ const FAQItem = ({
     </button>
     {isOpen && (
       <div className="pb-6">
-        <div className="text-[#bcc0c5] leading-snug tracking-tight mr-1">
+        <div className="text-[#bcc0c5] leading-snug tracking-tight mr-4">
           {answer.split("\n\n").map((section, index) => {
             const lines = section.split("\n");
             const sectionTitle = lines[0];
