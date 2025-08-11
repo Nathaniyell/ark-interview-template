@@ -15,7 +15,7 @@ import youtubeIcon from "../assets/footer/youtube-icon-24px-ht.png";
 const Footer = () => {
   return (
     <footer
-      className="border-t border-white/10 pt-16 pb-5 px-4"
+      className=" border-white/10 pt-16 pb-5 px-4"
       style={{ backgroundColor: "#202020" }}
     >
       <div className="max-w-5xl mx-auto">
