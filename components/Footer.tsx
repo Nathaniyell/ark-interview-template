@@ -270,7 +270,7 @@ const Footer = () => {
               className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4"
               style={{ color: "#D9D9D9", fontSize: "0.85rem" }}
             >
-              <span>© ARK 2025</span>
+              <span>© ARK 2026</span>
               <span style={{ color: "#D9D9D9" }}>•</span>
               <span style={{ color: "#BCC0C5" }}>Jesus is Lord</span>
               <span style={{ color: "#D9D9D9" }}>•</span>
