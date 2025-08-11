@@ -7,8 +7,9 @@ import Image from "next/image";
 import grid1 from "../assets/grid-img-1.svg";
 import grid2 from "../assets/grid-img-2.svg";
 import grid3 from "../assets/grid-img-3.svg";
-import group from "../assets/group-svg.svg";
-import questions from "../assets/questions.svg";
+import group from "../assets/group-svg.jpg";
+import questions from "../assets/ark-questions.png";
+import { Button } from "@/components/ui/button";
 
 const FAQItem = ({
   question,
@@ -82,7 +83,7 @@ const FAQItem = ({
                       return (
                         <div
                           key={lineIndex}
-                          className="ml-4 mb-1 flex items-start"
+                          className="ml-4 mb-2 flex items-start"
                         >
                           <span className="text-[#bcc0c5] mr-2 mt-[3px] text-sm leading-none">
                             •
@@ -132,7 +133,7 @@ const FAQItem = ({
                       return (
                         <div
                           key={lineIndex}
-                          className="ml-4 mb-1 flex items-start"
+                          className="ml-4 mb-2 flex items-start"
                         >
                           <span className="text-[#bcc0c5] mr-2 mt-[3px] text-sm leading-none">
                             •
@@ -143,11 +144,34 @@ const FAQItem = ({
                         </div>
                       );
                     } else if (line.trim()) {
-                      return (
-                        <p key={lineIndex} className="mb-2">
-                          {line}
-                        </p>
-                      );
+                      // Check if the line contains bold text with **text**
+                      const boldRegex = /\*\*(.*?)\*\*/g;
+                      if (boldRegex.test(line)) {
+                        const parts = line.split(/(\*\*.*?\*\*)/g);
+                        return (
+                          <p key={lineIndex} className="mb-2">
+                            {parts.map((part, partIndex) => {
+                              if (
+                                part.startsWith("**") &&
+                                part.endsWith("**")
+                              ) {
+                                return (
+                                  <strong key={partIndex} className="font-bold">
+                                    {part.slice(2, -2)}
+                                  </strong>
+                                );
+                              }
+                              return part;
+                            })}
+                          </p>
+                        );
+                      } else {
+                        return (
+                          <p key={lineIndex} className="mb-2">
+                            {line}
+                          </p>
+                        );
+                      }
                     }
                     return null;
                   })}
@@ -329,7 +353,7 @@ export default function Home() {
     {
       question: `What are ARK's seller fees?`,
       answer:
-        "ARK Store Fees:\n$30 Monthly Store Fee (Amazon and Shopify's $40 Monthly Store Fee is 25% More Expensive)\n\nARK Velocity Fees:\n$104.25 Annual Velocity Membership Fee (Amazon's Prime $139 Annual Membership Fee is 33% More Expensive)\n$139 for Monthly Velocity Membership Fee (Amazon's Prime $179.88 Monthly Membership Fee is 29% More Expensive)\n\nARK Transaction Fees:\n20% Transaction Fee on Total Order Price When Seller Ships (FBS)\n37% Transaction Fee on Total Order Price When ARK Ships (FBA)\n\nARK Shipping Fees (FBA):\nWarehouse rates vary from $0.78 – $4.28 per cubic foot depending on product size and time of year (peak vs. off-peak). Learn more here.",
+        "ARK Store Fees:\n$$30 Monthly Store Fee (Amazon and Shopify's $40 Monthly Store Fee is 25% More Expensive)\n\nARK Velocity Fees:\n$$104.25 Annual Velocity Membership Fee (Amazon's Prime $139 Annual Membership Fee is 33% More Expensive)\n$$139 for Monthly Velocity Membership Fee (Amazon's Prime $179.88 Monthly Membership Fee is 29% More Expensive)\n\nARK Transaction Fees:\n20% Transaction Fee on Total Order Price When Seller Ships (FBS)\n37% Transaction Fee on Total Order Price When ARK Ships (FBA)\n\nARK Shipping Fees (FBA):\nWarehouse rates vary from $0.78 – $4.28 per cubic foot depending on product size and time of year (peak vs. off-peak). Learn more here.",
     },
     {
       question: "When and how do I get paid as a seller?",
@@ -339,12 +363,12 @@ export default function Home() {
     {
       question: "What kind of products can I sell on ARK?",
       answer:
-        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food &amp; Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam, LGBTQ, Trans, Atheism, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
+        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam, LGBTQ, Trans, Atheism, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
     },
     {
       question: "How does ARK fulfill shipping for me?",
       answer:
-        "ARK sellers can choose 'Fulfilled by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\nHow do I get my products shipped for me?\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
+        "ARK sellers can choose 'Fulfilled by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\n**How do I get my products shipped for me?**\n\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
     },
     {
       question: "Is ID verification required of all sellers?",
@@ -358,18 +382,16 @@ export default function Home() {
       <div className="md:max-w-5xl md:mt-14 mt-6 mx-auto">
         <div className="flex justify-end items-end md:mr-0 mr-3 ">
           <div className=" gap-4 flex md:flex-row  flex-col-reverse items-center">
-            <Link className=" md:text-base text-sm" href="#">
+            <Link className=" md:text-base font-bold text-sm" href="#">
               {" "}
               Ready to open your store?
             </Link>
             <button
-              className="bg-secondary flex items-center justify-center hover:text-[#4de209] text-primary rounded-md h-12 cursor-pointer tracking-wide gap-1 font-bold"
+              className="bg-secondary flex items-center justify-center pl-2 pr-4 hover:text-[#4de209] text-primary rounded-md h-12 cursor-pointer tracking-wide  font-bold"
               style={{
                 background:
                   "linear-gradient(0deg, rgba(18, 18, 18, 0.12) 0%, rgba(255, 255, 255, 0.12) 100%)",
-                backgroundColor: "#121212",
-                paddingLeft: "20px",
-                paddingRight: "20px",
+                backgroundColor: "#202020",
               }}
             >
               <svg
@@ -382,7 +404,7 @@ export default function Home() {
                   d="M11.5 18.573a6.46 6.46 0 0 1-4.596-1.903C5.677 15.442 5 13.81 5 12.073s.677-3.369 1.904-4.597A.999.999 0 1 1 8.318 8.89C7.468 9.741 7 10.871 7 12.073s.468 2.333 1.318 3.183s1.979 1.317 3.182 1.317s2.332-.468 3.182-1.317c.851-.85 1.318-1.98 1.318-3.183s-.468-2.333-1.318-3.183a.999.999 0 1 1 1.414-1.414C17.323 8.705 18 10.337 18 12.073s-.677 3.369-1.904 4.597a6.46 6.46 0 0 1-4.596 1.903m0-7.573a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v5a1 1 0 0 1-1 1"
                 ></path>
               </svg>
-              ARK Retailer Setup
+              <span className="-ml-[2px]">ARK Retailer Setup</span>
             </button>
           </div>
         </div>
@@ -558,9 +580,10 @@ export default function Home() {
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARKai Ads enpower Faith Driven retailers to reach
-                          Christian shoppers with AI-driven campaigns boosting
-                          visibility, engagement and sales using comprehensive
-                          buyer data from your top selling products!
+                          Christian shoppers <br /> with AI-driven campaigns
+                          boosting visibility, engagement and sales using
+                          comprehensive buyer data from your top selling
+                          products!
                         </p>
                       </div>
                       <div className="flex justify-center">
@@ -671,7 +694,7 @@ export default function Home() {
       </div>
       {/* New Section with Content and FAQ */}
       <div className=" bg-secondary md:px-0 px-4">
-        <div className="md:mt-24 mt-20 md:max-w-[65rem] mx-auto py-20">
+        <div className="md:mt-24 mt-20 md:max-w-[68rem] mx-auto py-20">
           <div className="grid md:grid-cols-7 md:gap-16 items-start">
             {/* Left Content */}
             <div className="space-y-8 col-span-3">
@@ -691,15 +714,33 @@ export default function Home() {
               </div>
 
               <div className="flex  items-center gap-4">
-                <span className="text-white text-sm">
+                <span className="text-white text-base font-bold">
                   Ready to open your store?
                 </span>
                 <button
-                  className="bg-background flex items-center justify-center text-primary hover:bg-secondary/80 h-11 cursor-pointer tracking-wide gap-1 rounded-md font-bold"
+                  className="bg-secondary flex items-center justify-center pl-2 pr-4 hover:text-[#4de209] text-primary rounded-md h-12 cursor-pointer tracking-wide  font-bold"
                   style={{
                     background:
                       "linear-gradient(0deg, rgba(18, 18, 18, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%)",
                     backgroundColor: "#121212",
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-10"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M11.5 18.573a6.46 6.46 0 0 1-4.596-1.903C5.677 15.442 5 13.81 5 12.073s.677-3.369 1.904-4.597A.999.999 0 1 1 8.318 8.89C7.468 9.741 7 10.871 7 12.073s.468 2.333 1.318 3.183s1.979 1.317 3.182 1.317s2.332-.468 3.182-1.317c.851-.85 1.318-1.98 1.318-3.183s-.468-2.333-1.318-3.183a.999.999 0 1 1 1.414-1.414C17.323 8.705 18 10.337 18 12.073s-.677 3.369-1.904 4.597a6.46 6.46 0 0 1-4.596 1.903m0-7.573a1 1 0 0 1-1-1V5a1 1 0 1 1 2 0v5a1 1 0 0 1-1 1"
+                    ></path>
+                  </svg>
+                  <span className="-ml-[2px]">ARK Retailer Setup</span>
+                </button>
+                {/* <button
+                  className="bg-background flex items-center justify-center text-primary hover:bg-secondary/80 h-11 cursor-pointer tracking-wide gap-1 rounded-md font-bold"
+                  style={{
+             
                     paddingLeft: "20px",
                     paddingRight: "20px",
                   }}
@@ -715,7 +756,7 @@ export default function Home() {
                     ></path>
                   </svg>
                   ARK Retailer Setup
-                </button>
+                </button> */}
               </div>
             </div>
 
@@ -737,8 +778,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-20">
+          <div className="mt-20 relative flex items-center justify-center ">
             <Image src={questions} alt="Still have questions?" />
+            <Button className="mt-20 ml-[12%] absolute bg-transparent border-1  hover:bg-transparent rounded-[8px] border-white text-white hover:text-[#4DE209] hover:border-[#4DE209]">
+              Contact Us Now
+            </Button>
           </div>
         </div>
       </div>
