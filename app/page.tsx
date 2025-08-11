@@ -714,7 +714,7 @@ export default function Home() {
               </div>
 
               <div className="flex  items-center gap-4">
-                <span className="text-white text-base font-bold">
+                <span className="text-white text-[14px] font-bold">
                   Ready to open your store?
                 </span>
                 <button
