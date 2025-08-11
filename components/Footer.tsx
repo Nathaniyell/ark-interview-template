@@ -335,7 +335,7 @@ const Footer = () => {
                 <Image
                   src={xIcon}
                   alt="X (Twitter)"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
@@ -350,7 +350,7 @@ const Footer = () => {
                 <Image
                   src={tiktokIcon}
                   alt="TikTok"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
@@ -365,7 +365,7 @@ const Footer = () => {
                 <Image
                   src={youtubeIcon}
                   alt="YouTube"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
@@ -380,7 +380,7 @@ const Footer = () => {
                 <Image
                   src={instagramIcon}
                   alt="Instagram"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
@@ -395,7 +395,7 @@ const Footer = () => {
                 <Image
                   src={mediumIcon}
                   alt="Medium"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
@@ -410,7 +410,7 @@ const Footer = () => {
                 <Image
                   src={facebookIcon}
                   alt="Facebook"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
@@ -425,7 +425,7 @@ const Footer = () => {
                 <Image
                   src={pinterestIcon}
                   alt="Pinterest"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
@@ -440,7 +440,7 @@ const Footer = () => {
                 <Image
                   src={linkedinIcon}
                   alt="LinkedIn"
-                  height={20}
+                  height={16}
                   onContextMenu={(e) => e.preventDefault()}
                   draggable={false}
                 />
