@@ -7,7 +7,7 @@ import Image from "next/image";
 import grid1 from "../assets/grid-img-1.svg";
 import grid2 from "../assets/grid-img-2.svg";
 import grid3 from "../assets/grid-img-3.svg";
-import group from "../assets/group-svg.jpg";
+import group from "../assets/ark-group2.jpg";
 import questions from "../assets/ark-questions.png";
 import { Button } from "@/components/ui/button";
 
@@ -237,7 +237,7 @@ const TestimonialCarousel = () => {
         </h2>
       </div>
 
-      <div className=" rounded-2xl py-14 md:px-20 px-4  bg-accent backdrop-blur-sm">
+      <div className=" rounded-2xl py-14 md:px-20 px-4  bg-[#202020] ">
         <div className="flex flex-wrap items-center justify-between border-b-2 pb-2 border-white  mb-6">
           <div>
             <p className="text-[#bcc0c5] text-sm mb-2">
@@ -358,12 +358,12 @@ export default function Home() {
     {
       question: "When and how do I get paid as a seller?",
       answer:
-        "As an ARK Seller you are paid monthly until you have established an ARK Seller Rating of 99%+ for a minimum of 90 consecutive days or 300 purchases, whichever comes first. After having established said ARK Seller Rating over 90 consecutive days, you will be paid every two weeks.\n\nSales Periods Are:\n1st through 15th\n16th through End of Month\n\nPay Periods Are:\n22nd of Every Month (for all total orders from the 1st through 15th)\n7th of Every Month (for all total orders from the 16th through End of Month)\n\nHow You Are Paid:\n1. ARK will pays sellers electronically through their bank account on Pay Periods (provided all items sold during previous Sales Period have reached ARK buyers successfully and/or there are no reports of poor quality, damaged items, potential fraud, etc).\n2. Funds are transferred from the customer's payment method to ARK at time of purchase (shoppers choose their preferred payment method: credit card, digital wallets, PayPal, etc during initial ARK registration or during the check-out process of first ARK purchase).\n3. ARK then transfers total sales revenue from the previous Sales Period to the Seller's bank account, minus all ARK seller fees, on designated Pay Periods (if you use FBA, warehouse fees will be deducted as well).",
+        "As an ARK Seller you are paid monthly until you have established an ARK Seller Rating of 99%+ for a minimum of 90 consecutive days or 300 purchases, whichever comes first. After having established said ARK Seller Rating over 90 consecutive days, you will be paid every two weeks.\n\nSales Periods Are:\n1st through 15th\n16th through End of Month\n\nPay Periods Are:\n22nd of Every Month (for all total orders from the 1st through 15th)\n7th of Every Month (for all total orders from the 16th through End of Month)\n\nHow You Are Paid:\n1. ARK will pay sellers electronically through their bank account on Pay Periods (provided all items sold during previous Sales Period have reached ARK buyers successfully and/or there are no reports of poor quality, damaged items, potential fraud, etc).\n2. Funds are transferred from the customer's payment method to ARK at time of purchase (shoppers choose their preferred payment method: credit card, digital wallets, PayPal, etc during initial ARK registration or during the check-out process of first ARK purchase).\n3. ARK then transfers total sales revenue from the previous Sales Period to the Seller's bank account, minus all ARK seller fees, on designated Pay Periods (if you use FBA, warehouse fees will be deducted as well).",
     },
     {
       question: "What kind of products can I sell on ARK?",
       answer:
-        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam, LGBTQ, Trans, Atheism, ANTIFA, BLM, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
+        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam,HAMAS, LGBTQ, Trans, Atheism, ANTIFA, BLM, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
     },
     {
       question: "How does ARK fulfill shipping for me?",
@@ -423,16 +423,15 @@ export default function Home() {
                 />
               </div>
               <div className="md:px-3 px-4">
-                <p className=" text-sm mt-6 font-medium">
+                <p className=" text-[16px] mt-6 font-medium">
                   Reach 468 Million Faith Driven Consumers
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Why do Faith Driven Entrepreneurs, startups, brands and
                   Fortune 500&apos;s want to sell on ARK? To reach a potential
-                  468 million FDC who are blessed with an annual purchasing
-                  power of US$10 trillion in the global marketplace, plus an
-                  additional 2.132 billion Christian shoppers in the US, EU and
-                  worldwide!
+                  468M FDC who are blessed with an annual purchasing power of
+                  US$10 trillion in the global marketplace, plus an additional
+                  2.132 billion Christian shoppers in the US, EU and worldwide!
                 </p>
               </div>
             </div>
@@ -447,7 +446,9 @@ export default function Home() {
               </div>
 
               <div className="md:px-3 px-4">
-                <p className=" text-sm mt-6 font-medium">Shipping Worldwide</p>
+                <p className=" text-[16px] mt-6 font-medium">
+                  Shipping Worldwide
+                </p>
 
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-justify">
                   As a valued Faith Driven Retailer you&apos;ve got two options
@@ -468,7 +469,9 @@ export default function Home() {
                 />
               </div>
               <div className="md:px-3 px-4">
-                <p className=" text-sm mt-6 font-medium">Keep More Profits</p>
+                <p className=" text-[16px] mt-6 font-medium">
+                  Keep More Profits
+                </p>
 
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-left">
                   At ARK, our focus is to empower all Sellers in their retail
@@ -485,7 +488,7 @@ export default function Home() {
 
         <div className="md:mt-24 mt-20 ">
           <div className="text-center md:text-[40px] text-3xl  font-medium">
-            <h1>Get Started Seamlessly with ARK Setup</h1>
+            <h1>Experience a Seamless Launch with ARK Genesis</h1>
           </div>
 
           <div className="mt-16">
@@ -503,9 +506,9 @@ export default function Home() {
                   Register &amp; Begin Selling in 3... 2... 1...
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
-                  Retailers can open an account, get verified efficiently
-                  through our registeration process and begin listing your
-                  products immediately.
+                  ARK Genesis onboarding is designed to enable retailers to open
+                  an account, get verified, and begin listing your products with
+                  acceleration.
                 </p>
               </div>
             </div>
@@ -576,7 +579,7 @@ export default function Home() {
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-lg">
-                          ARKai Ad Spends
+                          ARKai Ads
                         </h4>
                         <p className="text-sm text-[#bcc0c5] leading-relaxed">
                           ARKai Ads enpower Faith Driven retailers to reach
@@ -693,7 +696,7 @@ export default function Home() {
         </div>
       </div>
       {/* New Section with Content and FAQ */}
-      <div className=" bg-secondary md:px-0 px-4">
+      <div className=" bg-[#202020] md:px-0 px-4">
         <div className="md:mt-24 mt-20 md:max-w-[68rem] mx-auto py-20">
           <div className="grid md:grid-cols-7 md:gap-16 items-start">
             {/* Left Content */}
@@ -722,7 +725,7 @@ export default function Home() {
                   style={{
                     background:
                       "linear-gradient(0deg, rgba(18, 18, 18, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%)",
-                    backgroundColor: "#121212",
+                    backgroundColor: "#101010",
                   }}
                 >
                   <svg
