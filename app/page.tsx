@@ -205,7 +205,7 @@ const TestimonialCarousel = () => {
     {
       id: 2,
       name: "Sarah M.",
-      shop: `Faith & Crafts`,
+      shop: `Faith & Food`,
       location: "Austin, TX",
       quote:
         "ARK has transformed our business! The support and platform are amazing for Christian entrepreneurs.",
@@ -363,7 +363,7 @@ export default function Home() {
     {
       question: "What kind of products can I sell on ARK?",
       answer:
-        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam,Hamas, LGBTQ, Trans, Atheism, ANTIFA, BLM, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
+        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam, Hamas, LGBTQ, Trans, Atheism, ANTIFA, BLM, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
     },
     {
       question: "How does ARK fulfill shipping for me?",
@@ -424,14 +424,15 @@ export default function Home() {
               </div>
               <div className="md:px-3 px-4">
                 <p className=" text-[16px] mt-6 font-medium">
-                  Reach 468 Million Faith Driven Consumers
+                  Reach 468M Faith Driven Consumers
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
                   Why do Faith Driven Entrepreneurs, startups, brands and
                   Fortune 500&apos;s want to sell on ARK? To reach a potential
-                  468M FDC who are blessed with an annual purchasing power of
-                  US$10 trillion in the global marketplace, plus an additional
-                  2.132 billion Christian shoppers in the US, EU and worldwide!
+                  468 Million FDC who are blessed with an annual purchasing
+                  power of US$10 trillion in the global marketplace, plus an
+                  additional 2.132 billion Christian shoppers in the US, EU and
+                  worldwide!
                 </p>
               </div>
             </div>
@@ -502,7 +503,7 @@ export default function Home() {
           <div className=" grid md:grid-cols-3 gap-x-4 md:gap-y-0 gap-y-6 mt-10">
             <div>
               <div className="md:px-3 px-4">
-                <p className=" text-sm mt-6 font-medium">
+                <p className=" text-[16px] mt-6 font-medium">
                   Register &amp; Begin Selling in 3... 2... 1...
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
@@ -514,7 +515,7 @@ export default function Home() {
             </div>
             <div>
               <div className="md:px-3 px-4">
-                <p className=" text-sm mt-6 font-medium">
+                <p className=" text-[16px] mt-6 font-medium">
                   God Wants to Bless &amp; Prosper You
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
@@ -526,7 +527,7 @@ export default function Home() {
             </div>
             <div>
               <div className="md:px-2 px-4">
-                <p className=" text-sm mt-6 font-medium">
+                <p className=" text-[16px] mt-6 font-medium">
                   Specialized Seller Support From ARK
                 </p>
                 <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
