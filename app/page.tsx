@@ -363,7 +363,7 @@ export default function Home() {
     {
       question: "What kind of products can I sell on ARK?",
       answer:
-        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam,HAMAS, LGBTQ, Trans, Atheism, ANTIFA, BLM, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
+        "ARK has four main channels of selling with thousands of sub-categories:\n• Christian\n• Mainstream\n• Food & Drink\n• Services\n\nARK does not allow sales of:\n• Anything that would deny that Jesus is The Christ.\n• Anything that promotes sin in any way, shape or form.\n• Anything that promotes Islam,Hamas, LGBTQ, Trans, Atheism, ANTIFA, BLM, etc.\n• Fake brands.\n• Sexual content.\n• Dangerous goods.\n• Drug paraphernalia.\n• Cigarettes and vaping.",
     },
     {
       question: "How does ARK fulfill shipping for me?",
