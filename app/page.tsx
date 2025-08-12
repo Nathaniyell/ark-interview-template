@@ -8,7 +8,7 @@ import grid1 from "../assets/grid-img-1.svg";
 import grid2 from "../assets/grid-img-2.svg";
 import grid3 from "../assets/grid-img-3.svg";
 import group from "../assets/ark-group2.jpg";
-import questions from "../assets/ark-questions.png";
+import questions from "../assets/ark-graphic-signup-page-2560x1313-300res-v13.jpg";
 import { Button } from "@/components/ui/button";
 
 const FAQItem = ({
