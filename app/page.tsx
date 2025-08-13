@@ -9,6 +9,12 @@ import grid2 from "../assets/grid-img-2.svg";
 import grid3 from "../assets/grid-img-3.svg";
 import group from "../assets/ark-graphic-signup-page-2560x1313-300res-v13.jpg";
 import questions from "../assets/ark-questions.png";
+import argilosLogo from "../assets/carousel/argilos-logo.png";
+import praiseBloomLogo from "../assets/carousel/praise-and-bloom-logo.png";
+import argilos1 from "../assets/carousel/argilos-1.jpg";
+import argilos2 from "../assets/carousel/argilos-2.jpg";
+import greetingCard1 from "../assets/carousel/greeting-card-1a.jpg";
+import greetingCard2 from "../assets/carousel/greeting-card-2a.jpg";
 import { Button } from "@/components/ui/button";
 
 const FAQItem = ({
@@ -192,28 +198,23 @@ const TestimonialCarousel = () => {
     {
       id: 1,
       name: "Clare O.",
-      shop: `Praise & Bloom`,
+      shop: `Faith & Food`,
       location: "Northwich, UK",
       quote:
         "How do we set up a store with you please? This is so exciting we cannot wait to get started!!",
-      avatar: "CO",
-      images: [
-        "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200&h=200&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
-      ],
+      avatar: praiseBloomLogo,
+      images: [greetingCard1, greetingCard2],
     },
     {
       id: 2,
       name: "Sarah M.",
-      shop: `Faith & Food`,
+      shop: `Argilos`,
       location: "Austin, TX",
       quote:
         "ARK has transformed our business! The support and platform are amazing for Christian entrepreneurs.",
-      avatar: "SM",
-      images: [
-        "https://images.unsplash.com/photo-1494790108755-2616b9138421?w=200&h=200&fit=crop&crop=face",
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
-      ],
+
+      avatar: argilosLogo,
+      images: [argilos1, argilos2],
     },
   ];
 
@@ -309,8 +310,12 @@ const TestimonialCarousel = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-pink-300 rounded-full flex items-center justify-center text-black font-semibold">
-                {currentTestimonial.avatar}
+              <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
+                <Image
+                  src={currentTestimonial.avatar}
+                  alt={`${currentTestimonial.shop} logo`}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-white font-medium">
@@ -328,12 +333,16 @@ const TestimonialCarousel = () => {
           </div>
           <div className="md:col-span-4">
             <div className="grid grid-cols-2 gap-x-5 ">
-              {currentTestimonial.images.map((image, index) => (
+              {currentTestimonial.images.map((imageSrc, index) => (
                 <div
                   key={index}
-                  className="  aspect-square bg-gradient-to-br from-pink-200 to-purple-300 rounded-lg flex items-center justify-center text-gray-600 text-sm"
+                  className="aspect-square rounded-lg overflow-hidden"
                 >
-                  Product {index + 1}
+                  <Image
+                    src={imageSrc}
+                    alt={`${currentTestimonial.shop} product ${index + 1}`}
+                    className="w-full h-full  object-cover"
+                  />
                 </div>
               ))}
             </div>
@@ -722,7 +731,7 @@ export default function Home() {
                   Ready to open your store?
                 </span>
                 <button
-                  className="bg-secondary flex items-center justify-center pl-2 pr-4 hover:text-[#4de209] text-primary rounded-md h-12 cursor-pointer tracking-wide  font-bold"
+                  className=" flex items-center justify-center pl-2 pr-4 hover:text-[#4de209] text-primary rounded-md h-12 cursor-pointer tracking-wide  font-bold"
                   style={{
                     background:
                       "linear-gradient(0deg, rgba(18, 18, 18, 0.3) 0%, rgba(255, 255, 255, 0.12) 100%)",
