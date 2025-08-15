@@ -426,9 +426,13 @@ const TestimonialCarousel = () => {
                 </p>
                 <p className="text-[#bcc0c5] text-sm">
                   Shop{" "}
-                  <span className="text-[#4de209]">
+                  <a
+                    href="www.church-gold.vercel.app"
+                    target="_blank"
+                    className="text-[#4de209]"
+                  >
                     {currentTestimonial.shop}
-                  </span>{" "}
+                  </a>{" "}
                   - {currentTestimonial.location}
                 </p>
               </div>
