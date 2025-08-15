@@ -7,7 +7,7 @@ import Image from "next/image";
 import grid1 from "../assets/grid-img-1.svg";
 import grid2 from "../assets/grid-img-2.svg";
 import grid3 from "../assets/grid-img-3.svg";
-import group from "../assets/ark-graphic-signup-page-2560x1313-300res-v13.jpg";
+import group from "../assets/14.png";
 import questions from "../assets/ark-questions.png";
 import argilosLogo from "../assets/carousel/argilos-logo.png";
 import praiseBloomLogo from "../assets/carousel/praise-and-bloom-logo.png";
@@ -24,6 +24,9 @@ import holyLocustProduct2 from "../assets/carousel/holy-locust-product-2.jpg";
 import honeycombProverbsLogo from "../assets/carousel/honeycomb-proverbs-logo.png";
 import honeycombProverbsProduct1 from "../assets/carousel/honeycomb-proverbs-product-1.jpg";
 import honeycombProverbsProduct2 from "../assets/carousel/honeycomb-proverbs-product-2.jpg";
+import madApparelLogo from "../assets/carousel/mad-apparel-logo.png";
+import madApparelProductOne from "../assets/carousel/mad-apparel-product-1.jpg";
+import madApparelProductTwo from "../assets/carousel/mad-apparel-product-2.jpg";
 import templetonOliveOilLogo from "../assets/carousel/templeton-olive-oil-logo.png";
 import templetonOliveOilProduct1 from "../assets/carousel/templeton-olive-oil-product-1.jpg";
 import templetonOliveOilProduct2 from "../assets/carousel/templeton-olive-oil-product-2.jpg";
@@ -261,26 +264,35 @@ const TestimonialCarousel = () => {
     },
     {
       id: 5,
-      name: "Maria S.",
+      name: "Via S.",
       shop: `Templeton Olive Oil`,
-      location: "Sacramento, CA",
+      location: "Templeton, United States",
       quote:
-        "Our artisanal olive oils have found the perfect home on ARK. The Christian community truly appreciates quality products.",
+        "We are the Rohde Family and have grown olives since 2008. There are seemingly endless and delicious benefits of freshly harvested Extra Virgin Olive Oil. We hope you enjoy!",
       avatar: templetonOliveOilLogo,
       images: [templetonOliveOilProduct1, templetonOliveOilProduct2],
     },
     {
       id: 6,
-      name: "Andrew K.",
+      name: "Krista B.",
       shop: `Tholi Oil`,
-      location: "Seattle, WA",
+      location: "Omaha, United States",
       quote:
-        "ARK's platform has been instrumental in growing our olive oil business among Christian families who value quality.",
+        "Our purpose is to consecrate and restore God’s people. Our blend of oil is God-breathed. Pure, high quality, and uses ingredients from Scripture.",
       avatar: tholiOilLogo,
       images: [tholiOilProduct1, tholiOilProduct2],
     },
     {
       id: 7,
+      name: "Tami A.",
+      shop: `MAD Apparel`,
+      location: "London, United Kingdom",
+      quote: `ARK Registered!!! Thank you I absolutely love this!! Will spread the word.👌🙏💯 `,
+      avatar: madApparelLogo,
+      images: [madApparelProductOne, madApparelProductTwo],
+    },
+    {
+      id: 8,
       name: "Jay B.",
       shop: `Tennessee Peanut Company`,
       location: "Tennessee, United States",
@@ -290,7 +302,7 @@ const TestimonialCarousel = () => {
       images: [tennesseePeanutProduct1, tennesseePeanutProduct2],
     },
     {
-      id: 8,
+      id: 9,
       name: "Danniell H.",
       shop: `The Little Yellow House`,
       location: "Vancouver, Canada",
@@ -300,7 +312,7 @@ const TestimonialCarousel = () => {
       images: [littleYellowHouseProduct1, littleYellowHouseProduct2],
     },
     {
-      id: 9,
+      id: 10,
       name: "Clare O.",
       shop: `Praise & Bloom`,
       location: "Northwich, UK",
@@ -355,7 +367,7 @@ const TestimonialCarousel = () => {
           <div className="flex items-center gap-4 md:my-0 my-5">
             <button
               onClick={prevSlide}
-              className="p-2 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
+              className="p-2 rounded-full border border-white/30 text-[#bcc0c5] hover:bg-white/10 transition-colors"
             >
               <svg
                 className="w-5 h-5"
@@ -378,7 +390,7 @@ const TestimonialCarousel = () => {
             </span>
             <button
               onClick={nextSlide}
-              className="p-2 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors"
+              className="p-2 rounded-full border border-white/30 text-[#bcc0c5] hover:bg-white/10 transition-colors"
             >
               <svg
                 className="w-5 h-5"
@@ -407,7 +419,7 @@ const TestimonialCarousel = () => {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
               </svg>
-              <p className="text-[#bcc0c5] text-lg leading-relaxed">
+              <p className="text-[#bcc0c5] text-lg h-[7rem] leading-relaxed">
                 {currentTestimonial.quote}
               </p>
             </div>
@@ -433,8 +445,8 @@ const TestimonialCarousel = () => {
                   >
                     {currentTestimonial.shop}
                   </a>{" "}
-                  - {currentTestimonial.location}
                 </p>
+                <p>{currentTestimonial.location}</p>
               </div>
             </div>
           </div>
@@ -484,7 +496,7 @@ export default function Home() {
     {
       question: "How does ARK fulfill shipping for me?",
       answer:
-        "ARK sellers can choose 'Fulfilled by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\n**How do I get my products shipped for me?**\n\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
+        "ARK sellers can choose 'Fulfilment by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\n**How do I get my products shipped for me?**\n\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
     },
     {
       question: "Is ID verification required of all sellers?",
