@@ -309,7 +309,7 @@ const Footer = () => {
                   English (US)
                 </Link>
               </div>
-              <span className="ml-[-10px]">$USD</span>
+              <span className="ml-[3px]">$USD</span>
             </div>
 
             {/* Right Side - Social Icons */}

@@ -15,6 +15,30 @@ import argilos1 from "../assets/carousel/argilos-1.jpg";
 import argilos2 from "../assets/carousel/argilos-2.jpg";
 import greetingCard1 from "../assets/carousel/greeting-card-1a.jpg";
 import greetingCard2 from "../assets/carousel/greeting-card-2a.jpg";
+import giftBabbleLogo from "../assets/carousel/gift-babble-logo.png";
+import giftBabbleProduct1 from "../assets/carousel/gift-babble-product-1.jpg";
+import giftBabbleProduct2 from "../assets/carousel/gift-babble-product-2.jpg";
+import holyLocustLogo from "../assets/carousel/holy-locust-logo.png";
+import holyLocustProduct1 from "../assets/carousel/holy-locust-product-1.jpg";
+import holyLocustProduct2 from "../assets/carousel/holy-locust-product-2.jpg";
+import honeycombProverbsLogo from "../assets/carousel/honeycomb-proverbs-logo.png";
+import honeycombProverbsProduct1 from "../assets/carousel/honeycomb-proverbs-product-1.jpg";
+import honeycombProverbsProduct2 from "../assets/carousel/honeycomb-proverbs-product-2.jpg";
+import templetonOliveOilLogo from "../assets/carousel/templeton-olive-oil-logo.png";
+import templetonOliveOilProduct1 from "../assets/carousel/templeton-olive-oil-product-1.jpg";
+import templetonOliveOilProduct2 from "../assets/carousel/templeton-olive-oil-product-2.jpg";
+import tennesseePeanutLogo from "../assets/carousel/tennessee-peanut-company-logo.png";
+import tennesseePeanutProduct1 from "../assets/carousel/tennessee-peanut-company-product-1.jpg";
+import tennesseePeanutProduct2 from "../assets/carousel/tennessee-peanut-company-product-2.jpg";
+import littleYellowHouseLogo from "../assets/carousel/the-little-yellow-house-logo.png";
+import littleYellowHouseProduct1 from "../assets/carousel/the-little-yellow-house-product-1.jpg";
+import littleYellowHouseProduct2 from "../assets/carousel/the-little-yellow-house-product-2.jpg";
+import tholiOilLogo from "../assets/carousel/tholi-oil-logo.png";
+import tholiOilProduct1 from "../assets/carousel/tholi-oil-product-1.jpg";
+import tholiOilProduct2 from "../assets/carousel/tholi-oil-product-2.jpg";
+import yeovanyLogo from "../assets/carousel/yeovany-logo-v1.png";
+import yeovanyProduct1 from "../assets/carousel/yeovany-product-1.jpg";
+import yeovanyProduct2 from "../assets/carousel/yeovany-product-2.jpg";
 import { Button } from "@/components/ui/button";
 
 const FAQItem = ({
@@ -197,25 +221,104 @@ const TestimonialCarousel = () => {
   const testimonials = [
     {
       id: 1,
+      name: "Noelle H.",
+      shop: `Honeycomb Proverbs`,
+      location: "San Antonio, United States",
+      quote:
+        "I would love more info on how to register to become a seller. What a great platform!",
+      avatar: honeycombProverbsLogo,
+      images: [honeycombProverbsProduct1, honeycombProverbsProduct2],
+    },
+    {
+      id: 2,
+      name: "Dror T.",
+      shop: `Holy Locust`,
+      location: "Ma'anit, Israel",
+      quote:
+        "Holy Locust is the world's first Biblical snack, a restored Biblical tradition and intended to be consumed and to strengthen your body.",
+      avatar: holyLocustLogo,
+      images: [holyLocustProduct1, holyLocustProduct2],
+    },
+    {
+      id: 3,
+      name: "Destini A.",
+      shop: `Yeovany`,
+      location: "Tyler, United States",
+      quote:
+        "Adorned with Luke 12:40, this watch serves as a constant reminder to stay prepared and live with purpose.—it's a statement of wisdom, faith, and style.",
+      avatar: yeovanyLogo,
+      images: [yeovanyProduct1, yeovanyProduct2],
+    },
+    {
+      id: 4,
+      name: "Heather P.",
+      shop: `GiftBabble`,
+      location: "Wisconsin, United States",
+      quote:
+        "As a Christian, I love to serve and share my faith and talents with people. I wanted a business that would make my family proud, which is what powered GiftBabble.",
+      avatar: giftBabbleLogo,
+      images: [giftBabbleProduct1, giftBabbleProduct2],
+    },
+    {
+      id: 5,
+      name: "Maria S.",
+      shop: `Templeton Olive Oil`,
+      location: "Sacramento, CA",
+      quote:
+        "Our artisanal olive oils have found the perfect home on ARK. The Christian community truly appreciates quality products.",
+      avatar: templetonOliveOilLogo,
+      images: [templetonOliveOilProduct1, templetonOliveOilProduct2],
+    },
+    {
+      id: 6,
+      name: "Andrew K.",
+      shop: `Tholi Oil`,
+      location: "Seattle, WA",
+      quote:
+        "ARK's platform has been instrumental in growing our olive oil business among Christian families who value quality.",
+      avatar: tholiOilLogo,
+      images: [tholiOilProduct1, tholiOilProduct2],
+    },
+    {
+      id: 7,
+      name: "Jay B.",
+      shop: `Tennessee Peanut Company`,
+      location: "Tennessee, United States",
+      quote:
+        "We believe God made them to remind us that something as little as a peanut can impact the world in such special ways, to His Glory!",
+      avatar: tennesseePeanutLogo,
+      images: [tennesseePeanutProduct1, tennesseePeanutProduct2],
+    },
+    {
+      id: 8,
+      name: "Danniell H.",
+      shop: `The Little Yellow House`,
+      location: "Vancouver, Canada",
+      quote:
+        "Welcome to our little corner of natural living where family, faith, and a love for clean, honest ingredients come together to create something truly meaningful.",
+      avatar: littleYellowHouseLogo,
+      images: [littleYellowHouseProduct1, littleYellowHouseProduct2],
+    },
+    {
+      id: 9,
       name: "Clare O.",
-      shop: `Faith & Food`,
+      shop: `Praise & Bloom`,
       location: "Northwich, UK",
       quote:
         "How do we set up a store with you please? This is so exciting we cannot wait to get started!!",
       avatar: praiseBloomLogo,
       images: [greetingCard1, greetingCard2],
     },
-    {
-      id: 2,
-      name: "Sarah M.",
-      shop: `Argilos`,
-      location: "Austin, TX",
-      quote:
-        "ARK has transformed our business! The support and platform are amazing for Christian entrepreneurs.",
-
-      avatar: argilosLogo,
-      images: [argilos1, argilos2],
-    },
+    // {
+    //   id: 2,
+    //   name: "Giannis M.",
+    //   shop: `Argilos`,
+    //   location: "Boston, United States",
+    //   quote:
+    //     "ARK has transformed our business! The support and platform are amazing for Christian entrepreneurs.",
+    //   avatar: argilosLogo,
+    //   images: [argilos1, argilos2],
+    // },
   ];
 
   const nextSlide = () => {
@@ -234,12 +337,12 @@ const TestimonialCarousel = () => {
     <div className="relative rounded-3xl  md:max-w-5xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-medium text-white mb-2">
-          Visit Anointed ARK Stores Worldwide
+          Visit Anointed Christian Stores & Retailers Worldwide
         </h2>
       </div>
 
       <div className=" rounded-2xl py-14 md:px-20 px-4  bg-[#202020] ">
-        <div className="flex flex-wrap items-center justify-between border-b-2 pb-2 border-white  mb-6">
+        <div className="flex flex-wrap items-center justify-between border-b pb-2 border-[#bcc0c5]  mb-6">
           <div>
             <p className="text-[#bcc0c5] text-sm mb-2">
               Ekklesia Comments, Praises &amp; Testimonies
@@ -298,13 +401,13 @@ const TestimonialCarousel = () => {
           <div className="md:col-span-3">
             <div className="mb-6">
               <svg
-                className="w-12 h-12 text-white/30 mb-4"
+                className="w-12 h-12 text-[#bcc0c5]/30 mb-4"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
               </svg>
-              <p className="text-white text-lg leading-relaxed">
+              <p className="text-[#bcc0c5] text-lg leading-relaxed">
                 {currentTestimonial.quote}
               </p>
             </div>
@@ -349,7 +452,7 @@ const TestimonialCarousel = () => {
           </div>
         </div>
 
-        <div className="w-full h-0.5 bg-white mt-8"></div>
+        <div className="w-full h-px bg-[#bcc0c5] mt-8"></div>
       </div>
     </div>
   );
@@ -561,7 +664,7 @@ export default function Home() {
 
           <div className=" mt-10">
             <div className="text-center md:text-[40px] text-3xl font-medium mb-16">
-              <h1 className="text-white">ARK It with Commanded Blessings</h1>
+              <h1 className="text-white">The Commanded Blessing is Upon You</h1>
             </div>
 
             {/* Comparison Table */}
