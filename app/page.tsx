@@ -267,7 +267,7 @@ const TestimonialCarousel = () => {
       shop: `Templeton Olive Oil`,
       location: "Templeton, United States",
       quote:
-        "We are the Rohde Family and have grown olives since 2008. There are seemingly endless and delicious benefits of freshly harvested Extra Virgin Olive Oil. We hope you enjoy!",
+        "We are the Rohde Family & have grown olives since 2008. There are seemingly endless & delicious benefits of freshly harvested Extra Virgin Olive Oil. We hope you enjoy!",
       avatar: templetonOliveOilLogo,
       images: [templetonOliveOilProduct1, templetonOliveOilProduct2],
     },
@@ -418,7 +418,7 @@ const TestimonialCarousel = () => {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
               </svg>
-              <p className="text-[#bcc0c5] text-lg h-[9rem] leading-relaxed">
+              <p className="text-[#bcc0c5] text-lg h-[7rem] leading-relaxed">
                 {currentTestimonial.quote}
               </p>
             </div>
