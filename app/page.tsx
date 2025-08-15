@@ -418,13 +418,13 @@ const TestimonialCarousel = () => {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
               </svg>
-              <p className="text-[#bcc0c5] text-lg h-[7rem] leading-relaxed">
+              <p className="text-[#bcc0c5] text-lg h-[9rem] leading-relaxed">
                 {currentTestimonial.quote}
               </p>
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
+              <div className="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden">
                 <Image
                   src={currentTestimonial.avatar}
                   alt={`${currentTestimonial.shop} logo`}
@@ -445,7 +445,7 @@ const TestimonialCarousel = () => {
                     {currentTestimonial.shop}
                   </a>{" "}
                 </p>
-                <p>{currentTestimonial.location}</p>
+                <p className=" text-sm">{currentTestimonial.location}</p>
               </div>
             </div>
           </div>
