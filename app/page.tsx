@@ -500,7 +500,7 @@ export default function Home() {
     {
       question: "Is ID verification required of all sellers?",
       answer:
-        "Yes. All sellers undergo our comprehensive verification process to ensure a God-honoring marketplace of integrity for Faith Driven Consumers. This includes submitting your passport from your country of residence to ARK's verification partner. Turn-around time is usually 24 to 72 hours. While you're waiting for final verification approval to begin selling, you can begin uploading products and creating your listings. You'll be notified by email when you have been fully verified.",
+        "Yes. All sellers undergo our comprehensive verification process to ensure a God-honoring marketplace of integrity for Faith Driven Consumers. This includes submitting your passport or driver's license from your country or state/province of residence to ARK's verification partner. Turn-around time is usually 24 to 72 hours. While you're waiting for final verification approval to begin selling, you can begin uploading products and creating your listings. You'll be notified by email when you have been fully verified.",
     },
   ];
 
