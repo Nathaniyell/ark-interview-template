@@ -38,7 +38,7 @@ import littleYellowHouseProduct2 from "../assets/carousel/the-little-yellow-hous
 import tholiOilLogo from "../assets/carousel/tholi-oil-logo.png";
 import tholiOilProduct1 from "../assets/carousel/tholi-oil-product-1.jpg";
 import tholiOilProduct2 from "../assets/carousel/tholi-oil-product-2.jpg";
-import yeovanyLogo from "../assets/carousel/yeovany-logo-v1.png";
+import yeovanyLogo from "../assets/carousel/yeovany-logo-white.png";
 import yeovanyProduct1 from "../assets/carousel/yeovany-product-1.jpg";
 import yeovanyProduct2 from "../assets/carousel/yeovany-product-2.jpg";
 import { Button } from "@/components/ui/button";
@@ -247,7 +247,7 @@ const TestimonialCarousel = () => {
       shop: `Yeovany`,
       location: "Tyler, United States",
       quote:
-        "Adorned with Luke 12:40, this watch serves as a constant reminder to stay prepared and live with purpose.—it's a statement of wisdom, faith, and style.",
+        "Adorned with Luke 12:40, this watch serves as a constant reminder to stay prepared and live with purpose. It's a statement of wisdom, faith, and style.",
       avatar: yeovanyLogo,
       images: [yeovanyProduct1, yeovanyProduct2],
     },
@@ -267,7 +267,7 @@ const TestimonialCarousel = () => {
       shop: `Templeton Olive Oil`,
       location: "Templeton, United States",
       quote:
-        "We are the Rohde Family & have grown olives since 2008. There are seemingly endless & delicious benefits of freshly harvested Extra Virgin Olive Oil. We hope you enjoy!",
+        "We are the Rohde Family and have grown olives since 2008. There are seemingly endless and delicious benefits of freshly harvested Extra Virgin Olive Oil. We hope you enjoy!",
       avatar: templetonOliveOilLogo,
       images: [templetonOliveOilProduct1, templetonOliveOilProduct2],
     },
@@ -316,7 +316,7 @@ const TestimonialCarousel = () => {
       shop: `Praise & Bloom`,
       location: "Northwich, UK",
       quote:
-        "How do we set up a store with you please? This is so exciting we cannot wait to get started!!",
+        "How do we set up a store with you please? This is so exciting we cannot wait to get started!",
       avatar: praiseBloomLogo,
       images: [greetingCard1, greetingCard2],
     },
@@ -345,7 +345,7 @@ const TestimonialCarousel = () => {
   const currentTestimonial = testimonials[currentSlide];
 
   return (
-    <div className="relative rounded-3xl  md:max-w-5xl mx-auto">
+    <div className="relative rounded-3xl  md:max-w-[66rem] mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-medium text-white mb-2">
           Visit Anointed Christian Stores & Retailers Worldwide
@@ -412,13 +412,13 @@ const TestimonialCarousel = () => {
           <div className="md:col-span-3">
             <div className="mb-6">
               <svg
-                className="w-12 h-12 text-[#bcc0c5]/30 mb-4"
+                className="w-12 h-12 text-[#bcc0c5] mb-4"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
               </svg>
-              <p className="text-[#bcc0c5] text-lg h-[7rem] leading-relaxed">
+              <p className="text-[#bcc0c5] text-lg text-justify h-[7rem] leading-relaxed">
                 {currentTestimonial.quote}
               </p>
             </div>
@@ -445,7 +445,9 @@ const TestimonialCarousel = () => {
                     {currentTestimonial.shop}
                   </a>{" "}
                 </p>
-                <p className=" text-sm">{currentTestimonial.location}</p>
+                <p className=" text-sm text-[#bcc0c5]">
+                  {currentTestimonial.location}
+                </p>
               </div>
             </div>
           </div>
@@ -495,7 +497,7 @@ export default function Home() {
     {
       question: "How does ARK fulfill shipping for me?",
       answer:
-        "ARK sellers can choose 'Fulfilment by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\n**How do I get my products shipped for me?**\n\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our fulfillment centers, ARK takes it from there and you are good to go!",
+        "ARK sellers can choose 'Fulfilment by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\n**How do I get my products shipped for me?**\n\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our Fulfillment centers, ARK takes it from there and you are good to go!",
     },
     {
       question: "Is ID verification required of all sellers?",
@@ -550,10 +552,10 @@ export default function Home() {
                 />
               </div>
               <div className="md:px-3 px-4">
-                <p className=" text-[16px] mt-6 font-medium">
+                <p className=" text-[17px] mt-6 font-medium">
                   Reach 468M Faith Driven Consumers
                 </p>
-                <p className="text-sm mt-1 leading-6 text-[#bcc0c5]">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5]">
                   Why do Faith Driven Entrepreneurs, startups, brands and
                   Fortune 500&apos;s want to sell on ARK? To reach a potential
                   468 Million FDC who are blessed with an annual purchasing
@@ -574,11 +576,11 @@ export default function Home() {
               </div>
 
               <div className="md:px-3 px-4">
-                <p className=" text-[16px] mt-6 font-medium">
+                <p className=" text-[17px] mt-6 font-medium">
                   Shipping Worldwide
                 </p>
 
-                <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-justify">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-justify">
                   As a valued Faith Driven Retailer you&apos;ve got two options
                   for fulfillment. Fulfillment by ARK which includes packaging,
                   labeling, shipping, tracking packages, delivery confirmation,
@@ -597,11 +599,11 @@ export default function Home() {
                 />
               </div>
               <div className="md:px-3 px-4">
-                <p className=" text-[16px] mt-6 font-medium">
+                <p className=" text-[17px] mt-6 font-medium">
                   Keep More Profits
                 </p>
 
-                <p className="text-sm mt-1 leading-6 text-[#bcc0c5] text-left">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-left">
                   At ARK, our focus is to empower all Sellers in their retail
                   ministries to experience God&apos;s favor and prosperity
                   according to Deut 8:18 while respecting their bottom line. We
