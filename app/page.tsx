@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-
 import grid1 from "../assets/grid-img-1.svg";
 import grid2 from "../assets/grid-img-2.svg";
 import grid3 from "../assets/grid-img-3.svg";
