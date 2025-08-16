@@ -713,10 +713,9 @@ export default function Home() {
                         </h4>
                         <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed">
                           ARKai Ads enpower Faith Driven retailers to reach
-                          Christian shoppers <br /> with AI-driven campaigns
-                          boosting visibility, engagement and sales using
-                          comprehensive buyer data from your top selling
-                          products!
+                          Christian shoppers with AI-driven campaigns boosting
+                          visibility, engagement and sales using comprehensive
+                          buyer data from your top selling products!
                         </p>
                       </div>
                       <div className="flex justify-center">
