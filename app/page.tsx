@@ -445,7 +445,7 @@ const TestimonialCarousel = () => {
                     {currentTestimonial.shop}
                   </a>{" "}
                 </p>
-                <p className=" text-[0.9rem] text-[#bcc0c5]">
+                <p className=" text-[0.9rem] text-[#bcc0c5] text-justify">
                   {currentTestimonial.location}
                 </p>
               </div>
@@ -555,7 +555,7 @@ export default function Home() {
                 <p className=" text-[17px] mt-6 font-medium">
                   Reach 468M Faith Driven Consumers
                 </p>
-                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5]">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-justify">
                   Why do Faith Driven Entrepreneurs, startups, brands and
                   Fortune 500&apos;s want to sell on ARK? To reach a potential
                   468 Million FDC who are blessed with an annual purchasing
@@ -603,11 +603,11 @@ export default function Home() {
                   Keep More Profits
                 </p>
 
-                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-left">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-justify">
                   At ARK, our focus is to empower all Sellers in their retail
                   ministries to experience God&apos;s favor and prosperity
                   according to Deut 8:18 while respecting their bottom line. We
-                  offer industry-best store and transaction fees, Christian
+                  offer industry-leading store and transaction fees, Christian
                   categories and engagement tools to lead you into the fullness
                   of your destiny!
                 </p>
@@ -635,7 +635,7 @@ export default function Home() {
                 <p className=" text-[17px] mt-6 font-medium">
                   Register &amp; Begin Selling in 3... 2... 1...
                 </p>
-                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5]">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-justify">
                   ARK Genesis onboarding is designed to enable retailers to open
                   an account, get verified, and begin listing your products with
                   acceleration.
@@ -647,7 +647,7 @@ export default function Home() {
                 <p className=" text-[17px] mt-6 font-medium">
                   God Wants to Bless &amp; Prosper You
                 </p>
-                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5]">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-justify">
                   We&apos;re going to educate you in the scriptures to the truth
                   that obedience will bring you favor in the marketplace and
                   lead you to a life of victory.
@@ -659,7 +659,7 @@ export default function Home() {
                 <p className=" text-[17px] mt-6 font-medium">
                   Specialized Seller Support From ARK
                 </p>
-                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5]">
+                <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-justify">
                   New and current Faith Driven Retailers &amp; Sellers can
                   access our Ekklesia support who can help with account issues,
                   questions, billing and more.
@@ -711,7 +711,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
                           ARKai Ads
                         </h4>
-                        <p className="text-[0.9rem] text-[#bcc0c5] leading-relaxed">
+                        <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed">
                           ARKai Ads enpower Faith Driven retailers to reach
                           Christian shoppers <br /> with AI-driven campaigns
                           boosting visibility, engagement and sales using
@@ -735,7 +735,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
                           2-Day Shipping
                         </h4>
-                        <p className="text-[0.9rem] text-[#bcc0c5] leading-relaxed">
+                        <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed">
                           ARK offers two-day shipping fulfillment for all our
                           Faith Driven Retailers and Sellers via our Velocity®
                           Membership. Post-sale we package, print label, pay
@@ -758,7 +758,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
                           iOS &amp; Android Apps
                         </h4>
-                        <p className="text-[0.9rem] text-[#bcc0c5] leading-relaxed">
+                        <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed text-justify">
                           ARK offers our Faith Driven Consumers mobility with
                           our iOS &amp; Android apps for shopping on the go. You
                           can browse and order products, receive shipping
@@ -781,7 +781,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
                           Seller Engagement Tools
                         </h4>
-                        <p className="text-[0.9rem] text-[#bcc0c5] leading-relaxed">
+                        <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed text-justify">
                           ARK offers our Faith Driven Retailers the ability to
                           engage with faith driven consumers and Christian
                           shoppers worldwide via discounts, coupons offers, and
@@ -804,7 +804,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
                           Social Media Promotions
                         </h4>
-                        <p className="text-[0.9rem] text-[#bcc0c5] leading-relaxed">
+                        <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed text-justify">
                           ARK offers our Faith Driven Retailers greater viral
                           reach through social media as a portion of your
                           listings are promoted on ARK&apos;s &amp; our partners
