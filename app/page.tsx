@@ -688,7 +688,7 @@ export default function Home() {
             <div className="max-w-4xl mx-auto px-4">
               <div className="bg-background  overflow-hidden">
                 {/* Header */}
-                <div className="py-5 border-b-2 border-white">
+                <div className="py-5 border-b-1 border-white">
                   <div className="grid grid-cols-5 gap-4">
                     <div className="col-span-3"></div>
                     <div className="text-center">
@@ -705,7 +705,7 @@ export default function Home() {
                 {/* Features */}
                 <div>
                   {/* Shopper Identity Verification */}
-                  <div className="py-5 border-b-2 border-white">
+                  <div className="py-5 border-b-1 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
@@ -728,7 +728,7 @@ export default function Home() {
                   </div>
 
                   {/* 2-Day Shipping */}
-                  <div className="py-5 border-b-2 border-white">
+                  <div className="py-5 border-b-1 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
@@ -751,7 +751,7 @@ export default function Home() {
                   </div>
 
                   {/* iOS & Android Apps */}
-                  <div className="py-5 border-b-2 border-white">
+                  <div className="py-5 border-b-1 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
@@ -774,7 +774,7 @@ export default function Home() {
                   </div>
 
                   {/* Seller Engagement Tools */}
-                  <div className="py-5 border-b-2 border-white">
+                  <div className="py-5 border-b-1 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
@@ -797,7 +797,7 @@ export default function Home() {
                   </div>
 
                   {/* Social Media Promotions */}
-                  <div className="py-5 border-b-2 border-white">
+                  <div className="py-5 border-b-1 border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
