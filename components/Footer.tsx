@@ -468,12 +468,12 @@ const Footer = () => {
               <Link
                 href="https://www.linkedin.com/company/faithdrivenmarketplace/"
                 target="_blank"
-                className="text-[#BCC0C5] hover:text-[#4de209] transition-colors mt-[1px] "
+                className="text-[#BCC0C5] hover:text-[#4de209] transition-colors "
                 onContextMenu={(e) => e.preventDefault()}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  height={19}
+                  height={18}
                   viewBox="0 0 14 14"
                 >
                   <path
