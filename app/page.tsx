@@ -497,7 +497,7 @@ export default function Home() {
     {
       question: "How does ARK fulfill shipping for me?",
       answer:
-        "ARK sellers can choose 'Fulfilment by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\n**How do I get my products shipped for me?**\n\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our Fulfillment centers, ARK takes it from there and you are good to go!",
+        "ARK sellers can choose 'Fulfillment by ARK' (FBA) for all their shipping needs.\n\nThrough our Velocity Membership, ARK handles:\n• Packaging\n• Labeling\n• Shipping\n• Tracking\n• One-click Returns\n\n**How do I get my products shipped for me?**\n\n• As an ARK seller you will be directed to send all your products to one or more of our warehouses and fulfillment centers in the US, Canada, UK, EU and other countries.\n• Once they arrive at our Fulfillment centers, ARK takes it from there and you are good to go!",
     },
     {
       question: "Is ID verification required of all sellers?",
@@ -686,7 +686,7 @@ export default function Home() {
 
             {/* Comparison Table */}
             <div className="max-w-4xl mx-auto px-4">
-              <div className="bg-background rounded-lg overflow-hidden">
+              <div className="bg-background  overflow-hidden">
                 {/* Header */}
                 <div className="py-5 border-b-2 border-white">
                   <div className="grid grid-cols-5 gap-4">
