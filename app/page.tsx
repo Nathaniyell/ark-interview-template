@@ -674,7 +674,7 @@ export default function Home() {
             <h1>
               <span className="text-[#4de303]">ark</span>convenant
             </h1>
-            <p className=" text-center font-bold !text-base text-primary/90  leading-2">
+            <p className=" text-center font-base !text-base text-primary/90  leading-2">
               For Sellers
             </p>
           </div>
