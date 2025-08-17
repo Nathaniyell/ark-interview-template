@@ -487,7 +487,7 @@ export default function Home() {
     {
       question: "When and how do I get paid as a seller?",
       answer:
-        "As an ARK Seller you are paid monthly until you have established an ARK Seller Rating of 99%+ for a minimum of 90 consecutive days or 300 purchases, whichever comes first. After having established said ARK Seller Rating over 90 consecutive days, you will be paid every two weeks.\n\nSales Periods Are:\n1st through 15th\n16th through End of Month\n\nPay Periods Are:\n22nd of Every Month (for all total orders from the 1st through 15th)\n7th of Every Month (for all total orders from the 16th through End of Month)\n\nHow You Are Paid:\n1. ARK will pay sellers electronically through their bank account on Pay Periods (provided all items sold during previous Sales Period have reached ARK buyers successfully and/or there are no reports of poor quality, damaged items, potential fraud, etc).\n2. Funds are transferred from the customer's payment method to ARK at time of purchase (shoppers choose their preferred payment method: credit card, digital wallets, PayPal, etc during initial ARK registration or during the check-out process of first ARK purchase).\n3. ARK then transfers total sales revenue from the previous Sales Period to the Seller's bank account, minus all ARK seller fees, on designated Pay Periods (if you use FBA, warehouse fees will be deducted as well).",
+        "As an ARK Seller you are paid monthly until you have established an ARK Seller Rating of 99%+ for a minimum of 90 consecutive days or 300 purchases, whichever comes first. After having established said ARK Seller Rating over 90 consecutive days, you will be paid every two weeks.\n\nSales Periods Are:\n1st through 15th\n16th through End of Month\n\nPay Periods Are:\n22nd of Every Month (for all total orders from the 1st through 15th)\n7th of Every Month (for all total orders from the 16th through End of Month)\n\nHow You Are Paid:\n1. ARK will pay sellers electronically through their bank account on Pay Periods (provided all items sold during previous Sales Period have reached ARK buyers successfully and/or there are no reports of poor quality, damaged items, potential fraud, etc).\n2. Funds are transferred from the buyer's payment method to ARK at time of purchase (shoppers choose their preferred payment from their ARK Wallet: debit card, credit card, ARK Gift Card or ARK Credit Balance, during initial ARK registration or during the check-out process of first ARK purchase).\n3. ARK then transfers total sales revenue from the previous Sales Period to the Seller's bank account, minus all ARK seller fees, on designated Pay Periods (if you use FBA, warehouse fees will be deducted as well).",
     },
     {
       question: "What kind of products can I sell on ARK?",
@@ -606,8 +606,8 @@ export default function Home() {
                 <p className="text-[0.9rem] mt-1 leading-6 text-[#bcc0c5] text-justify">
                   At ARK, our focus is to empower all Sellers in their retail
                   ministries to experience God&apos;s favor and prosperity
-                  according to Deut 8:18 while respecting their bottom line. We
-                  offer industry-leading store and transaction fees, Christian
+                  according to Deut 8:18 while respecting their bottom line. ARK
+                  offers industry-leading lowest total retailer fees, Christian
                   categories and engagement tools to lead you into the fullness
                   of your destiny!
                 </p>
@@ -674,13 +674,13 @@ export default function Home() {
             <h1>
               <span className="text-[#4de303]">ark</span>convenant
             </h1>
-            <p className=" text-center !text-base text-primary/90  leading-5">
-              for sellers
+            <p className=" text-center font-bold !text-base text-primary/90  leading-2">
+              For Sellers
             </p>
           </div>
 
           <div className=" mt-10">
-            <div className="text-center md:text-[40px] text-3xl font-medium mb-16">
+            <div className="text-center md:text-[40px] text-3xl font-medium mb-9">
               <h1 className="text-white">The Commanded Blessing is Upon You</h1>
             </div>
 
@@ -705,7 +705,7 @@ export default function Home() {
                 {/* Features */}
                 <div>
                   {/* Shopper Identity Verification */}
-                  <div className="py-5 border-b-1 border-white">
+                  <div className="py-5 border-b-1  border-white">
                     <div className="grid grid-cols-5 gap-4 items-center">
                       <div className="col-span-3 pr-8">
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
@@ -757,7 +757,7 @@ export default function Home() {
                         <h4 className="font-semibold text-white mb-2 text-[17px]">
                           iOS &amp; Android Apps
                         </h4>
-                        <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed text-justify">
+                        <p className="text-[0.9rem] text-[#bcc0c5] text-justify leading-relaxed ">
                           ARK offers our Faith Driven Consumers mobility with
                           our iOS &amp; Android apps for shopping on the go. You
                           can browse and order products, receive shipping
