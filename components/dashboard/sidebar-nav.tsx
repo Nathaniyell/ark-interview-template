@@ -3,26 +3,28 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import {
-  User,
-  MessageSquare,
+  CircleUserRound,
+  Mail,
   Package,
   BarChart3,
-  Settings,
-  List,
-  Clock,
-  MessageCircle,
+  ChartNoAxesCombined,
+  ClipboardList,
+  Timer,
+  MessageCircleMore,
+  GraduationCap,
   Smartphone,
 } from "lucide-react";
 
 const navItems = [
-  { icon: User, label: "User Profile", id: "profile" },
-  { icon: MessageSquare, label: "Messages", id: "messages" },
+  { icon: CircleUserRound, label: "User Profile", id: "profile" },
+  { icon: Mail, label: "Messages", id: "messages" },
   { icon: Package, label: "Products", id: "products" },
   { icon: BarChart3, label: "Reports", id: "reports" },
-  { icon: Settings, label: "Settings", id: "settings" },
-  { icon: List, label: "Lists", id: "lists" },
-  { icon: Clock, label: "History", id: "history" },
-  { icon: MessageCircle, label: "Chat", id: "chat" },
+  { icon: ChartNoAxesCombined, label: "Settings", id: "settings" },
+  { icon: ClipboardList, label: "Lists", id: "lists" },
+  { icon: GraduationCap, label: "Graduation", id: "Graduation" },
+  { icon: Timer, label: "History", id: "history" },
+  { icon: MessageCircleMore, label: "Chat", id: "chat" },
   { icon: Smartphone, label: "Mobile App", id: "mobile" },
 ];
 
@@ -36,7 +38,7 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
   return (
     <aside
       className={cn(
-        "w-12 lg:w-16 bg-[#353637] flex flex-col items-center py-4 lg:py-6 gap-4 lg:gap-6 flex-shrink-0",
+        "w-12 lg:w-16 bg-[#353637] rounded-[15px] flex flex-col items-center py-4 lg:py-6 gap-4 lg:gap-6 flex-shrink-0",
         fixed ? "fixed left-0 top-0 h-screen z-50" : "h-full"
       )}
     >
@@ -50,12 +52,12 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
             className={cn(
               "w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-lg transition-colors",
               isActive
-                ? "bg-[#4de209] text-black"
-                : "text-white hover:bg-[#4de209]/20"
+                ? "text-[#4de209]"
+                : "text-white hover:text-[#4de209]"
             )}
             title={item.label}
           >
-            <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
+            <Icon className="w-5 h-5 lg:w-7 lg:h-7" />
           </button>
         );
       })}
