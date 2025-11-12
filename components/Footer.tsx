@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 justify-items-center">
           {/* Support Column */}
-          <div className="text-left">
+          <div className="text-left w-full">
             <h3 className="font-semibold mb-3">Support</h3>
             <ul
               className="space-y-2"
