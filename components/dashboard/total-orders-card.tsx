@@ -8,7 +8,7 @@ interface TotalOrdersCardProps {
 
 export function TotalOrdersCard({
   value = "3,387",
-  change = "10.11% over last month",
+  change = "10.11%",
 }: TotalOrdersCardProps) {
   return (
     <MetricCard
