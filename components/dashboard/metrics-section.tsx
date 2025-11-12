@@ -42,7 +42,7 @@ export const MetricsSection = () => {
                     className={cn(
                       "w-2 h-2 rounded-full flex-shrink-0",
                       data.title === "Orders"
-                        ? "bg-[#4de209]/60"
+                        ? "bg-[#4de209]/50"
                         : "bg-[#4de209]"
                     )}
                   ></div>
