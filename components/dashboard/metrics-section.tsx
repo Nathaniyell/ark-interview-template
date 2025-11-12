@@ -9,14 +9,14 @@ export const MetricsSection = () => {
   return (
     <div className="relative flex gap-6">
       <SidebarNav />
-      <div className="flex gap-6 flex-1">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 max-w-2xl h-fit">
+      <div className="flex gap-6 flex-1 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1 max-w-2xl h-[450px]">
           <TotalRevenuesCard />
           <TotalOrdersCard />
           <TotalProductsSoldCard />
           <NewCustomersCard />
         </div>
-        <div className="bg-[#353637] rounded-[15px] p-6 text-white flex-1 h-full">
+        <div className="bg-[#353637] rounded-[15px] p-6 text-white flex-1 flex flex-col h-[450px]">
           <h2 className="text-xl font-bold mb-4">Revenue Reports &gt; 2023</h2>
           <div className="space-y-4">
             <p className="text-sm text-white/80">
