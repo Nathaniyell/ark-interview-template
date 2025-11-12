@@ -28,7 +28,7 @@ export function DashboardNav() {
        
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden p-2 text-white hover:text-green-400 focus:outline-none"
+          className="lg:hidden p-2 text-white hover:text-[#4de209] focus:outline-none"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -37,7 +37,7 @@ export function DashboardNav() {
     
       <nav
         className={cn(
-          "bg-[#818588] rounded-b-[15px] lg:rounded-[9px] mx-4 transition-all duration-300 overflow-hidden",
+          "bg-[#818588] rounded-b-[15px] lg:rounded-[8px] mx-4 transition-all duration-300 overflow-hidden",
           menuOpen ? "max-h-[500px]" : "max-h-0 lg:max-h-none"
         )}
       >
@@ -63,7 +63,7 @@ export function DashboardNav() {
           ))}
         </ul>
       </nav>
-        <ul className="mt-[24px] w-3/4 mx-auto flex flex-col lg:flex-row items-start lg:items-center lg:justify-around lg:gap-6 px-6">
+        <ul className="mt-[24px] w-3/4 overflow-x-scroll flex-nowrap mx-auto flex flex-col lg:flex-row items-start lg:items-center lg:justify-around lg:gap-6 px-6">
           <li>Edit Account/Profile/Password</li>
           <li>Get Verified</li>
           <li>Open a Store</li>
