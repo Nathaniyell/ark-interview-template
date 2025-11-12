@@ -3,11 +3,9 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 
 export function DashboardNav() {
   const [active, setActive] = useState("Admin Home");
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { title: "Admin Home", href: "#" },
@@ -22,36 +20,16 @@ export function DashboardNav() {
   ];
 
   return (
-    <header className="w-full h-[129px] bg-[#353637] text-white rounded-[15px] shadow-lg">
-      <div className="flex items-center justify-end px-6 py-4">
-
-       
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden p-2 text-white hover:text-[#4de209] focus:outline-none"
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-    
-      <nav
-        className={cn(
-          "bg-[#818588] rounded-b-[15px] lg:rounded-[8px] mx-4 transition-all duration-300 overflow-hidden",
-          menuOpen ? "max-h-[500px]" : "max-h-0 lg:max-h-none"
-        )}
-      >
-        <ul className="flex flex-col lg:flex-row items-start lg:items-center lg:justify-around lg:gap-6 px-6">
+    <header className="w-full h-[129px] bg-[#353637] text-white rounded-[15px] p-[24px] shadow-lg">
+      <nav className="bg-[#818588] rounded-[15px] mx-4 overflow-x-auto">
+        <ul className="flex flex-row items-center justify-around gap-6 px-6 py-2 flex-nowrap min-w-max">
           {navLinks.map((link) => (
-            <li key={link.title} className="w-full lg:w-auto">
+            <li key={link.title} className="flex-shrink-0">
               <Link
                 href={link.href}
-                onClick={() => {
-                  setActive(link.title);
-                  setMenuOpen(false);
-                }}
+                onClick={() => setActive(link.title)}
                 className={cn(
-                  "block text-sm font-medium transition-colors py-2 text-center duration-200 hover:text-[#4de209]",
+                  "block text-sm font-medium cursor-pointer transition-colors py-2 whitespace-nowrap duration-200 hover:text-[#4de209]",
                   active === link.title
                     ? "text-[#4de209]"
                     : "text-white/80"
@@ -63,15 +41,15 @@ export function DashboardNav() {
           ))}
         </ul>
       </nav>
-        <ul className="mt-[24px] w-3/4 overflow-x-scroll flex-nowrap mx-auto flex flex-col lg:flex-row items-start lg:items-center lg:justify-around lg:gap-6 px-6">
-          <li>Edit Account/Profile/Password</li>
-          <li>Get Verified</li>
-          <li>Open a Store</li>
-          <li>Gift Certificates</li>
-          <li>Create Newsletters</li>
-          <li>Send Praise Report</li>
-          <li>Contact Support</li>
-        </ul>
+      <ul className="mt-[14px] w-3/4 overflow-x-auto flex-nowrap mx-auto flex flex-row items-center justify-around gap-6 px-6">
+        <li className="flex-shrink-0 whitespace-nowrap">Edit Account/Profile/Password</li>
+        <li className="flex-shrink-0 whitespace-nowrap">Get Verified</li>
+        <li className="flex-shrink-0 whitespace-nowrap">Open a Store</li>
+        <li className="flex-shrink-0 whitespace-nowrap">Gift Certificates</li>
+        <li className="flex-shrink-0 whitespace-nowrap">Create Newsletters</li>
+        <li className="flex-shrink-0 whitespace-nowrap">Send Praise Report</li>
+        <li className="flex-shrink-0 whitespace-nowrap">Contact Support</li>
+      </ul>
     </header>
   );
 }
