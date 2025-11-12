@@ -63,6 +63,15 @@ export function DashboardNav() {
           ))}
         </ul>
       </nav>
+        <ul className="mt-[24px] w-3/4 mx-auto flex flex-col lg:flex-row items-start lg:items-center lg:justify-around lg:gap-6 px-6">
+          <li>Edit Account/Profile/Password</li>
+          <li>Get Verified</li>
+          <li>Open a Store</li>
+          <li>Gift Certificates</li>
+          <li>Create Newsletters</li>
+          <li>Send Praise Report</li>
+          <li>Contact Support</li>
+        </ul>
     </header>
   );
 }
