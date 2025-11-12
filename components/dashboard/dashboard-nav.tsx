@@ -37,7 +37,7 @@ export function DashboardNav() {
     
       <nav
         className={cn(
-          "bg-[#818588] rounded-b-[15px] lg:rounded-[8px] mx-4 transition-all duration-300 overflow-hidden",
+          "bg-[#818588] rounded-b-[15px] lg:rounded-[9px] mx-4 transition-all duration-300 overflow-hidden",
           menuOpen ? "max-h-[500px]" : "max-h-0 lg:max-h-none"
         )}
       >
