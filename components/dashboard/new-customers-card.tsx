@@ -8,7 +8,7 @@ interface NewCustomersCardProps {
 
 export function NewCustomersCard({
   value = "328",
-  change = "9.97% over last month",
+  change = "9.97%",
 }: NewCustomersCardProps) {
   return (
     <MetricCard
