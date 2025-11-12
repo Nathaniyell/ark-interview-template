@@ -1,0 +1,22 @@
+import { MetricCard } from "./metric-card";
+import { Users } from "lucide-react";
+
+interface NewCustomersCardProps {
+  value?: string;
+  change?: string;
+}
+
+export function NewCustomersCard({
+  value = "328",
+  change = "9.97% over last month",
+}: NewCustomersCardProps) {
+  return (
+    <MetricCard
+      title="New Customers"
+      value={value}
+      change={change}
+      icon={<Users size={20} className="text-[#4de209]" />}
+    />
+  );
+}
+
