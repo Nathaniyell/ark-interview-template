@@ -6,8 +6,8 @@ const Page = () => {
     <div className="h-screen m-[50px] flex flex-col gap-[50px]">
       <h1 className="text-white font-bold text-5xl">Dashboard</h1>
       <DashboardNav />
-      <div className="bg-[#353637] h-[69px] p-[24px] rounded-[15px] flex items-center justify-between">
-        <h2 className="textxl font-bold">
+      <div className="bg-[#353637] lg:h-[69px] p-[24px] rounded-[15px] flex-col lg:flex-row flex lg:items-center lg:justify-between gap-[24px] lg:gap-0">
+        <h2 className="text-xl font-bold">
           Welcome to your dashboard David - you are highly favoured
         </h2>
         <div className="flex gap-4 items-center">

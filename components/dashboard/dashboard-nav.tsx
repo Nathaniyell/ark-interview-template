@@ -21,7 +21,7 @@ export function DashboardNav() {
 
   return (
     <header className="w-full h-[129px] bg-[#353637] text-white rounded-[15px] p-[24px] shadow-lg">
-      <nav className="bg-[#818588] rounded-[15px] mx-4 overflow-x-auto">
+      <nav className="bg-[#818588] rounded-[15px] overflow-x-auto">
         <ul className="flex flex-row items-center justify-around gap-6 px-6 py-2 flex-nowrap min-w-max">
           {navLinks.map((link) => (
             <li key={link.title} className="flex-shrink-0">
@@ -41,7 +41,7 @@ export function DashboardNav() {
           ))}
         </ul>
       </nav>
-      <ul className="mt-[14px] w-3/4 overflow-x-auto flex-nowrap mx-auto flex flex-row items-center justify-around gap-6 px-6">
+      <ul className="mt-[14px] lg:w-3/4 overflow-x-auto flex-nowrap lg:mx-auto flex flex-row items-center justify-around gap-6">
         <li className="flex-shrink-0 whitespace-nowrap">Edit Account/Profile/Password</li>
         <li className="flex-shrink-0 whitespace-nowrap">Get Verified</li>
         <li className="flex-shrink-0 whitespace-nowrap">Open a Store</li>
