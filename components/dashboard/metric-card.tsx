@@ -32,7 +32,7 @@ export function MetricCard({
       </div>
       <div className="flex flex-col gap-2">
         <p className="text-3xl font-bold">{value}</p>
-        <div className="flex items-center gap-1 text-[#4de209] text-sm bg-[#353637] h-[40px] rounded-[10px] px-4">
+        <div className="flex items-center gap-1 text-[#4de209] text-sm bg-[#353637] h-[40px] rounded-[10px] px-4 w-fit">
           <ArrowUp size={16} />
           <span>{change}</span> <span className="text-white/80">over last month</span>
         </div>
