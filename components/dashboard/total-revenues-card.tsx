@@ -15,7 +15,7 @@ export function TotalRevenuesCard({
       title="Total Revenues"
       value={value}
       change={change}
-      icon={<DollarSign size={20} className="text-[#4de209]" />}
+      icon={<DollarSign size={24} />}
     />
   );
 }

@@ -15,7 +15,7 @@ export function TotalProductsSoldCard({
       title="Total Products Sold"
       value={value}
       change={change}
-      icon={<Package size={20} className="text-[#4de209]" />}
+      icon={<Package size={24} />}
     />
   );
 }

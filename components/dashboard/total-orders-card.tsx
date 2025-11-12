@@ -15,7 +15,7 @@ export function TotalOrdersCard({
       title="Total Orders"
       value={value}
       change={change}
-      icon={<ShoppingCart size={20} className="text-[#4de209]" />}
+      icon={<ShoppingCart size={24}  />}
     />
   );
 }

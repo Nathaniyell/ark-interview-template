@@ -26,7 +26,7 @@ export function MetricCard({
     >
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-medium text-white/80">{title}</h3>
-        <div className="w-10 h-10 rounded-full bg-[#4de209]/20 flex items-center justify-center">
+        <div className="w-12 h-12 rounded-[8px] bg-[#353637] flex items-center justify-center text-white">
           {icon}
         </div>
       </div>

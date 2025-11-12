@@ -15,7 +15,7 @@ export function NewCustomersCard({
       title="New Customers"
       value={value}
       change={change}
-      icon={<Users size={20} className="text-[#4de209]" />}
+      icon={<Users size={24} />}
     />
   );
 }
