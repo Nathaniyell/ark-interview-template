@@ -36,7 +36,7 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
   return (
     <aside
       className={cn(
-        "w-16 bg-[#353637] flex flex-col items-center py-6 gap-6",
+        "w-12 lg:w-16 bg-[#353637] flex flex-col items-center py-4 lg:py-6 gap-4 lg:gap-6 flex-shrink-0",
         fixed ? "fixed left-0 top-0 h-screen z-50" : "h-full"
       )}
     >
@@ -48,14 +48,14 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
             key={item.id}
             onClick={() => setActive(item.id)}
             className={cn(
-              "w-12 h-12 flex items-center justify-center rounded-lg transition-colors",
+              "w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-lg transition-colors",
               isActive
                 ? "bg-[#4de209] text-black"
                 : "text-white hover:bg-[#4de209]/20"
             )}
             title={item.label}
           >
-            <Icon size={24} />
+            <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
           </button>
         );
       })}

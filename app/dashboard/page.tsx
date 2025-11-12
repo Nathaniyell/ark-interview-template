@@ -4,7 +4,7 @@ import { Bell, Power } from "lucide-react";
 
 const Page = () => {
   return (
-    <div className="min-h-screen m-[50px] flex flex-col gap-[50px]">
+    <div className="min-h-screen m-[20px] lg:m-[50px] flex flex-col gap-[50px]">
       <h1 className="text-white font-bold text-5xl">Dashboard</h1>
       <DashboardNav />
       <div className="bg-[#353637] lg:h-[69px] p-[24px] rounded-[15px] flex-col lg:flex-row flex lg:items-center lg:justify-between gap-[24px] lg:gap-0">
