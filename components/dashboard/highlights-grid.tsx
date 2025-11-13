@@ -80,7 +80,7 @@ const news = {
   handle: "@ARKmarketplace",
   message:
     "Join ARK for a Night of Hope, Education & Encouragement in Jesus at FAITHx Vancouver 2026! Connect with @ARKmarketplace this December 19, 2026 in Vancouver and enjoy music worship, moving media pieces & anointed speakers who will give inspirational FAITHx Talks! Info on where to purchase tickets online coming soon!",
-  image: "/images/news/faithx-stage.jpg",
+  image: "/dashboard-assets/faithx-vancouver.png",
 };
 
 const placeholderImage =
@@ -88,38 +88,39 @@ const placeholderImage =
 
 export const HighlightsGrid = () => {
   return (
-    <div className="grid gap-4 lg:gap-[40px] grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)_minmax(0,1fr)]">
-      <div className="rounded-[15px] border-2 border-[#272829] bg-transparent text-white overflow-hidden">
-        <div className="bg-[#3a3b3d] px-6 py-4">
-          <h3 className="text-lg font-semibold">Reminders &amp; Actions Needed</h3>
-        </div>
-        <div className="divide-y divide-[#272829]">
+    <div className="grid gap-4 lg:gap-[40px] grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)_minmax(0,1fr)]">
+      <div className="flex flex-col gap-[24px] text-white">
+        <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">Reminders &amp; Actions Needed</h3>
+        <div className="rounded-[15px] border-2 border-[#272829] bg-transparent overflow-hidden">
           {reminders.map((item) => (
-            <div key={item.id} className="flex items-center gap-4 px-6 py-4">
-              <div className="w-12 h-12 rounded-[12px] bg-[#272829] border border-[#272829] flex items-center justify-center">
-                <item.icon size={24} className="text-white/70" />
+            <div
+              key={item.id}
+              className="flex items-center gap-4 px-6 border-b-2 border-[#272829] last:border-b-0"
+            >
+              <div className="flex items-center gap-4 pr-6 border-r-2 border-[#272829] h-[81px]">
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <item.icon size={24} className="text-white/70" />
+                </div>
               </div>
-              <span className="w-8 h-8 rounded-full bg-[#272829] border border-[#4de209]/40 text-[#4de209] font-bold text-sm grid place-items-center">
-                {item.count}
-              </span>
+                <span className="w-8 h-8 rounded-full bg-[#4de209] border text-black font-bold text-sm grid place-items-center">
+                  {item.count}
+                </span>
               <p className="text-sm text-white/70 flex-1">{item.message}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="rounded-[15px] border-2 border-[#272829] bg-transparent text-white overflow-hidden">
-        <div className="bg-[#3a3b3d] px-6 py-4">
-          <h3 className="text-lg font-semibold">ARK Products &amp; Stores Spotlight</h3>
-        </div>
-        <div className="flex flex-col gap-[40px] px-6 py-6">
+      <div className="flex flex-col gap-[24px] text-white">
+        <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">ARK Products &amp; Stores Spotlight</h3>
+        <div className="bg-transparent overflow-hidden flex flex-col gap-[45px]">
           {spotlights.map((item) => (
             <div
               key={item.id}
-              className="flex flex-col md:flex-row md:items-center gap-4 rounded-[15px] border-2 border-[#272829]"
+              className="flex flex-col md:flex-row md:items-center gap-4 rounded-[15px] border-2 border-[#272829] h-[164px]"
             >
               <div
-                className="relative w-full md:w-40 h-32 md:h-24 rounded-[12px] overflow-hidden flex-shrink-0 bg-cover bg-center"
+                className="relative w-full md:w-40 h-32 md:h-24 rounded-l-[15px] overflow-hidden flex-shrink-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${item.image || placeholderImage})` }}
               ></div>
               <div className="flex-1 flex flex-col">
@@ -138,11 +139,9 @@ export const HighlightsGrid = () => {
         </div>
       </div>
 
-      <div className="rounded-[15px] border-2 border-[#272829] bg-transparent text-white overflow-hidden">
-        <div className="bg-[#3a3b3d] px-6 py-4">
-          <h3 className="text-lg font-semibold">ARK News &amp; Events</h3>
-        </div>
-        <div className="px-6 py-6 flex flex-col gap-4">
+      <div className="flex flex-col gap-[24px] text-white">
+        <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">ARK News &amp; Events</h3>
+        <div className="rounded-[15px] border-2 border-[#272829] bg-transparent overflow-hidden px-6 py-10 flex flex-col gap-4 h-[575px]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-[#272829] border border-[#272829] grid place-items-center text-lg font-semibold">
@@ -153,7 +152,7 @@ export const HighlightsGrid = () => {
                 <span className="text-sm text-[#4de209]">{news.handle}</span>
               </div>
             </div>
-            <button className="text-white/50 text-xl leading-none">×</button>
+            <button className="text-white/50 text-3xl leading-none">×</button>
           </div>
           <p className="text-sm text-white/70 leading-relaxed">{news.message}</p>
           <div
