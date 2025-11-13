@@ -7,6 +7,7 @@ import {
   RefreshCcw,
   Handshake,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const reminders = [
   {
@@ -101,7 +102,7 @@ export const HighlightsGrid = () => {
             Reminders &amp; Actions Needed
           </h3>
           <div className="rounded-[15px] border-2 border-[#272829] bg-transparent overflow-hidden">
-            {reminders.map((item) => (
+            {reminders.map((item, index) => (
               <div
                 key={item.id}
                 className="flex items-center px- border-b-2 border-[#272829] last:border-b-0"
@@ -112,7 +113,14 @@ export const HighlightsGrid = () => {
                   </div>
                 </div>
                 <div className="hover:bg-[#272829] flex items-center gap-2 h-[81px] px-2 w-full">
-                  <span className="w-5 h-5 rounded-full bg-[#4de209] border text-black font-bold text-[12px] grid place-items-center">
+                  <span
+                    className={cn(
+                      "w-5 h-5 rounded-full border font-bold text-[12px] grid place-items-center",
+                      index >= reminders.length - 2
+                        ? "bg-white text-black border-white"
+                        : "bg-[#4de209] text-black border-[#4de209]"
+                    )}
+                  >
                     {item.count}
                   </span>
                   <p className="text-sm text-white/70 flex-1 ">
