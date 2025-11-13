@@ -191,7 +191,7 @@ export const MetricsSection = () => {
                     className="flex items-center gap-4 py-4 border-b border-[#4a4a4a] last:border-b-0"
                   >
                     <div className="flex items-center gap-3 flex-1 min-w-24">
-                      <div className="w-12 h-12 rounded-[10px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70">
+                      <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70">
                         {product.initials}
                       </div>
                       <div className="flex flex-col gap-1 min-w-0">
