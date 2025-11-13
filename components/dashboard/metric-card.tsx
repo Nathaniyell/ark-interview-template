@@ -29,12 +29,12 @@ export function MetricCard({
         <p className="text-3xl font-bold">{value}</p>
         <h3 className="font-medium text-white/80">{title}</h3>
         </div>
-        <div className="w-12 h-12 rounded-[8px] bg-[#353637] flex items-center justify-center text-white">
+        <div className="w-12 h-12 rounded-[8px] bg-[#272829] flex items-center justify-center text-white">
           {icon}
         </div>
       </div>
       <div className="flex flex-col gap-2">        
-        <div className="flex items-center gap-1 text-[#4de209] text-sm bg-[#353637] h-[40px] rounded-[10px] px-4 w-fit lg:w-full">
+        <div className="flex items-center gap-1 text-[#4de209] text-sm bg-[#272829] h-[40px] rounded-[10px] px-4 w-fit lg:w-full">
           <ArrowUp size={16} />
           <span>{change}</span> <span className="text-white/80">over last month</span>
         </div>
