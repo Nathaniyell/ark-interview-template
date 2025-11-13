@@ -32,12 +32,12 @@ const MetricsChart = () => {
                   <XAxis
                     dataKey="month"
                     stroke="#ffffff80"
-                    tick={{ fill: "#ffffff80", fontSize: 12 }}
+                    tick={{ fill: "#ffffff80", fontSize: 14 }}
                     axisLine={{ stroke: "#272829" }}
                   />
                   <YAxis
                     stroke="#ffffff80"
-                    tick={{ fill: "#ffffff80", fontSize: 12 }}
+                    tick={{ fill: "#ffffff80", fontSize: 14 }}
                     axisLine={{ stroke: "#272829" }}
                     tickFormatter={(value) => {
                       if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
