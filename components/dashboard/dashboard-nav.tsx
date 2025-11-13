@@ -22,7 +22,7 @@ export function DashboardNav() {
   return (
     <header className="w-full h-[129px] bg-[#272829] text-white rounded-[15px] p-[24px] shadow-lg">
       <nav className="bg-[#3a3b3c] lg:h-[42px] rounded-[15px] overflow-x-auto">
-        <ul className="flex flex-row items-center justify-around gap-6 px-6 py-2 flex-nowrap min-w-max">
+        <ul className="flex flex-row items-center justify-around gap-6 px-6 py-1 flex-nowrap min-w-max">
           {navLinks.map((link) => (
             <li key={link.title} className="flex-shrink-0">
               <Link
