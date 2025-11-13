@@ -246,7 +246,7 @@ export const HighlightsGrid = () => {
           Ship on your own or choose FBA. Visit our fullfikment center and get
           your shipping game on seamlessly!
         </p>
-        <div className="border-2 border-[#272829] rounded-[15px] h-[82px] flex items-center justify-center gap-[50px] bg-transparent">
+        <div className="border-2 border-[#272829] rounded-[15px] h-[82px] flex items-center justify-center gap-[80px] bg-transparent">
           {brands.map((brand, index) => (
             <h4 className="font-black text-3xl text-[#b0b3b8]" key={index}>
               {brand}
