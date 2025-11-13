@@ -1,10 +1,10 @@
-import React from "react";
 import { TotalRevenuesCard } from "./total-revenues-card";
 import { TotalOrdersCard } from "./total-orders-card";
 import { NewCustomersCard } from "./new-customers-card";
 import { TotalProductsSoldCard } from "./total-products-sold-card";
 import { SidebarNav } from "./sidebar-nav";
 import { cn } from "@/lib/utils";
+import MetricsChart from "./MetricsChart";
 
 export const MetricsSection = () => {
   const visualizationData = [
@@ -116,7 +116,7 @@ export const MetricsSection = () => {
             <NewCustomersCard />
           </div>
           <div className="bg-transparent rounded-[15px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col lg:h-[350px]">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between mb-4">
               <h2 className="text-lg lg:text-xl font-bold">
                 Revenue Reports &gt; 2023
               </h2>
@@ -148,6 +148,9 @@ export const MetricsSection = () => {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="flex-1 min-h-0">
+             <MetricsChart />
             </div>
           </div>
         </div>
