@@ -1,5 +1,5 @@
 import { MetricCard } from "./metric-card";
-import { DollarSign } from "lucide-react";
+import { CircleDollarSign } from "lucide-react";
 
 interface TotalRevenuesCardProps {
   value?: string;
@@ -15,7 +15,7 @@ export function TotalRevenuesCard({
       title="Total Revenues"
       value={value}
       change={change}
-      icon={<DollarSign size={24} />}
+      icon={<CircleDollarSign size={24} />}
     />
   );
 }

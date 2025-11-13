@@ -1,5 +1,5 @@
 import { MetricCard } from "./metric-card";
-import { Package } from "lucide-react";
+import { Gift } from "lucide-react";
 
 interface TotalProductsSoldCardProps {
   value?: string;
@@ -15,7 +15,7 @@ export function TotalProductsSoldCard({
       title="Total Products Sold"
       value={value}
       change={change}
-      icon={<Package size={24} />}
+      icon={<Gift size={24} />}
     />
   );
 }
