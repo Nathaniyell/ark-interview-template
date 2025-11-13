@@ -60,6 +60,49 @@ export const MetricsSection = () => {
   ];
 
   const timeframes = ["Today", "Week", "Month", "Year"];
+
+  const locationMetrics = [
+    {
+      country: "United States",
+      revenue: "$51,397",
+      orders: "2,056",
+    },
+    {
+      country: "United Kingdom",
+      revenue: "$17,281",
+      orders: "691",
+    },
+    {
+      country: "Canada",
+      revenue: "$10,673",
+      orders: "427",
+    },
+    {
+      country: "Germany",
+      revenue: "$7,864",
+      orders: "315",
+    },
+    {
+      country: "Australia",
+      revenue: "$5,253",
+      orders: "210",
+    },
+    {
+      country: "South Africa",
+      revenue: "$3,186",
+      orders: "127",
+    },
+    {
+      country: "France",
+      revenue: "$2,941",
+      orders: "114",
+    },
+    {
+      country: "Brazil",
+      revenue: "$2,508",
+      orders: "98",
+    },
+  ];
   return (
     <div className="relative flex flex-row gap-4 lg:gap-[40px]">
       <SidebarNav />
@@ -152,21 +195,18 @@ export const MetricsSection = () => {
                         {product.initials}
                       </div>
                       <div className="flex flex-col gap-1 min-w-0">
-                        <span className="font-semibold text-sm lg:text-base text-white truncate">
+                        <span className="font-semibold text-sm lg:text-base text-white/60 truncate">
                           {product.title}
-                        </span>
-                        {/* <span className="text-xs text-white/50 truncate">
-                          {product.subtitle}
-                        </span> */}
+                        </span>              
                       </div>
                     </div>
-                    <span className="w-[80px] text-right text-sm font-medium text-white/70">
+                    <span className="w-[80px] text-right text-sm font-medium text-white/60">
                       {product.price}
                     </span>
-                    <span className="w-[100px] text-right text-sm font-medium text-white/70">
+                    <span className="w-[100px] text-right text-sm font-medium text-white/60">
                       {product.revenue}
                     </span>
-                    <span className="w-[80px] text-right text-sm font-semibold text-white/70">
+                    <span className="w-[80px] text-right text-sm font-semibold text-white/60">
                       {product.orders}
                     </span>
                   </div>
@@ -174,8 +214,41 @@ export const MetricsSection = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-[599px] lg:h-[470px] rounded-[15px] border-2 border-[#4a4a4a]">
-        
+          <div className="lg:w-[599px] lg:h-[470px] rounded-[15px] border-2 border-[#4a4a4a] text-white flex flex-col overflow-hidden">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:px-6 lg:py-6 border-b-2 border-[#4a4a4a]">
+              <h2 className="text-lg font-semibold">
+                Revenue &amp; Orders by Location &gt;{" "}
+                <span className="text-[#4de209]">March 2024</span>
+              </h2>
+              <button className="w-full lg:w-auto rounded-[6px] bg-[#272829] text-[#4de209] text-sm font-semibold px-4 py-2">
+                Try ARKai Ads
+              </button>
+            </div>
+            <div className="flex flex-col flex-1 px-4 lg:px-6 mt-[32px] overflow-hidden">
+              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 font-semibold px-4 lg:px-6 py-3 bg-[#272829] h-[49px] rounded-[8px] gap-2">
+                <span className="flex-1">Top Countries</span>
+                <span className="w-[110px] text-right">Revenue</span>
+                <span className="w-[90px] text-right">Orders</span>
+              </div>
+              <div className="flex-1 overflow-y-scroll mt-[30px] space-y-[20px]">
+                {locationMetrics.map((location) => (
+                  <div
+                    key={location.country}
+                    className="flex items-center gap-4 border-b border-[#4a4a4a]/60 pb-3 last:border-b-0 last:pb-0"
+                  >
+                    <span className="flex-1 text-sm font-semibold text-white/60 uppercase">
+                      {location.country}
+                    </span>
+                    <span className="w-[110px] text-right text-sm font-medium text-white/60">
+                      {location.revenue}
+                    </span>
+                    <span className="w-[90px] text-right text-sm font-medium text-white/60">
+                      {location.orders}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         
