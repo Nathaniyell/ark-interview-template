@@ -1,5 +1,6 @@
 import { DashboardNav } from "@/components/dashboard/dashboard-nav";
 import { MetricsSection } from "@/components/dashboard/metrics-section";
+import { HighlightsGrid } from "@/components/dashboard/highlights-grid";
 import { Bell, Power } from "lucide-react";
 
 const Page = () => {
@@ -24,6 +25,7 @@ const Page = () => {
           </div>
         </div>
         <MetricsSection />
+        <HighlightsGrid />
       </div>
     </div>
   );
