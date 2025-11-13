@@ -138,23 +138,30 @@ export const HighlightsGrid = () => {
             ARK Products &amp; Stores Spotlight
           </h3>
           <div className="bg-transparent overflow-hidden flex flex-col gap-[45px]">
-            {spotlights.map((item) => (
+             {spotlights.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col md:flex-row md:items-center gap-4 rounded-[15px] border-2 border-[#272829] h-[164px]"
+                 className="flex flex-col md:flex-row md:items-stretch gap-4 rounded-[15px] border-2 border-[#272829] h-[164px]"
               >
                 <div
-                  className="relative w-full md:w-40 h-32 md:h-24 rounded-l-[15px] overflow-hidden flex-shrink-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                ></div>
-                <div className="flex-1 flex flex-col">
+                   className="relative w-full md:w-[200px] h-[164px] md:h-full rounded-t-[15px] md:rounded-tr-none md:rounded-l-[15px] overflow-hidden flex-shrink-0"
+                 >
+                   <Image
+                     src={item.image}
+                     alt={item.title}
+                     fill
+                     sizes="(max-width: 768px) 100vw, 200px"
+                     className="object-cover"
+                   />
+                 </div>
+                <div className="flex-1 flex flex-col self-center">
                   <h4 className="text-base font-semibold">{item.title}</h4>
                   <p className="text-sm">
                     Shop <span className="text-[#4de209]">{item.shop}</span>{" "}
                   </p>
                   <span className="text-xs text-white/60">{item.location}</span>
                 </div>
-                <div className="pr-6">
+                <div className="pr-6 self-center">
                   <div className="relative w-[100px] h-[100px] rounded-full border border-[#272829] bg-[#272829] overflow-hidden flex-shrink-0">
                     <Image
                       src={item.logo}
