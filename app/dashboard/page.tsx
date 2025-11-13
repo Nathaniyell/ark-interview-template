@@ -10,7 +10,7 @@ const Page = () => {
       <div className=" m-[20px] lg:m-[50px] flex flex-col gap-[40px]">
       <DashboardNav />
         <div className="bg-[#272829] lg:h-[69px] p-[24px] rounded-[15px] flex-col lg:flex-row flex lg:items-center lg:justify-between gap-[24px] lg:gap-0">
-          <h2 className="text-xl font-bold">
+          <h2 className="font-bold">
             Welcome to your dashboard David - you are highly favoured
           </h2>
           <div className="flex gap-4 items-center">
