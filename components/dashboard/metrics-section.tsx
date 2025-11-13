@@ -32,7 +32,8 @@ export const MetricsSection = () => {
     },
     {
       id: "mysteries-parables",
-      title: "John MacArthur - Parables: The Mysteries of God's Kingdom Revealed",
+      title:
+        "John MacArthur - Parables: The Mysteries of God's Kingdom Revealed",
       subtitle: "Hardcover · Theology",
       price: "$14.99",
       revenue: "$18,722",
@@ -41,7 +42,7 @@ export const MetricsSection = () => {
     },
     {
       id: "cheerway-tv-stand",
-      title: "Cheerway 3D Fireplace TV Stand for TVs up to 65\"",
+      title: 'Cheerway 3D Fireplace TV Stand for TVs up to 65"',
       subtitle: "Home · Furniture",
       price: "$299.99",
       revenue: "$9,299",
@@ -107,7 +108,6 @@ export const MetricsSection = () => {
     <div className="relative flex flex-row gap-4 lg:gap-[40px]">
       <SidebarNav />
       <div className="flex flex-col flex-1 gap-[40px]">
-
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-[40px] items-stretch">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[40px] flex-1 lg:max-w-2xl lg:h-fit">
             <TotalRevenuesCard />
@@ -197,7 +197,7 @@ export const MetricsSection = () => {
                       <div className="flex flex-col gap-1 min-w-0">
                         <span className="font-semibold text-sm lg:text-base text-white/60 truncate">
                           {product.title}
-                        </span>              
+                        </span>
                       </div>
                     </div>
                     <span className="w-[80px] text-right text-sm font-medium text-white/60">
@@ -251,7 +251,6 @@ export const MetricsSection = () => {
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
