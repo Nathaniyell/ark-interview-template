@@ -28,7 +28,7 @@ const MetricsChart = () => {
     <>
          <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#272829" />
+                  <CartesianGrid vertical={false} strokeWidth={2} stroke="#272829" />
                   <XAxis
                     dataKey="month"
                     stroke="#ffffff80"
