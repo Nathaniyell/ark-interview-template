@@ -32,11 +32,11 @@ export const MetricsSection = () => {
         <div className="bg-transparent rounded-[15px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col lg:h-[350px]">
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between">
             <h2 className="text-lg lg:text-xl font-bold">Revenue Reports &gt; 2023</h2>
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-[50px]">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
               {visualizationData.map((data) => (
                 <div
                   key={data.title}
-                  className="w-fit flex items-center gap-2 bg-[#272829] rounded-[8px] px-4 lg:px-10 py-2"
+                  className="w-fit flex items-center gap-2 bg-[#272829] rounded-[8px] px-4 lg:px-2 py-2"
                 >
                   <div
                     className={cn(
@@ -50,7 +50,7 @@ export const MetricsSection = () => {
                     <span className="text-white/70 font-medium">
                       {data.title}
                     </span>
-                    <span className="font-bold text-base lg:text-xl text-white">
+                    <span className="font-bold text-base lg:text-lg text-white">
                       {data.amount}
                     </span>
                     <span className="text-[#4de209]">↑ {data.percentage}</span>
