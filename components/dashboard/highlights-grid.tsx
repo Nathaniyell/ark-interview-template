@@ -94,6 +94,10 @@ const news = {
   image: "/dashboard-assets/faithx-vancouver.png",
 };
 
+const brands = [
+  "UPS", "FedEx", "ShipStation", "USPS", "DHL", "C A N A D A P O S T"
+]
+
 export const HighlightsGrid = () => {
   return (
     <>
@@ -138,38 +142,40 @@ export const HighlightsGrid = () => {
             ARK Products &amp; Stores Spotlight
           </h3>
           <div className="bg-transparent overflow-hidden flex flex-col gap-[45px]">
-             {spotlights.map((item) => (
+            {spotlights.map((item) => (
               <div
                 key={item.id}
-                 className="flex flex-col md:flex-row md:items-stretch gap-4 rounded-[15px] border-2 border-[#272829] h-[164px]"
+                className="rounded-[15px] border-2 border-[#272829] overflow-hidden w-full"
               >
-                <div
-                   className="relative w-full md:w-[200px] h-[164px] md:h-full rounded-t-[15px] md:rounded-tr-none md:rounded-l-[15px] overflow-hidden flex-shrink-0"
-                 >
-                   <Image
-                     src={item.image}
-                     alt={item.title}
-                     fill
-                     sizes="(max-width: 768px) 100vw, 200px"
-                     className="object-cover"
-                   />
-                 </div>
-                <div className="flex-1 flex flex-col self-center">
-                  <h4 className="text-base font-semibold">{item.title}</h4>
-                  <p className="text-sm">
-                    Shop <span className="text-[#4de209]">{item.shop}</span>{" "}
-                  </p>
-                  <span className="text-xs text-white/60">{item.location}</span>
-                </div>
-                <div className="pr-6 self-center">
-                  <div className="relative w-[100px] h-[100px] rounded-full border border-[#272829] bg-[#272829] overflow-hidden flex-shrink-0">
+                <div className="flex flex-col md:grid md:grid-cols-[minmax(0,200px)_1fr_auto] md:items-center gap-4 md:gap-6 h-full">
+                  <div className="relative w-full h-40 md:h-full md:min-h-[164px] overflow-hidden">
                     <Image
-                      src={item.logo}
-                      alt={`${item.shop} logo`}
+                      src={item.image}
+                      alt={item.title}
                       fill
-                      sizes="64px"
+                      sizes="(max-width: 768px) 100vw, 220px"
                       className="object-cover"
                     />
+                  </div>
+                  <div className="flex flex-col gap-2 px-5 md:px-0 min-w-0">
+                    <h4 className="text-base font-semibold truncate md:whitespace-normal">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm">
+                      Shop <span className="text-[#4de209]">{item.shop}</span>{" "}
+                    </p>
+                    <span className="text-xs text-white/60">{item.location}</span>
+                  </div>
+                  <div className="flex justify-center md:justify-end pr-5 md:pr-6">
+                    <div className="relative w-[90px] h-[90px] rounded-full border border-[#272829] bg-[#272829] overflow-hidden flex-shrink-0">
+                      <Image
+                        src={item.logo}
+                        alt={`${item.shop} logo`}
+                        fill
+                        sizes="90px"
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -202,7 +208,7 @@ export const HighlightsGrid = () => {
                   viewBox="0 0 14 14"
                 >
                   <g fill="none">
-                    <g clip-path="url(#SVGG1Ot4cAD)">
+                    <g clipPath="url(#SVGG1Ot4cAD)">
                       <path
                         fill="currentColor"
                         d="M11.025.656h2.147L8.482 6.03L14 13.344H9.68L6.294 8.909l-3.87 4.435H.275l5.016-5.75L0 .657h4.43L7.486 4.71zm-.755 11.4h1.19L3.78 1.877H2.504z"
@@ -240,7 +246,13 @@ export const HighlightsGrid = () => {
           Ship on your own or choose FBA. Visit our fullfikment center and get
           your shipping game on seamlessly!
         </p>
-        <div className="border-2 rounded-[15px] h-[82px]"></div>
+        <div className="border-2 border-[#272829] rounded-[15px] h-[82px] flex items-center justify-center gap-[50px] bg-transparent">
+          {brands.map((brand, index) => (
+            <h4 className="font-black text-3xl text-[#b0b3b8]" key={index}>
+              {brand}
+            </h4>
+          ))}
+        </div>
       </div>
     </>
   );
