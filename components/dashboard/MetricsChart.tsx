@@ -28,17 +28,17 @@ const MetricsChart = () => {
     <>
          <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData} margin={{ top: 5, right: 10, left: 0, bottom: 5 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#4a4a4a" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#272829" />
                   <XAxis
                     dataKey="month"
                     stroke="#ffffff80"
                     tick={{ fill: "#ffffff80", fontSize: 12 }}
-                    axisLine={{ stroke: "#4a4a4a" }}
+                    axisLine={{ stroke: "#272829" }}
                   />
                   <YAxis
                     stroke="#ffffff80"
                     tick={{ fill: "#ffffff80", fontSize: 12 }}
-                    axisLine={{ stroke: "#4a4a4a" }}
+                    axisLine={{ stroke: "#272829" }}
                     tickFormatter={(value) => {
                       if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
                       if (value >= 1000) return `${(value / 1000).toFixed(0)}K`;
@@ -48,7 +48,7 @@ const MetricsChart = () => {
                   <Tooltip
                     contentStyle={{
                       backgroundColor: "#272829",
-                      border: "1px solid #4a4a4a",
+                      border: "1px solid #272829",
                       borderRadius: "8px",
                       color: "#fff",
                     }}
