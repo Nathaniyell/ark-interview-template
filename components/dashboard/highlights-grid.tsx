@@ -141,7 +141,7 @@ export const HighlightsGrid = () => {
           <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">
             ARK Products &amp; Stores Spotlight
           </h3>
-          <div className="bg-transparent overflow-hidden flex flex-col gap-[45px]">
+          <div className="bg-transparent overflow-hidden flex flex-col gap-[38px]">
             {spotlights.map((item) => (
               <div
                 key={item.id}
