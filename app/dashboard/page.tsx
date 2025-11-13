@@ -25,7 +25,7 @@ const Page = () => {
           </div>
         </div>
         <MetricsSection />
-        <HighlightsGrid />
+        <HighlightsGrid />       
       </div>
     </div>
   );
