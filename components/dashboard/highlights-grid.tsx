@@ -9,6 +9,7 @@ import {
   Handshake,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logo from "@/app/logo.svg";
 
 const reminders = [
   {
@@ -190,8 +191,8 @@ export const HighlightsGrid = () => {
           <div className="rounded-[15px] border-2 border-[#272829] bg-transparent overflow-hidden px-6 py-10 flex flex-col gap-6 h-[575px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#272829] border border-[#272829] grid place-items-center text-lg font-semibold">
-                  {news.platform}
+                <div className="w-[56px] h-[56px] rounded-full bg-black grid place-items-center text-lg font-semibold">
+              <Image src={logo} alt="ARK Logo" className="h-[30px]" />                 
                 </div>
                 <div className="flex flex-col">
                   <span className="font-semibold leading-tight">
