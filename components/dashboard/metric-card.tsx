@@ -20,7 +20,7 @@ export function MetricCard({
   return (
     <div
       className={cn(
-        "bg-transparent border-[#4a4a4a] border-2 rounded-[15px] p-6 text-white flex flex-col gap-[50px] h-full",
+        "bg-transparent border-[#4a4a4a] border-2 rounded-[15px] px-4 py-3 text-white flex flex-col gap-[20px] h-full",
         className
       )}
     >
