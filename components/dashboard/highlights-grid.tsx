@@ -83,8 +83,6 @@ const news = {
   image: "/dashboard-assets/faithx-vancouver.png",
 };
 
-const placeholderImage =
-  "https://images.unsplash.com/photo-1526289035000-8afb0c7b7e0a?auto=format&fit=crop&w=600&q=80";
 
 export const HighlightsGrid = () => {
   return (
@@ -124,7 +122,7 @@ export const HighlightsGrid = () => {
             >
               <div
                 className="relative w-full md:w-40 h-32 md:h-24 rounded-l-[15px] overflow-hidden flex-shrink-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${item.image || placeholderImage})` }}
+                style={{ backgroundImage: `url(${item.image})` }}
               ></div>
               <div className="flex-1 flex flex-col">
                 <h4 className="text-base font-semibold">{item.title}</h4>
@@ -161,7 +159,7 @@ export const HighlightsGrid = () => {
           <p className="text-sm text-white/70 leading-relaxed">{news.message}</p>
           <div
             className="relative w-full h-52 rounded-[16px] overflow-hidden border border-[#272829] bg-cover bg-center"
-            style={{ backgroundImage: `url(${news.image || placeholderImage})` }}
+            style={{ backgroundImage: `url(${news.image})` }}
           >
             <span className="sr-only">FAITHx Vancouver 2026 stage</span>
           </div>
