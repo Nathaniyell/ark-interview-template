@@ -19,47 +19,166 @@ export const MetricsSection = () => {
       percentage: "12.89%",
     },
   ];
+
+  const topProducts = [
+    {
+      id: "message-bible",
+      title: "The Message: The Bible in Contemporary Language",
+      subtitle: "Print · Religion & Spirituality",
+      price: "$22.99",
+      revenue: "$41,129",
+      orders: "1,789",
+      initials: "TM",
+    },
+    {
+      id: "mysteries-parables",
+      title: "John MacArthur - Parables: The Mysteries of God's Kingdom Revealed",
+      subtitle: "Hardcover · Theology",
+      price: "$14.99",
+      revenue: "$18,722",
+      orders: "1,249",
+      initials: "JM",
+    },
+    {
+      id: "cheerway-tv-stand",
+      title: "Cheerway 3D Fireplace TV Stand for TVs up to 65\"",
+      subtitle: "Home · Furniture",
+      price: "$299.99",
+      revenue: "$9,299",
+      orders: "31",
+      initials: "CF",
+    },
+    {
+      id: "scottys-keto-mix",
+      title: "Scotty's Keto Pancake & Waffle Mix - 0 Net Carbs",
+      subtitle: "Grocery · Specialty Foods",
+      price: "$33.99",
+      revenue: "$5,336",
+      orders: "157",
+      initials: "SK",
+    },
+  ];
+
+  const timeframes = ["Today", "Week", "Month", "Year"];
   return (
     <div className="relative flex flex-row gap-4 lg:gap-[40px]">
       <SidebarNav />
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-[40px] flex-1 items-stretch">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[40px] flex-1 lg:max-w-2xl lg:h-fit">
-          <TotalRevenuesCard />
-          <TotalOrdersCard />
-          <TotalProductsSoldCard />
-          <NewCustomersCard />
-        </div>
-        <div className="bg-transparent rounded-[15px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col lg:h-[350px]">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between">
-            <h2 className="text-lg lg:text-xl font-bold">Revenue Reports &gt; 2023</h2>
-            <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
-              {visualizationData.map((data) => (
-                <div
-                  key={data.title}
-                  className="w-fit flex items-center gap-2 bg-[#272829] rounded-[8px] px-4 lg:px-2 py-2"
-                >
+      <div className="flex flex-col flex-1 gap-[40px]">
+
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[40px] items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[40px] flex-1 lg:max-w-2xl lg:h-fit">
+            <TotalRevenuesCard />
+            <TotalOrdersCard />
+            <TotalProductsSoldCard />
+            <NewCustomersCard />
+          </div>
+          <div className="bg-transparent rounded-[15px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col lg:h-[350px]">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between">
+              <h2 className="text-lg lg:text-xl font-bold">
+                Revenue Reports &gt; 2023
+              </h2>
+              <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
+                {visualizationData.map((data) => (
                   <div
-                    className={cn(
-                      "w-2 h-2 rounded-full flex-shrink-0",
-                      data.title === "Orders"
-                        ? "bg-[#4de209]/50"
-                        : "bg-[#4de209]"
-                    )}
-                  ></div>
-                  <div className="text-xs sm:text-sm flex items-center gap-1 lg:gap-2 flex-wrap">
-                    <span className="text-white/70 font-medium">
-                      {data.title}
-                    </span>
-                    <span className="font-bold text-base lg:text-lg text-white">
-                      {data.amount}
-                    </span>
-                    <span className="text-[#4de209]">↑ {data.percentage}</span>
+                    key={data.title}
+                    className="w-fit flex items-center gap-2 bg-[#272829] rounded-[8px] px-4 lg:px-2 py-2"
+                  >
+                    <div
+                      className={cn(
+                        "w-2 h-2 rounded-full flex-shrink-0",
+                        data.title === "Orders"
+                          ? "bg-[#4de209]/50"
+                          : "bg-[#4de209]"
+                      )}
+                    ></div>
+                    <div className="text-xs sm:text-sm flex items-center gap-1 lg:gap-2 flex-wrap">
+                      <span className="text-white/70 font-medium">
+                        {data.title}
+                      </span>
+                      <span className="font-bold text-base lg:text-lg text-white">
+                        {data.amount}
+                      </span>
+                      <span className="text-[#4de209]">
+                        ↑ {data.percentage}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[40px] items-stretch">
+          <div className="bg-transparent rounded-[15px] border-2 border-[#4a4a4a] text-white flex-1 flex flex-col lg:h-[470px] overflow-hidden">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b-2 border-b-[#4a4a4a] px-4 py-4 lg:px-6 lg:py-6">
+              <h2 className="text-lg font-semibold">
+                Top Products Sold &gt;{" "}
+                <span className="font-semibold text-[#4de209]">March 2024</span>
+              </h2>
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-[20px] w-full lg:w-auto">
+                <p className="text-sm text-[#4de209] bg-[#272829] rounded-[5px] px-4 py-2 text-center lg:text-left">
+                  Get Free $100 ARKai Ad Spend on Your Best Selling Products*
+                </p>
+                <ul className="flex items-center justify-between gap-[12px] text-sm">
+                  {timeframes.map((label) => (
+                    <li
+                      key={label}
+                      className={cn(
+                        "rounded-[5px] px-3 py-1.5 min-w-[56px] text-center bg-transparent text-white/60 border border-transparent transition-colors",
+                        label === "Month" && "bg-[#272829] text-white"
+                      )}
+                    >
+                      {label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="flex flex-col flex-1 px-4 lg:px-6 mt-[40px] overflow-y-scroll">
+              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 px-4 font-semibold lg:px-6 py-3 bg-[#272829] h-[49px] rounded-[8px] gap-2">
+                <span className="flex-1">Top Products</span>
+                <span className="w-[80px] text-right">Price</span>
+                <span className="w-[100px] text-right">Revenue</span>
+                <span className="w-[80px] text-right">Orders</span>
+              </div>
+              <div className="flex-1 overflow-y-scroll mt-[20px]">
+                {topProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    className="flex items-center gap-4 py-4 border-b border-[#4a4a4a] last:border-b-0"
+                  >
+                    <div className="flex items-center gap-3 flex-1 min-w-24">
+                      <div className="w-12 h-12 rounded-[10px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70">
+                        {product.initials}
+                      </div>
+                      <div className="flex flex-col gap-1 min-w-0">
+                        <span className="font-semibold text-sm lg:text-base text-white truncate">
+                          {product.title}
+                        </span>
+                        {/* <span className="text-xs text-white/50 truncate">
+                          {product.subtitle}
+                        </span> */}
+                      </div>
+                    </div>
+                    <span className="w-[80px] text-right text-sm font-medium text-white/70">
+                      {product.price}
+                    </span>
+                    <span className="w-[100px] text-right text-sm font-medium text-white/70">
+                      {product.revenue}
+                    </span>
+                    <span className="w-[80px] text-right text-sm font-semibold text-white/70">
+                      {product.orders}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="lg:w-[599px] lg:h-[470px] rounded-[15px] border-2 border-[#4a4a4a]">
+        
+          </div>
+        </div>
+        
       </div>
     </div>
   );
