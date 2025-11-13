@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Bell,
   CreditCard,
@@ -61,7 +62,7 @@ const spotlights = [
     shop: "GiftBabble",
     location: "Wisconsin, United States",
     image: "/dashboard-assets/god-is-good-journal.png",
-    logo: "GB",
+    logo: "/dashboard-assets/gift-babble-logo.png",
   },
   {
     id: "beef-tallow",
@@ -69,7 +70,7 @@ const spotlights = [
     shop: "The Little Yellow House",
     location: "Vancouver, Canada",
     image: "/dashboard-assets/the-little-yellow-house.png",
-    logo: "LY",
+    logo: "/dashboard-assets/the-little-yellow-house-logo.png",
   },
   {
     id: "energy-bars",
@@ -77,7 +78,7 @@ const spotlights = [
     shop: "Holy Locust",
     location: "Ma'anit, Israel",
     image: "/dashboard-assets/the-holy-locust-snackbar.png",
-    logo: "HL",
+    logo: "/dashboard-assets/holy-locust-logo.png",
   },
 ];
 
@@ -154,8 +155,14 @@ export const HighlightsGrid = () => {
                   <span className="text-xs text-white/60">{item.location}</span>
                 </div>
                 <div className="pr-6">
-                  <div className="w-16 h-16 rounded-full border border-[#272829] bg-[#272829] flex items-center justify-center text-lg font-semibold text-white/70 flex-shrink-0">
-                    {item.logo}
+                  <div className="relative w-[100px] h-[100px] rounded-full border border-[#272829] bg-[#272829] overflow-hidden flex-shrink-0">
+                    <Image
+                      src={item.logo}
+                      alt={`${item.shop} logo`}
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
                   </div>
                 </div>
               </div>
