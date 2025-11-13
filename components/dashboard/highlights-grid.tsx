@@ -95,17 +95,20 @@ export const HighlightsGrid = () => {
           {reminders.map((item) => (
             <div
               key={item.id}
-              className="flex items-center gap-4 px-6 border-b-2 border-[#272829] last:border-b-0"
+              className="flex items-center px- border-b-2 border-[#272829] last:border-b-0"
             >
-              <div className="flex items-center gap-4 pr-6 border-r-2 border-[#272829] h-[81px]">
+              <div className="flex items-center gap-4 px-4 border-r-2 border-[#272829] h-[81px]">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <item.icon size={24} className="text-white/70" />
                 </div>
               </div>
+              <div className="hover:bg-[#272829] flex items-center gap-2 h-[81px] px-2 w-full">
+
                 <span className="w-8 h-8 rounded-full bg-[#4de209] border text-black font-bold text-sm grid place-items-center">
                   {item.count}
                 </span>
-              <p className="text-sm text-white/70 flex-1">{item.message}</p>
+              <p className="text-sm text-white/70 flex-1 ">{item.message}</p>
+              </div>
             </div>
           ))}
         </div>
