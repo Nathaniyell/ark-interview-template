@@ -104,7 +104,7 @@ export const HighlightsGrid = () => {
               </div>
               <div className="hover:bg-[#272829] flex items-center gap-2 h-[81px] px-2 w-full">
 
-                <span className="w-8 h-8 rounded-full bg-[#4de209] border text-black font-bold text-sm grid place-items-center">
+                <span className="w-5 h-5 rounded-full bg-[#4de209] border text-black font-bold text-[12px] grid place-items-center">
                   {item.count}
                 </span>
               <p className="text-sm text-white/70 flex-1 ">{item.message}</p>
