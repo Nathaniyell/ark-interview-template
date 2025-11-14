@@ -115,7 +115,7 @@ export const MetricsSection = () => {
             <TotalProductsSoldCard />
             <NewCustomersCard />
           </div>
-          <div className="bg-transparent rounded-[12px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[350px]">
+          <div className="bg-transparent rounded-[12px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[343px]">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between mb-4">
               <h2 className="text-lg lg:text-xl font-bold">
                 Revenue Reports &gt; 2023
