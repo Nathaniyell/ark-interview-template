@@ -29,14 +29,14 @@ const MetricsChart = () => {
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
         data={chartData}
-        margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
+        margin={{ top:9, right: 10, left: 10, bottom: 5 }}
       >
         <CartesianGrid vertical={false} strokeWidth={2} stroke="#272829" />
 
         <XAxis
           dataKey="month"
-          stroke="#ffffff80"
-          tick={{ fill: "#ffffff80", fontSize: 14 }}
+          stroke="#b0b3b8"
+          tick={{ fill: "#b0b3b8", fontSize: 14 }}
           axisLine={false}
           tickLine={false}
           dy={20}
@@ -46,8 +46,8 @@ const MetricsChart = () => {
         {/* Left Y-Axis for Sales (visible) */}
         <YAxis
           yAxisId="left"
-          stroke="#ffffff80"
-          tick={{ fill: "#ffffff80", fontSize: 14 }}
+          stroke="#b0b3b8"
+          tick={{ fill: "#b0b3b8", fontSize: 14 }}
           axisLine={false}
           tickLine={false}
           tickFormatter={(value) => {
