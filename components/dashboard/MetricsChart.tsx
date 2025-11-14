@@ -41,6 +41,8 @@ const MetricsChart = () => {
           tick={{ fill: "#ffffff80", fontSize: 14 }}
           axisLine={false}      // removes line
           tickLine={false}      // removes pointers
+          dy={20}   
+          height={40}
         />
 
         {/* Y-Axis with no vertical line and no pointers */}
@@ -56,18 +58,9 @@ const MetricsChart = () => {
             
           }}
           domain={['auto', "auto"]}
+          dx={-15}   
+          width={70}
         />
-
-    {/* Right Y-axis for Orders */}
-    <YAxis
-      yAxisId="right"
-      orientation="right"
-      stroke="#ffffff80"
-      tick={{ fill: "#ffffff80", fontSize: 14 }}
-      axisLine={false}
-      tickLine={false}
-      domain={['auto', 'auto']}
-    />
 
         {/* Tooltip: sales formatted as $, orders as plain numbers */}
         <Tooltip
