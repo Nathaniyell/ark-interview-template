@@ -42,13 +42,13 @@ export function DashboardNav() {
         </ul>
       </nav>
       <ul className="mt-[14px] text-[13px] lg:w-3/4 overflow-x-auto flex-nowrap lg:mx-auto flex flex-row items-center justify-around gap-6">
-        <li className="flex-shrink-0 whitespace-nowrap">Edit Account/Profile/Password</li>
-        <li className="flex-shrink-0 whitespace-nowrap">Get Verified</li>
-        <li className="flex-shrink-0 whitespace-nowrap">Open a Store</li>
-        <li className="flex-shrink-0 whitespace-nowrap">Gift Certificates</li>
-        <li className="flex-shrink-0 whitespace-nowrap">Create Newsletters</li>
-        <li className="flex-shrink-0 whitespace-nowrap">Send Praise Report</li>
-        <li className="flex-shrink-0 whitespace-nowrap">Contact Support</li>
+        <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">Edit Account/Profile/Password</li>
+        <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">Get Verified</li>
+        <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">Open a Store</li>
+        <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">Gift Certificates</li>
+        <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">Create Newsletters</li>
+        <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">Send Praise Report</li>
+        <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">Contact Support</li>
       </ul>
     </header>
   );
