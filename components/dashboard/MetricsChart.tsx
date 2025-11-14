@@ -12,17 +12,17 @@ import {
 const MetricsChart = () => {
   const chartData = [
     { month: "Jan", sales: 0, orders: 0 },
-    { month: "Feb", sales: 45000, orders: 2400 },
-    { month: "Mar", sales: 120000, orders: 6000 },
-    { month: "Apr", sales: 95000, orders: 5000 },
+    { month: "Feb", sales: 45000, orders: 240 },
+    { month: "Mar", sales: 120000, orders: 600 },
+    { month: "Apr", sales: 95000, orders: 500 },
     { month: "May", sales: 180000, orders: 900 },
-    { month: "Jun", sales: 220000, orders: 1200 },
-    { month: "Jul", sales: 280000, orders: 1400 },
-    { month: "Aug", sales: 350000, orders: 1700 },
-    { month: "Sep", sales: 480000, orders: 2400 },
-    { month: "Oct", sales: 650000, orders: 3300 },
-    { month: "Nov", sales: 850000, orders: 4200 },
-    { month: "Dec", sales: 1200000, orders: 6000 },
+    { month: "Jun", sales: 220000, orders: 100 },
+    { month: "Jul", sales: 280000, orders: 100 },
+    { month: "Aug", sales: 350000, orders: 100 },
+    { month: "Sep", sales: 480000, orders: 200 },
+    { month: "Oct", sales: 650000, orders: 300 },
+    { month: "Nov", sales: 850000, orders: 400 },
+    { month: "Dec", sales: 1200000, orders: 600 },
   ];
 
   return (
@@ -31,38 +31,47 @@ const MetricsChart = () => {
         data={chartData}
         margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
       >
-        {/* Remove vertical grid lines, keep only horizontal */}
         <CartesianGrid vertical={false} strokeWidth={2} stroke="#272829" />
 
-        {/* X-Axis without pointers or axis line */}
         <XAxis
           dataKey="month"
           stroke="#ffffff80"
           tick={{ fill: "#ffffff80", fontSize: 14 }}
-          axisLine={false}      // removes line
-          tickLine={false}      // removes pointers
-          dy={20}   
+          axisLine={false}
+          tickLine={false}
+          dy={20}
           height={40}
         />
 
-        {/* Y-Axis with no vertical line and no pointers */}
+        {/* Left Y-Axis for Sales (visible) */}
         <YAxis
+          yAxisId="left"
           stroke="#ffffff80"
           tick={{ fill: "#ffffff80", fontSize: 14 }}
-          axisLine={false}      // no Y-axis line
-          tickLine={false}      // no ticks
+          axisLine={false}
+          tickLine={false}
           tickFormatter={(value) => {
             if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
             if (value >= 1000) return `${(value / 1000).toFixed(0)}K`;
             return value.toString();
-            
           }}
-          domain={['auto', "auto"]}
-          dx={-15}   
+          domain={[0, 'auto']}
+          dx={-15}
           width={70}
         />
 
-        {/* Tooltip: sales formatted as $, orders as plain numbers */}
+        {/* Right Y-Axis for Orders (hidden labels) */}
+        <YAxis
+          yAxisId="right"
+          orientation="right"
+          stroke="transparent" // Hide the axis line
+          tick={false} // Hide all ticks and labels
+          axisLine={false}
+          tickLine={false}
+          domain={[0, 'auto']}
+          width={0} // Take no space
+        />
+
         <Tooltip
           contentStyle={{
             backgroundColor: "#272829",
@@ -72,19 +81,17 @@ const MetricsChart = () => {
           }}
           labelStyle={{ color: "#bfbfbf" }}
           formatter={(value: number, name: string) => {
-            // If the series is "orders", return plain number
-            if (name === "Orders") return value;
-
-            // Otherwise format sales as money
-            if (value >= 1000000) return `$${(value / 1000000).toFixed(2)}M`;
-            if (value >= 1000) return `$${(value / 1000).toFixed(0)}K`;
-            return `$${value}`;
+            if (name === "Orders") return [value, "Orders"];
+            
+            if (value >= 1000000) return [`$${(value / 1000000).toFixed(2)}M`, "Sales"];
+            if (value >= 1000) return [`$${(value / 1000).toFixed(0)}K`, "Sales"];
+            return [`$${value}`, "Sales"];
           }}
-          
         />
 
-        {/* Sales line */}
+        {/* Sales line - uses left Y-axis */}
         <Line
+          yAxisId="left"
           type="monotone"
           dataKey="sales"
           stroke="#4de209"
@@ -93,8 +100,9 @@ const MetricsChart = () => {
           name="Sales"
         />
 
-        {/* Orders line (plain numbers, not $) */}
+        {/* Orders line - uses right Y-axis */}
         <Line
+          yAxisId="right"
           type="monotone"
           dataKey="orders"
           stroke="#4de209"
