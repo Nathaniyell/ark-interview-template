@@ -43,7 +43,7 @@ export function DashboardNav() {
         </ul>
       </nav>
 
-      <ul className="mt-[12px] text-[13px] lg:w-3/4 overflow-x-auto flex-nowrap lg:mx-auto flex flex-row items-center justify-around gap-6">
+      <ul className="mt-[12px] text-[13px] lg:w-5/6 overflow-x-auto flex-nowrap lg:mx-auto flex flex-row items-center justify-around gap-6">
         <li className="flex-shrink-0 whitespace-nowrap hover:text-[#4de209] cursor-pointer">
           Edit Account/Profile/Password
         </li>
