@@ -29,7 +29,7 @@ export function DashboardNav() {
                 href={link.href}
                 onClick={() => setActive(link.title)}
                 className={cn(
-                  "block text-[14.5px] font-medium cursor-pointer transition-colors py-2 whitespace-nowrap duration-200 hover:text-[#4de209]",
+                  "block text-[14.5px] font-medium cursor-pointer transition-colors pt-[5px] whitespace-nowrap duration-200 hover:text-[#4de209]",
                   active === link.title
                     ? "text-[#4de209]"
                     : "text-white/80"
