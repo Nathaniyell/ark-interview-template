@@ -26,7 +26,7 @@ export function DashboardNav() {
           {navLinks.map((link) => (
             <li
               key={link.title}
-              className="flex-shrink-0 pr-8 last:pr-0 border-r-2 border-[#454545] last:border-r-0"
+              className="flex-shrink-0 pr-9 last:pr-0 border-r-2 border-[#454545] last:border-r-0"
             >
               <Link
                 href={link.href}
