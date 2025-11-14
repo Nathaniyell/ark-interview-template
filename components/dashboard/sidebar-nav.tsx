@@ -39,7 +39,7 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
     <aside
       className={cn(
         "w-12 lg:w-[53px] bg-[#272829] rounded-[15px] flex flex-col items-center justify-center py-4 lg:py-0 place-items-center gap-4 lg:gap-6 flex-shrink-0",
-        fixed ? "fixed left-0 top-0 h-screen z-50" : "h-[760px]"
+        fixed ? "fixed left-0 top-0 h-screen z-50" : "h-[748px]"
       )}
     >
       {navItems.map((item) => {
