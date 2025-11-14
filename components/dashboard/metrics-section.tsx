@@ -115,7 +115,7 @@ export const MetricsSection = () => {
             <TotalProductsSoldCard />
             <NewCustomersCard />
           </div>
-          <div className="bg-transparent rounded-[12px] border border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[343px]">
+          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/50 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[343px]">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between mb-4">
               <h2 className="text-lg lg:text-xl font-bold">
                 Revenue Reports &gt; <span className="text-[#4de209]">2023</span>
@@ -155,8 +155,8 @@ export const MetricsSection = () => {
           </div>
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[40px] items-stretch">
-          <div className="bg-transparent rounded-[12px] border border-[#4a4a4a] text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b-2 border-b-[#4a4a4a] px-4 py-4 lg:px-6 lg:py-6">
+          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/50 text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b-2 border-b-[#bfbfbf]/50 px-4 py-4 lg:px-6 lg:py-6">
               <h2 className="text-lg font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
@@ -191,7 +191,7 @@ export const MetricsSection = () => {
                 {topProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="flex items-center gap-4 py-4 border-b border-[#4a4a4a] last:border-b-0"
+                    className="flex items-center gap-4 py-4 border-b border-[#bfbfbf]/50 last:border-b-0"
                   >
                     <div className="flex items-center gap-3 flex-1 min-w-24">
                       <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70">
@@ -217,8 +217,8 @@ export const MetricsSection = () => {
               </div>
             </div>
           </div>
-          <div className="lg:h-[350px] rounded-[12px] border border-[#4a4a4a] text-white flex flex-col overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:px-6 lg:py-6 border-b-2 border-[#4a4a4a]">
+          <div className="lg:h-[350px] rounded-[12px] border border-[#bfbfbf]/50 text-white flex flex-col overflow-hidden">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:px-6 lg:py-6 border-b-2 border-[#bfbfbf]/50">
               <h2 className="text-lg font-semibold">
                 Revenue &amp; Orders by Location &gt;{" "}
                 <span className="text-[#4de209]">March 2024</span>
@@ -237,7 +237,7 @@ export const MetricsSection = () => {
                 {locationMetrics.map((location) => (
                   <div
                     key={location.country}
-                    className="flex items-center gap-4 border-b border-[#4a4a4a]/60 pb-3 last:border-b-0 last:pb-0"
+                    className="flex items-center gap-4 border-b border-[#bfbfbf]/50/60 pb-3 last:border-b-0 last:pb-0"
                   >
                     <span className="flex-1 text-sm font-semibold text-white/60 uppercase">
                       {location.country}
