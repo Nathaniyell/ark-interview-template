@@ -29,7 +29,7 @@ export function DashboardNav() {
                 href={link.href}
                 onClick={() => setActive(link.title)}
                 className={cn(
-                  "block text-sm font-medium cursor-pointer transition-colors py-2 whitespace-nowrap duration-200 hover:text-[#4de209]",
+                  "block text-[14.5px] font-medium cursor-pointer transition-colors py-2 whitespace-nowrap duration-200 hover:text-[#4de209]",
                   active === link.title
                     ? "text-[#4de209]"
                     : "text-white/80"
@@ -41,7 +41,7 @@ export function DashboardNav() {
           ))}
         </ul>
       </nav>
-      <ul className="mt-[14px] lg:w-3/4 overflow-x-auto flex-nowrap lg:mx-auto flex flex-row items-center justify-around gap-6">
+      <ul className="mt-[14px] text-[13px] lg:w-3/4 overflow-x-auto flex-nowrap lg:mx-auto flex flex-row items-center justify-around gap-6">
         <li className="flex-shrink-0 whitespace-nowrap">Edit Account/Profile/Password</li>
         <li className="flex-shrink-0 whitespace-nowrap">Get Verified</li>
         <li className="flex-shrink-0 whitespace-nowrap">Open a Store</li>
