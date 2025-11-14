@@ -20,7 +20,7 @@ export function DashboardNav() {
   ];
 
   return (
-    <header className="w-full h-[97px] bg-[#272829] text-white rounded-[12px] p-[24px] shadow-lg">
+    <header className="w-full h-[97px] bg-[#272829] text-white rounded-[12px] pb-[24px] pt-[20px] px-[20px] shadow-lg">
       <nav className="bg-[#3a3b3c] lg:h-[32px] rounded-[10px] overflow-x-auto">
         <ul className="flex flex-row items-center justify-around gap-6 px-6 flex-nowrap min-w-max">
           {navLinks.map((link) => (
