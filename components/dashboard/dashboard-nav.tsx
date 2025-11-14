@@ -22,11 +22,11 @@ export function DashboardNav() {
   return (
     <header className="w-full h-[97px] bg-[#272829] text-white rounded-[12px] pb-[24px] pt-[20px] px-[20px] shadow-lg">
       <nav className="bg-[#3a3b3c] lg:h-[32px] rounded-[10px] overflow-x-auto flex items-center">
-        <ul className="flex flex-row items-center justify-around gap-[50px] flex-nowrap min-w-max mx-auto">
+        <ul className="flex flex-row items-center justify-around gap-[40px] flex-nowrap min-w-max mx-auto">
           {navLinks.map((link) => (
             <li
               key={link.title}
-              className="flex-shrink-0 pr-6 last:pr-0 border-r-2 border-[#454545] last:border-r-0"
+              className="flex-shrink-0 pr-8 last:pr-0 border-r-2 border-[#454545] last:border-r-0"
             >
               <Link
                 href={link.href}
