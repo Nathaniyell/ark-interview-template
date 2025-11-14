@@ -60,7 +60,7 @@ const MetricsChart = () => {
           }}
           domain={[0, 'auto']}
           dx={-15}
-          width={70}
+          width={50}
         />
 
         {/* Right Y-Axis for Orders (hidden labels) */}
