@@ -115,7 +115,7 @@ export const MetricsSection = () => {
             <TotalProductsSoldCard />
             <NewCustomersCard />
           </div>
-          <div className="bg-transparent rounded-[15px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[350px]">
+          <div className="bg-transparent rounded-[12px] border-2 border-[#4a4a4a] p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[350px]">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between mb-4">
               <h2 className="text-lg lg:text-xl font-bold">
                 Revenue Reports &gt; 2023
@@ -155,7 +155,7 @@ export const MetricsSection = () => {
           </div>
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[40px] items-stretch">
-          <div className="bg-transparent rounded-[15px] border-2 border-[#4a4a4a] text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
+          <div className="bg-transparent rounded-[12px] border-2 border-[#4a4a4a] text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b-2 border-b-[#4a4a4a] px-4 py-4 lg:px-6 lg:py-6">
               <h2 className="text-lg font-semibold">
                 Top Products Sold &gt;{" "}
@@ -217,7 +217,7 @@ export const MetricsSection = () => {
               </div>
             </div>
           </div>
-          <div className="lg:h-[350px] rounded-[15px] border-2 border-[#4a4a4a] text-white flex flex-col overflow-hidden">
+          <div className="lg:h-[350px] rounded-[12px] border-2 border-[#4a4a4a] text-white flex flex-col overflow-hidden">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:px-6 lg:py-6 border-b-2 border-[#4a4a4a]">
               <h2 className="text-lg font-semibold">
                 Revenue &amp; Orders by Location &gt;{" "}
