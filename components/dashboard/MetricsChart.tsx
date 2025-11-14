@@ -29,7 +29,7 @@ const MetricsChart = () => {
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
         data={chartData}
-        margin={{ top:9, right: 10, left: 10, bottom: 5 }}
+        margin={{ top:9, right: 10, left: 10, bottom: 3 }}
       >
         <CartesianGrid vertical={false} strokeWidth={2} stroke="#272829" />
 
@@ -39,8 +39,11 @@ const MetricsChart = () => {
           tick={{ fill: "#b0b3b8", fontSize: 14 }}
           axisLine={false}
           tickLine={false}
-          dy={20}
-          height={40}
+          dy={10} // Reduced dy
+          height={50} // Increased height
+          interval={0} // Ensure all labels show
+          padding={{ left: 0, right: 10 }} // Add padding to prevent overflow
+        //   scale={"point"}
         />
 
         {/* Left Y-Axis for Sales (visible) */}
