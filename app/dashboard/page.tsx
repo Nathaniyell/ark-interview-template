@@ -18,7 +18,7 @@ const Page = () => {
               <Bell size={26} />
               <span className="w-2 h-2 rounded-full bg-[#4de209] absolute top-0 right-1"></span>
             </div>
-            <div className="bg-[#4de209] rounded-full px-4 h-[30px] flex items-center justify-center text-black font-bold gap-2">
+            <div className="bg-[#4de209] rounded-full px-4 h-[31px] flex items-center justify-center text-black font-bold gap-2">
               <p className="">Create new listing</p>
               <Power size={18} className="font-bold" />
             </div>
