@@ -57,7 +57,7 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
             )}
             title={item.label}
           >
-            <Icon className="w-5 h-5 lg:w-7 lg:h-7" />
+            <Icon className="w-5 h-5 lg:w-[21px] lg:h-[21px]" />
           </button>
         );
       })}
