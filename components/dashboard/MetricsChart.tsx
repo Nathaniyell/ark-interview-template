@@ -8,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import "./metricChart.module.css"
 
 const MetricsChart = () => {
   const chartData = [
@@ -29,28 +30,28 @@ const MetricsChart = () => {
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
         data={chartData}
-        margin={{ top:9, right: 10, left: 10, bottom: 3 }}
+        margin={{ top: 9, right: 20, left: 20, bottom: 25 }} // Increased side margins
       >
         <CartesianGrid vertical={false} strokeWidth={2} stroke="#272829" />
 
         <XAxis
           dataKey="month"
           stroke="#b0b3b8"
-          tick={{ fill: "#b0b3b8", fontSize: 14 }}
+          tick={{ fill: "#b0b3b8", fontSize: 12, fontFamily: "'Jost', sans-serif" }}
           axisLine={false}
           tickLine={false}
-          dy={10} // Reduced dy
-          height={50} // Increased height
-          interval={0} // Ensure all labels show
-          padding={{ left: 0, right: 10 }} // Add padding to prevent overflow
-        //   scale={"point"}
+          dy={10}
+          height={40}
+          interval={0}
+          // This ensures even spacing and proper alignment
+          padding={{ left: 9, right: 13 }} // Adjust padding for edge labels
         />
 
         {/* Left Y-Axis for Sales (visible) */}
         <YAxis
           yAxisId="left"
           stroke="#b0b3b8"
-          tick={{ fill: "#b0b3b8", fontSize: 14 }}
+          tick={{ fill: "#b0b3b8", fontSize: 12, fontFamily: "'Jost', sans-serif" }}
           axisLine={false}
           tickLine={false}
           tickFormatter={(value) => {
@@ -59,20 +60,20 @@ const MetricsChart = () => {
             return value.toString();
           }}
           domain={[0, 'auto']}
-          dx={-15}
-          width={50}
+          dx={-10} // Reduced dx
+          width={45} // Reduced width
         />
 
         {/* Right Y-Axis for Orders (hidden labels) */}
         <YAxis
           yAxisId="right"
           orientation="right"
-          stroke="transparent" // Hide the axis line
-          tick={false} // Hide all ticks and labels
+          stroke="transparent"
+          tick={false}
           axisLine={false}
           tickLine={false}
           domain={[0, 'auto']}
-          width={0} // Take no space
+          width={0}
         />
 
         <Tooltip
@@ -81,8 +82,12 @@ const MetricsChart = () => {
             border: "1px solid #272829",
             borderRadius: "8px",
             color: "#bfbfbf",
+            fontFamily: "'Jost', sans-serif",
           }}
-          labelStyle={{ color: "#bfbfbf" }}
+          labelStyle={{ 
+            color: "#bfbfbf",
+            fontFamily: "'Jost', sans-serif"
+          }}
           formatter={(value: number, name: string) => {
             if (name === "Orders") return [value, "Orders"];
             
