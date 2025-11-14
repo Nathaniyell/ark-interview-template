@@ -38,7 +38,7 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
   return (
     <aside
       className={cn(
-        "w-12 lg:w-[53px] bg-[#272829] rounded-[15px] flex flex-col items-center justify-center py-4 lg:py-0 place-items-center gap-4 lg:gap-6 flex-shrink-0",
+        "w-12 lg:w-[53px] bg-[#272829] rounded-[12px] flex flex-col items-center justify-center py-4 lg:py-0 place-items-center gap-4 lg:gap-6 flex-shrink-0",
         fixed ? "fixed left-0 top-0 h-screen z-50" : "h-[744px]"
       )}
     >
@@ -57,7 +57,7 @@ export function SidebarNav({ fixed = false }: SidebarNavProps) {
             )}
             title={item.label}
           >
-            <Icon className="w-5 h-5 lg:w-[21px] lg:h-[21px]" />
+            <Icon className="w-5 h-5 lg:w-[23px] lg:h-[23px]" />
           </button>
         );
       })}
