@@ -157,12 +157,12 @@ export const MetricsSection = () => {
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[30px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 lg:py-6">
-              <h2 className="text-lg font-semibold">
+              <h2 className="text-sm font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
               </h2>
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-[20px] w-full lg:w-auto">
-                <p className="text-sm text-[#4de209] bg-[#272829] rounded-[5px] px-4 py-2 text-center lg:text-left">
+                <p className="text-sm text-[#4de209] bg-[#272829] rounded-[5px] px-2 py-1 text-center lg:text-left">
                   Get Free $100 ARKai Ad Spend on Your Best Selling Products*
                 </p>
                 <ul className="flex items-center justify-between gap-[12px] text-sm">
@@ -227,11 +227,11 @@ export const MetricsSection = () => {
           </div>
           <div className="lg:h-[350px] rounded-[12px] border border-[#bfbfbf]/25 text-white flex flex-col overflow-hidden">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:py-6 border-b border-[#bfbfbf]/25">
-              <h2 className="text-lg font-semibold">
+              <h2 className="text-sm font-semibold">
                 Revenue &amp; Orders by Location &gt;{" "}
                 <span className="text-[#4de209]">March 2024</span>
               </h2>
-              <button className="w-full lg:w-auto rounded-[6px] bg-[#272829] text-[#4de209] text-sm font-semibold px-4 py-2">
+              <button className="w-full lg:w-auto rounded-[6px] bg-[#272829] text-[#4de209] text-sm px-3 py-1">
                 Try ARKai Ads
               </button>
             </div>
