@@ -218,7 +218,7 @@ export const MetricsSection = () => {
             </div>
           </div>
           <div className="lg:h-[350px] rounded-[12px] border border-[#bfbfbf]/50 text-white flex flex-col overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:px-6 lg:py-6 border-b-2 border-[#bfbfbf]/50">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:px-6 lg:py-6 border-b border-[#bfbfbf]/50">
               <h2 className="text-lg font-semibold">
                 Revenue &amp; Orders by Location &gt;{" "}
                 <span className="text-[#4de209]">March 2024</span>
