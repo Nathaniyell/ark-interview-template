@@ -105,18 +105,18 @@ export const MetricsSection = () => {
     },
   ];
   return (
-    <div className="relative flex flex-row gap-4 lg:gap-[40px]">
+    <div className="relative flex flex-row gap-4 lg:gap-[30px]">
       <SidebarNav />
-      <div className="flex flex-col flex-1 gap-[40px]">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[40px] items-stretch">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[40px] flex-1 lg:max-w-2xl lg:h-fit">
+      <div className="flex flex-col flex-1 gap-[30px]">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[30px] items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[30px] flex-1 lg:max-w-2xl lg:h-fit">
             <TotalRevenuesCard />
             <TotalOrdersCard />
             <TotalProductsSoldCard />
             <NewCustomersCard />
           </div>
-          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[343px]">
-            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[50px] justify-between mb-4">
+          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[325px]">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
               <h2 className="text-lg lg:text-xl font-bold">
                 Revenue Reports &gt; <span className="text-[#4de209]">2023</span>
               </h2>
@@ -154,7 +154,7 @@ export const MetricsSection = () => {
             </div>
           </div>
         </div>
-        <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[40px] items-stretch">
+        <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[30px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 lg:px-6 lg:py-6">
               <h2 className="text-lg font-semibold">
