@@ -7,13 +7,13 @@ import Image from "next/image";
 const Page = () => {
   return (
     <div className="min-h-screen flex flex-col pb-[50px] lg:pb-0">
-      <div className="relative w-full h-[185px] bg-white">
+      <div className="relative w-full bg-white overflow-hidden" style={{ aspectRatio: '1920/185' }}>
         <Image 
           src="/dashboard-assets/ark-users-dashbaord-slider.jpg"
           alt="hero image"
           fill
           priority
-          className="object-fill"
+          className="object-cover"
           sizes="100vw"
         />
       </div>
