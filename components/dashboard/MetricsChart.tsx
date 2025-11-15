@@ -40,7 +40,7 @@ const MetricsChart = () => {
           tick={{ fill: "#b0b3b8", fontSize: 12, fontFamily: "'Jost', sans-serif" }}
           axisLine={false}
           tickLine={false}
-          dy={25}
+          dy={20}
           height={20}
           interval={0}
           // This ensures even spacing and proper alignment

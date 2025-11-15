@@ -105,17 +105,17 @@ export const MetricsSection = () => {
     },
   ];
   return (
-    <div className="relative flex flex-row gap-4 lg:gap-[30px]">
+    <div className="relative flex flex-row gap-4 lg:gap-[38px]">
       <SidebarNav />
-      <div className="flex flex-col flex-1 gap-[30px]">
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[30px] items-stretch">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[30px] flex-1 lg:max-w-2xl">
+      <div className="flex flex-col flex-1 gap-[38px]">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[38px] items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[38px] flex-1 lg:max-w-2xl">
             <TotalRevenuesCard />
             <TotalOrdersCard />
             <TotalProductsSoldCard />
             <NewCustomersCard />
           </div>
-          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-full">
+          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[19px] lg:h-full">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
               <h2 className="text-sm font-semibold">
                 Revenue Reports &gt; <span className="text-[#4de209]">2023</span>
@@ -154,7 +154,7 @@ export const MetricsSection = () => {
             </div>
           </div>
         </div>
-        <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[30px] items-stretch">
+        <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[38px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[400px] overflow-hidden">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4">
               <h2 className="text-sm font-semibold">

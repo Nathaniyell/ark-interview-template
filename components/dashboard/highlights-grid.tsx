@@ -103,7 +103,7 @@ export const HighlightsGrid = () => {
   return (
     <>
       <div className="grid gap-4 lg:gap-[30px] grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)_minmax(0,1fr)]">
-        <div className="flex flex-col gap-[20px] text-white">
+        <div className="flex flex-col gap-[19px] text-white">
           <h3 className="text-lg font-semibold bg-[#272829] h-[51px] text-center grid place-items-center rounded-[12px]">
             Reminders &amp; Actions Needed
           </h3>
@@ -140,11 +140,11 @@ export const HighlightsGrid = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[20px] text-white">
+        <div className="flex flex-col gap-[19px] text-white">
           <h3 className="text-lg font-semibold bg-[#272829] h-[51px] text-center grid place-items-center rounded-[12px]">
             ARK Products &amp; Stores Spotlight
           </h3>
-          <div className="bg-transparent overflow-hidden flex flex-col gap-[45px] h-[500px]">
+          <div className="bg-transparent overflow-hidden flex flex-col gap-[38px] h-[500px]">
             {spotlights.map((item) => (
               <div
                 key={item.id}
@@ -186,7 +186,7 @@ export const HighlightsGrid = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-[20px] text-white">
+        <div className="flex flex-col gap-[19px] text-white">
           <h3 className="text-lg font-semibold bg-[#272829] h-[51px] text-center grid place-items-center rounded-[12px]">
             ARK News &amp; Events
           </h3>
@@ -243,8 +243,8 @@ export const HighlightsGrid = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-[20px]">
-        <p className=" text-[#4de209] text-sm text-center">Advertisment</p>
+      <div className="flex flex-col gap-[19px] -mt-[19px]">
+          <p className=" text-[#4de209] text-sm text-center">Advertisment</p>
         <p className="bg-[#272829] rounded-[12px] h-[51px] text-center font-bold grid place-items-center">
           Ship on your own or choose FBA. Visit our fullfilment center and get
           your shipping game on seamlessly!
