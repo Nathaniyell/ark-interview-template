@@ -117,14 +117,14 @@ export const MetricsSection = () => {
           </div>
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[325px]">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
-              <h2 className="text-lg lg:text-xl font-bold">
+              <h2 className="text-sm font-semibold">
                 Revenue Reports &gt; <span className="text-[#4de209]">2023</span>
               </h2>
               <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
                 {visualizationData.map((data) => (
                   <div
                     key={data.title}
-                    className="w-fit flex items-center gap-2 bg-[#272829] rounded-[8px] px-4 lg:px-2 py-2"
+                    className="w-fit flex items-center gap-2 bg-[#272829] rounded-[8px] px-4 lg:px-2 py-1"
                   >
                     <div
                       className={cn(
@@ -138,7 +138,7 @@ export const MetricsSection = () => {
                       <span className="text-[#d8d8d8] font-medium">
                         {data.title}
                       </span>
-                      <span className="font-bold text-base lg:text-lg text-white">
+                      <span className="font-semibold text-white">
                         {data.amount}
                       </span>
                       <span className="text-[#4de209]">
