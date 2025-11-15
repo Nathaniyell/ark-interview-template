@@ -135,7 +135,7 @@ export const MetricsSection = () => {
                       )}
                     ></div>
                     <div className="text-xs sm:text-sm flex items-center gap-1 lg:gap-2 flex-wrap">
-                      <span className="text-white/70 font-medium">
+                      <span className="text-[#d8d8d8] font-medium">
                         {data.title}
                       </span>
                       <span className="font-bold text-base lg:text-lg text-white">
