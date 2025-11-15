@@ -156,7 +156,7 @@ export const MetricsSection = () => {
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[40px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/50 text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b-2 border-b-[#bfbfbf]/50 px-4 py-4 lg:px-6 lg:py-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/50 px-4 py-4 lg:px-6 lg:py-6">
               <h2 className="text-lg font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
