@@ -104,10 +104,10 @@ export const HighlightsGrid = () => {
     <>
       <div className="grid gap-4 lg:gap-[40px] grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)_minmax(0,1fr)]">
         <div className="flex flex-col gap-[24px] text-white">
-          <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">
+          <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[12px]">
             Reminders &amp; Actions Needed
           </h3>
-          <div className="rounded-[15px] border-[#bfbfbf]/25 border bg-transparent overflow-hidden">
+          <div className="rounded-[12px] border-[#bfbfbf]/25 border bg-transparent overflow-hidden">
             {reminders.map((item, index) => (
               <div
                 key={item.id}
@@ -118,13 +118,16 @@ export const HighlightsGrid = () => {
                     <item.icon size={24} className="text-white/70" />
                   </div>
                 </div>
-                <div className="hover:bg-[#272829] flex items-center gap-2 h-[81px] px-2 w-full">
+                <div className={cn(
+                  "hover:bg-[#272829] flex items-center gap-2 h-[81px] px-2 w-full", 
+                  // index === 0 && "rounded-t-[15px] border-t border-[#bfbfbf]/25"
+                )}>
                   <span
                     className={cn(
                       "w-5 h-5 rounded-full border font-bold text-[12px] grid place-items-center",
                       index >= reminders.length - 2
                         ? "bg-white text-black border-white"
-                        : "bg-[#4de209] text-black border-[#4de209]"
+                        : "bg-[#4de209] text-black border-[#4de209]"                
                     )}
                   >
                     {item.count}
@@ -139,14 +142,14 @@ export const HighlightsGrid = () => {
         </div>
 
         <div className="flex flex-col gap-[24px] text-white">
-          <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">
+          <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[12px]">
             ARK Products &amp; Stores Spotlight
           </h3>
           <div className="bg-transparent overflow-hidden flex flex-col gap-[38px]">
             {spotlights.map((item) => (
               <div
                 key={item.id}
-                className="rounded-[15px] border-[#bfbfbf]/25 border overflow-hidden w-full"
+                className="rounded-[12px] border-[#bfbfbf]/25 border overflow-hidden w-full"
               >
                 <div className="flex flex-col md:grid md:grid-cols-[minmax(0,200px)_1fr_auto] md:items-center gap-4 md:gap-6 h-full">
                   <div className="relative w-full h-40 md:h-full md:min-h-[164px] overflow-hidden">
@@ -185,10 +188,10 @@ export const HighlightsGrid = () => {
         </div>
 
         <div className="flex flex-col gap-[24px] text-white">
-          <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">
+          <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[12px]">
             ARK News &amp; Events
           </h3>
-          <div className="rounded-[15px] border-[#bfbfbf]/25 border bg-transparent overflow-hidden px-6 py-10 flex flex-col gap-6 h-[575px]">
+          <div className="rounded-[12px] border-[#bfbfbf]/25 border bg-transparent overflow-hidden px-6 py-10 flex flex-col gap-6 h-[575px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-[56px] h-[56px] rounded-full bg-black grid place-items-center text-lg font-semibold">
@@ -243,11 +246,11 @@ export const HighlightsGrid = () => {
       </div>
       <div className="flex flex-col gap-[20px]">
         <p className=" text-[#4de209] text-sm text-center">Advertisment</p>
-        <p className="bg-[#272829] rounded-[15px] h-[68px] text-center font-bold grid place-items-center">
+        <p className="bg-[#272829] rounded-[12px] h-[68px] text-center font-bold grid place-items-center">
           Ship on your own or choose FBA. Visit our fullfilment center and get
           your shipping game on seamlessly!
         </p>
-        <div className="border-[#bfbfbf]/25 border rounded-[15px] lg:h-[82px] p-4 sm:p-0 flex flex-col sm:flex-row sm:items-center justify-center gap-[80px] bg-transparent overflow-x-scroll">
+        <div className="border-[#bfbfbf]/25 border rounded-[12px] lg:h-[82px] p-4 sm:p-0 flex flex-col sm:flex-row sm:items-center justify-center gap-[80px] bg-transparent overflow-x-scroll">
           {brands.map((brand, index) => (
             <h4 className="font-black text-3xl text-[#b0b3b8]" key={index}>
               {brand}
