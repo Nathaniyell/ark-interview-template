@@ -107,13 +107,13 @@ export const HighlightsGrid = () => {
           <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">
             Reminders &amp; Actions Needed
           </h3>
-          <div className="rounded-[15px] border-2 border-[#272829] bg-transparent overflow-hidden">
+          <div className="rounded-[15px] border-[#bfbfbf]/50 border bg-transparent overflow-hidden">
             {reminders.map((item, index) => (
               <div
                 key={item.id}
-                className="flex items-center px- border-b-2 border-[#272829] last:border-b-0"
+                className="flex items-center px- border-[#bfbfbf]/50 border last:border-b-0"
               >
-                <div className="flex items-center gap-4 px-4 border-r-2 border-[#272829] h-[81px]">
+                <div className="flex items-center gap-4 px-4 border-[#bfbfbf]/50 border-r h-[81px]">
                   <div className="w-12 h-12 flex items-center justify-center">
                     <item.icon size={24} className="text-white/70" />
                   </div>
@@ -146,7 +146,7 @@ export const HighlightsGrid = () => {
             {spotlights.map((item) => (
               <div
                 key={item.id}
-                className="rounded-[15px] border-2 border-[#272829] overflow-hidden w-full"
+                className="rounded-[15px] border-[#bfbfbf]/50 border overflow-hidden w-full"
               >
                 <div className="flex flex-col md:grid md:grid-cols-[minmax(0,200px)_1fr_auto] md:items-center gap-4 md:gap-6 h-full">
                   <div className="relative w-full h-40 md:h-full md:min-h-[164px] overflow-hidden">
@@ -168,7 +168,7 @@ export const HighlightsGrid = () => {
                     <span className="text-xs text-white/60">{item.location}</span>
                   </div>
                   <div className="flex justify-center md:justify-end pr-5 md:pr-6">
-                    <div className="relative w-[90px] h-[90px] rounded-full border border-[#272829] bg-[#272829] overflow-hidden flex-shrink-0">
+                    <div className="relative w-[90px] h-[90px] rounded-full border-[#bfbfbf]/50 border bg-[#272829] overflow-hidden flex-shrink-0">
                       <Image
                         src={item.logo}
                         alt={`${item.shop} logo`}
@@ -188,7 +188,7 @@ export const HighlightsGrid = () => {
           <h3 className="text-lg font-semibold bg-[#272829] h-[68px] text-center grid place-items-center rounded-[15px]">
             ARK News &amp; Events
           </h3>
-          <div className="rounded-[15px] border-2 border-[#272829] bg-transparent overflow-hidden px-6 py-10 flex flex-col gap-6 h-[575px]">
+          <div className="rounded-[15px] border-[#bfbfbf]/50 border bg-transparent overflow-hidden px-6 py-10 flex flex-col gap-6 h-[575px]">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-[56px] h-[56px] rounded-full bg-black grid place-items-center text-lg font-semibold">
@@ -233,7 +233,7 @@ export const HighlightsGrid = () => {
               ))}
             </ul>
             <div
-              className="relative w-full h-72 rounded-[16px] overflow-hidden border-2 border-[#272829] bg-cover bg-center"
+              className="relative w-full h-72 rounded-[16px] overflow-hidden border-[#bfbfbf]/50 border bg-cover bg-center"
               style={{ backgroundImage: `url(${news.image})` }}
             >
               <span className="sr-only">FAITHx Vancouver 2026 stage</span>
@@ -247,7 +247,7 @@ export const HighlightsGrid = () => {
           Ship on your own or choose FBA. Visit our fullfikment center and get
           your shipping game on seamlessly!
         </p>
-        <div className="border-2 border-[#272829] rounded-[15px] lg:h-[82px] p-4 sm:p-0 flex flex-col sm:flex-row sm:items-center justify-center gap-[80px] bg-transparent overflow-x-scroll">
+        <div className="border-[#bfbfbf]/50 border rounded-[15px] lg:h-[82px] p-4 sm:p-0 flex flex-col sm:flex-row sm:items-center justify-center gap-[80px] bg-transparent overflow-x-scroll">
           {brands.map((brand, index) => (
             <h4 className="font-black text-3xl text-[#b0b3b8]" key={index}>
               {brand}
