@@ -109,13 +109,13 @@ export const MetricsSection = () => {
       <SidebarNav />
       <div className="flex flex-col flex-1 gap-[30px]">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-[30px] items-stretch">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[30px] flex-1 lg:max-w-2xl lg:h-fit">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-[30px] flex-1 lg:max-w-2xl llg:h-[320px]">
             <TotalRevenuesCard />
             <TotalOrdersCard />
             <TotalProductsSoldCard />
             <NewCustomersCard />
           </div>
-          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[325px]">
+          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[20px] lg:h-[320px]">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
               <h2 className="text-sm font-semibold">
                 Revenue Reports &gt; <span className="text-[#4de209]">2023</span>
@@ -124,7 +124,7 @@ export const MetricsSection = () => {
                 {visualizationData.map((data) => (
                   <div
                     key={data.title}
-                    className="w-fit flex items-center gap-2 bg-[#272829] rounded-[8px] px-4 lg:px-2 py-1"
+                    className="w-fit flex items-center gap-2 bg-[#272829] rounded-[5px] px-4 lg:px-2 py-1"
                   >
                     <div
                       className={cn(
