@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <div className="min-h-screen flex flex-col pb-[50px] lg:pb-0">
       <div className="h-[185px] bg-white"></div>
-      <div className=" m-[20px] lg:m-[50px] flex flex-col gap-[40px]">
+      <div className=" m-[20px] lg:m-[38px] flex flex-col gap-[40px]">
       <DashboardNav />
         <div className="bg-[#272829] lg:h-[52px] p-[24px] rounded-[15px] flex-col lg:flex-row flex lg:items-center lg:justify-between gap-[24px] lg:gap-0">
           <h2 className="text-[20px] font-bold">
