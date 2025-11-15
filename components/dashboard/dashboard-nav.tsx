@@ -22,17 +22,21 @@ export function DashboardNav() {
   return (
     <header className="w-full h-[97px] bg-[#272829] text-white rounded-[12px] pb-[24px] pt-[20px] px-[20px] shadow-lg">
       <nav className="bg-[#3a3b3c] lg:h-[32px] rounded-[10px] overflow-x-auto flex items-center">
-        <ul className="flex w-full flex-row items-center justify-evenly gap-[10px] flex-nowrap">
-          {navLinks.map((link) => (
+        <ul className="grid grid-cols-9 w-full h-full items-stretch">
+          {navLinks.map((link, index) => (
             <li
               key={link.title}
-              className="flex-shrink-0 pl-10 pr-12 border-r-2 border-[#454545] last:border-r-0"
+              className={cn(
+                "border-r-2 border-[#454545] last:border-r-0 flex items-center",
+                index === 0 && "rounded-l-[10px]",
+                index === navLinks.length - 1 && "rounded-r-[10px]"
+              )}
             >
               <Link
                 href={link.href}
                 onClick={() => setActive(link.title)}
                 className={cn(
-                  "block text-[14.5px] font-medium cursor-pointer transition-colors whitespace-nowrap duration-200 hover:text-[#4de209]",
+                  "w-full text-center text-[14.5px] font-medium cursor-pointer transition-colors whitespace-nowrap duration-200 hover:text-[#4de209] px-2 py-[9px] h-full flex items-center justify-center leading-none", 
                   active === link.title ? "text-[#4de209]" : "text-white/80"
                 )}
               >
