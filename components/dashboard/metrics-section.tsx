@@ -181,39 +181,47 @@ export const MetricsSection = () => {
               </div>
             </div>
             <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-y-scroll">
-              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 px-4 font-semibold py-3 bg-[#272829] h-[34px] rounded-[8px] gap-2">
-                <span className="flex-1">Top Products</span>
-                <span className="w-[80px] text-right">Price</span>
-                <span className="w-[100px] text-right">Revenue</span>
-                <span className="w-[80px] text-right">Orders</span>
-              </div>
-              <div className="flex-1 overflow-y-scroll mt-[10px]">
-                {topProducts.map((product) => (
-                  <div
-                    key={product.id}
-                    className="flex items-center gap-4 py-4 border-b border-[#bfbfbf]/25 last:border-b-0"
-                  >
-                    <div className="flex items-center gap-3 flex-1 min-w-24">
-                      <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70">
-                        {product.initials}
-                      </div>
-                      <div className="flex flex-col gap-1 min-w-0">
-                        <span className="font-semibold text-sm lg:text-base text-white/60 truncate">
-                          {product.title}
-                        </span>
-                      </div>
-                    </div>
-                    <span className="w-[80px] text-right text-sm font-medium text-white/60">
-                      {product.price}
-                    </span>
-                    <span className="w-[100px] text-right text-sm font-medium text-white/60">
-                      {product.revenue}
-                    </span>
-                    <span className="w-[80px] text-right text-sm font-semibold text-white/60">
-                      {product.orders}
-                    </span>
-                  </div>
-                ))}
+              <div className="flex-1 overflow-y-scroll">
+                <table className="w-full table-fixed">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
+                      <th className="text-left px-4 py-3 rounded-tl-[8px] rounded-bl-[8px] w-auto">Top Products</th>
+                      <th className="text-right px-4 py-3 w-[80px]">Price</th>
+                      <th className="text-right px-4 py-3 w-[100px]">Revenue</th>
+                      <th className="text-right px-4 py-3 rounded-tr-[8px] rounded-br-[8px] w-[80px]">Orders</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {topProducts.map((product) => (
+                      <tr
+                        key={product.id}
+                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
+                      >
+                        <td className="px-4 py-4">
+                          <div className="flex items-center gap-3">
+                            <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
+                              {product.initials}
+                            </div>
+                            <div className="flex flex-col gap-1 min-w-0">
+                              <span className="font-semibold text-sm lg:text-base text-white/60 truncate">
+                                {product.title}
+                              </span>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="text-right px-4 py-4 w-[80px] text-sm font-medium text-white/60">
+                          {product.price}
+                        </td>
+                        <td className="text-right px-4 py-4 w-[100px] text-sm font-medium text-white/60">
+                          {product.revenue}
+                        </td>
+                        <td className="text-right px-4 py-4 w-[80px] text-sm font-semibold text-white/60">
+                          {product.orders}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -228,28 +236,34 @@ export const MetricsSection = () => {
               </button>
             </div>
             <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-hidden">
-              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 font-semibold px-4 py-3 bg-[#272829] h-[34px] rounded-[8px] gap-2">
-                <span className="flex-1">Top Countries</span>
-                <span className="w-[110px] text-right">Revenue</span>
-                <span className="w-[90px] text-right">Orders</span>
-              </div>
-              <div className="flex-1 overflow-y-scroll mt-[20px] space-y-[20px]">
-                {locationMetrics.map((location) => (
-                  <div
-                    key={location.country}
-                    className="flex items-center gap-4 border-b border-[#bfbfbf]/25 pb-3 last:border-b-0 last:pb-0"
-                  >
-                    <span className="flex-1 text-sm font-semibold text-white/60 uppercase">
-                      {location.country}
-                    </span>
-                    <span className="w-[110px] text-right text-sm font-medium text-white/60">
-                      {location.revenue}
-                    </span>
-                    <span className="w-[90px] text-right text-sm font-medium text-white/60">
-                      {location.orders}
-                    </span>
-                  </div>
-                ))}
+              <div className="flex-1 overflow-y-scroll">
+                <table className="w-full table-fixed">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
+                      <th className="text-left px-4 py-3 rounded-tl-[8px] rounded-bl-[8px] w-auto">Top Countries</th>
+                      <th className="text-right px-4 py-3 w-[110px]">Revenue</th>
+                      <th className="text-right px-4 py-3 rounded-tr-[8px] rounded-br-[8px] w-[90px]">Orders</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {locationMetrics.map((location) => (
+                      <tr
+                        key={location.country}
+                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
+                      >
+                        <td className="px-4 py-3 text-sm font-semibold text-white/60 uppercase">
+                          {location.country}
+                        </td>
+                        <td className="text-right px-4 py-3 w-[110px] text-sm font-medium text-white/60">
+                          {location.revenue}
+                        </td>
+                        <td className="text-right px-4 py-3 w-[90px] text-sm font-medium text-white/60">
+                          {location.orders}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
