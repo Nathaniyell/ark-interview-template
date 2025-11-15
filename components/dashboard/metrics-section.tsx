@@ -156,7 +156,7 @@ export const MetricsSection = () => {
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[30px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 lg:px-6 lg:py-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 lg:py-6">
               <h2 className="text-lg font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
@@ -180,14 +180,14 @@ export const MetricsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col flex-1 px-4 lg:px-6 mt-[40px] overflow-y-scroll">
-              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 px-4 font-semibold lg:px-6 py-3 bg-[#272829] h-[49px] rounded-[8px] gap-2">
+            <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-y-scroll">
+              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 px-4 font-semibold py-3 bg-[#272829] h-[34px] rounded-[8px] gap-2">
                 <span className="flex-1">Top Products</span>
                 <span className="w-[80px] text-right">Price</span>
                 <span className="w-[100px] text-right">Revenue</span>
                 <span className="w-[80px] text-right">Orders</span>
               </div>
-              <div className="flex-1 overflow-y-scroll mt-[20px]">
+              <div className="flex-1 overflow-y-scroll mt-[10px]">
                 {topProducts.map((product) => (
                   <div
                     key={product.id}
@@ -218,7 +218,7 @@ export const MetricsSection = () => {
             </div>
           </div>
           <div className="lg:h-[350px] rounded-[12px] border border-[#bfbfbf]/25 text-white flex flex-col overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:px-6 lg:py-6 border-b border-[#bfbfbf]/25">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:py-6 border-b border-[#bfbfbf]/25">
               <h2 className="text-lg font-semibold">
                 Revenue &amp; Orders by Location &gt;{" "}
                 <span className="text-[#4de209]">March 2024</span>
@@ -227,13 +227,13 @@ export const MetricsSection = () => {
                 Try ARKai Ads
               </button>
             </div>
-            <div className="flex flex-col flex-1 px-4 lg:px-6 mt-[32px] overflow-hidden">
-              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 font-semibold px-4 lg:px-6 py-3 bg-[#272829] h-[49px] rounded-[8px] gap-2">
+            <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-hidden">
+              <div className="flex items-center text-xs uppercase tracking-[0.08em] text-white/60 font-semibold px-4 py-3 bg-[#272829] h-[34px] rounded-[8px] gap-2">
                 <span className="flex-1">Top Countries</span>
                 <span className="w-[110px] text-right">Revenue</span>
                 <span className="w-[90px] text-right">Orders</span>
               </div>
-              <div className="flex-1 overflow-y-scroll mt-[30px] space-y-[20px]">
+              <div className="flex-1 overflow-y-scroll mt-[20px] space-y-[20px]">
                 {locationMetrics.map((location) => (
                   <div
                     key={location.country}
