@@ -156,7 +156,7 @@ export const MetricsSection = () => {
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[30px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[350px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 lg:py-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4">
               <h2 className="text-sm font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
@@ -170,7 +170,7 @@ export const MetricsSection = () => {
                     <li
                       key={label}
                       className={cn(
-                        "rounded-[5px] px-3 py-1.5 min-w-[56px] text-center bg-transparent text-white/60 border border-transparent transition-colors",
+                        "rounded-[5px] px-2 py-1 min-w-[56px] text-center bg-transparent text-white/60 border border-transparent transition-colors",
                         label === "Month" && "bg-[#272829] text-white"
                       )}
                     >
@@ -185,10 +185,10 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead>
                     <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
-                      <th className="text-left px-4 py-3 rounded-tl-[8px] rounded-bl-[8px] w-auto">Top Products</th>
+                      <th className="text-left px-4 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Products</th>
                       <th className="text-right px-4 py-3 w-[80px]">Price</th>
                       <th className="text-right px-4 py-3 w-[100px]">Revenue</th>
-                      <th className="text-right px-4 py-3 rounded-tr-[8px] rounded-br-[8px] w-[80px]">Orders</th>
+                      <th className="text-right px-4 py-3 rounded-tr-[5px] rounded-br-[5px] w-[80px]">Orders</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -226,7 +226,7 @@ export const MetricsSection = () => {
             </div>
           </div>
           <div className="lg:h-[350px] rounded-[12px] border border-[#bfbfbf]/25 text-white flex flex-col overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 lg:py-6 border-b border-[#bfbfbf]/25">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 border-b border-[#bfbfbf]/25">
               <h2 className="text-sm font-semibold">
                 Revenue &amp; Orders by Location &gt;{" "}
                 <span className="text-[#4de209]">March 2024</span>
@@ -240,9 +240,9 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead>
                     <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
-                      <th className="text-left px-4 py-3 rounded-tl-[8px] rounded-bl-[8px] w-auto">Top Countries</th>
+                      <th className="text-left px-4 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
                       <th className="text-right px-4 py-3 w-[110px]">Revenue</th>
-                      <th className="text-right px-4 py-3 rounded-tr-[8px] rounded-br-[8px] w-[90px]">Orders</th>
+                      <th className="text-right px-4 py-3 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
                     </tr>
                   </thead>
                   <tbody>
