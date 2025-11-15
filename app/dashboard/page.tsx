@@ -2,11 +2,21 @@ import { DashboardNav } from "@/components/dashboard/dashboard-nav";
 import { MetricsSection } from "@/components/dashboard/metrics-section";
 import { HighlightsGrid } from "@/components/dashboard/highlights-grid";
 import { Bell } from "lucide-react";
+import Image from "next/image";
 
 const Page = () => {
   return (
     <div className="min-h-screen flex flex-col pb-[50px] lg:pb-0">
-      <div className="h-[185px] bg-white"></div>
+      <div className="relative w-full h-[185px] bg-white">
+        <Image 
+          src="/dashboard-assets/ark-users-dashbaord-slider.jpg"
+          alt="hero image"
+          fill
+          priority
+          className="object-fill"
+          sizes="100vw"
+        />
+      </div>
       <div className=" m-[20px] lg:m-[38px] flex flex-col gap-[38px]">
       <DashboardNav />
         <div className="bg-[#272829] lg:h-[52px] p-[24px] rounded-[15px] flex-col lg:flex-row flex lg:items-center lg:justify-between gap-[24px] lg:gap-0">
