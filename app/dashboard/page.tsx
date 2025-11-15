@@ -9,10 +9,10 @@ const Page = () => {
     <div className="min-h-screen flex flex-col pb-[50px] lg:pb-0">
       <div className="relative w-full overflow-hidden">
         <Image 
-          src="/dashboard-assets/ark-users-dashbaord-slider.jpg"
+          src="/dashboard-assets/ark-users-dashbaord-slider-matt16-24-1920x204-v1.jpg"
           alt="hero image"
           width={1920}
-          height={200}
+          height={204}
           priority
           className="w-full h-auto"
           sizes="100vw"
