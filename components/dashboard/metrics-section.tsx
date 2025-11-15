@@ -237,7 +237,7 @@ export const MetricsSection = () => {
                 {locationMetrics.map((location) => (
                   <div
                     key={location.country}
-                    className="flex items-center gap-4 border-b border-[#bfbfbf]/25/60 pb-3 last:border-b-0 last:pb-0"
+                    className="flex items-center gap-4 border-b border-[#bfbfbf]/25 pb-3 last:border-b-0 last:pb-0"
                   >
                     <span className="flex-1 text-sm font-semibold text-white/60 uppercase">
                       {location.country}
