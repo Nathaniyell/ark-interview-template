@@ -180,7 +180,7 @@ export const MetricsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col flex-1 pl-[19px] pr-[25px] mt-[29px] overflow-hidden">
+            <div className="flex flex-col flex-1 pl-[19px] pr-[19px] mt-[29px] overflow-hidden">
               <div className="flex-1 table-scrollable">
                 <table className="w-full table-fixed">
                   <thead className="sticky top-0 z-10">
@@ -235,7 +235,7 @@ export const MetricsSection = () => {
                 Try ARKai Ads
               </button>
             </div>
-            <div className="flex flex-col flex-1 pl-[19px] pr-[25px] mt-[29px] overflow-hidden">
+            <div className="flex flex-col flex-1 pl-[19px] pr-[19px] mt-[29px] overflow-hidden">
               <div className="flex-1 table-scrollable">
                 <table className="w-full table-fixed">
                   <thead className="sticky top-0 z-10">
@@ -249,16 +249,18 @@ export const MetricsSection = () => {
                     {locationMetrics.map((location) => (
                       <tr
                         key={location.country}
-                        className="border-b last:border-b-0 [#bfbfbf]/25"
+                        className=""
                       >
                         <td className="py-3 pl-[19px] text-sm font-semibold text-white/60 uppercase">
                           {location.country}
+                          <div className="h-[1px] bg-red-600 mt-4"></div>
                         </td>
                         <td className="text-right px-4 py-3 w-[110px] text-sm font-medium text-white/60">
-                          {location.revenue}
+                          {location.revenue}<div className="h-[1px] bg-red-600 mt-4"></div>
                         </td>
                         <td className="text-right px-4 py-3 w-[90px] pr-[19px] text-sm font-medium text-white/60">
                           {location.orders}
+                        <div className="h-[1px] bg-red-600 mt-4"></div>
                         </td>
                       </tr>
                     ))}
