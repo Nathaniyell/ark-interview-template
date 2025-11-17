@@ -265,7 +265,8 @@ input[type="search"]:focus-visible {
 .table-scrollable {
   scrollbar-width: thin;
   scrollbar-color: #272829 transparent;
-  padding-right: 5px;
+  padding-right: 20px;
+  overflow-y: scroll !important;
 }
 
 .table-scrollable::-webkit-scrollbar {

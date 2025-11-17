@@ -180,8 +180,8 @@ export const MetricsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col flex-1 pl-[19px] pr-[30px] mt-[29px] overflow-hidden">
-              <div className="flex-1 overflow-y-auto table-scrollable">
+            <div className="flex flex-col flex-1 pl-[19px] pr-[25px] mt-[29px] overflow-hidden">
+              <div className="flex-1 table-scrollable">
                 <table className="w-full table-fixed">
                   <thead className="sticky top-0 z-10">
                     <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
@@ -197,7 +197,7 @@ export const MetricsSection = () => {
                         key={product.id}
                         className="border-b border-[#bfbfbf]/25 last:border-b-0"
                       >
-                        <td className="py-4 px-[19px]">
+                        <td className="py-4 pl-[19px]">
                           <div className="flex items-center gap-3">
                             <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
                               {product.initials}
@@ -235,8 +235,8 @@ export const MetricsSection = () => {
                 Try ARKai Ads
               </button>
             </div>
-            <div className="flex flex-col flex-1 pl-[19px] pr-[30px] mt-[29px] overflow-hidden">
-              <div className="flex-1 overflow-y-auto table-scrollable">
+            <div className="flex flex-col flex-1 pl-[19px] pr-[25px] mt-[29px] overflow-hidden">
+              <div className="flex-1 table-scrollable">
                 <table className="w-full table-fixed">
                   <thead className="sticky top-0 z-10">
                     <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
