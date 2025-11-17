@@ -180,15 +180,15 @@ export const MetricsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col flex-1 px-4 mt-[29px] overflow-y-scroll">
+            <div className="flex flex-col flex-1 px-[19px] mt-[29px] overflow-y-scroll">
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
-                    <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[37px]">
-                      <th className="text-left px-2 py-1 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Products</th>
+                    <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
+                      <th className="text-left pl-[19px] w-3/5 py-1 rounded-tl-[5px] rounded-bl-[5px]">Top Products</th>
                       <th className="text-right px-2 py-1 w-[80px]">Price</th>
                       <th className="text-right px-2 py-1 w-[100px]">Revenue</th>
-                      <th className="text-right px-2 py-1 rounded-tr-[5px] rounded-br-[5px] w-[80px]">Orders</th>
+                      <th className="text-right pr-[19px] py-1 rounded-tr-[5px] rounded-br-[5px] w-[80px]">Orders</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -197,7 +197,7 @@ export const MetricsSection = () => {
                         key={product.id}
                         className="border-b border-[#bfbfbf]/25 last:border-b-0"
                       >
-                        <td className="py-4">
+                        <td className="py-4 px-[19px]">
                           <div className="flex items-center gap-3">
                             <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
                               {product.initials}
@@ -215,7 +215,7 @@ export const MetricsSection = () => {
                         <td className="text-right px-4 py-4 w-[100px] text-sm font-medium text-white/60">
                           {product.revenue}
                         </td>
-                        <td className="text-right px-4 py-4 w-[80px] text-sm font-semibold text-white/60">
+                        <td className="text-right py-4 w-[80px] text-sm font-semibold text-white/60 pr-[19px]">
                           {product.orders}
                         </td>
                       </tr>
@@ -235,29 +235,29 @@ export const MetricsSection = () => {
                 Try ARKai Ads
               </button>
             </div>
-            <div className="flex flex-col flex-1 px-4 mt-[29px] overflow-hidden">
+            <div className="flex flex-col flex-1 px-[19px] mt-[29px] overflow-hidden">
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
-                    <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[37px]">
-                      <th className="text-left px-2 py-1 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
-                      <th className="text-right px-2 py-1 w-[110px]">Revenue</th>
-                      <th className="text-right px-2 py-1 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
+                    <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
+                      <th className="text-left pl-[19px] rounded-tl-[5px] rounded-bl-[5px] w-2/5">Top Countries</th>
+                      <th className="text-right w-[110px]">Revenue</th>
+                      <th className="text-right rounded-tr-[5px] rounded-br-[5px] w-[90px] pr-[19px] ">Orders</th>
                     </tr>
                   </thead>
                   <tbody>
                     {locationMetrics.map((location) => (
                       <tr
                         key={location.country}
-                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
+                        className="border-b border-[#bfbfbf]/25 last:border-b-0 !px-[190px]"
                       >
-                        <td className="py-3 text-sm font-semibold text-white/60 uppercase">
+                        <td className="py-3 pl-[19px] text-sm font-semibold text-white/60 uppercase">
                           {location.country}
                         </td>
                         <td className="text-right px-4 py-3 w-[110px] text-sm font-medium text-white/60">
                           {location.revenue}
                         </td>
-                        <td className="text-right px-4 py-3 w-[90px] text-sm font-medium text-white/60">
+                        <td className="text-right px-4 py-3 w-[90px] pr-[19px] text-sm font-medium text-white/60">
                           {location.orders}
                         </td>
                       </tr>
