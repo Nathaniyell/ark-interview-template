@@ -253,14 +253,14 @@ export const MetricsSection = () => {
                       >
                         <td className="py-3 pl-[19px] text-sm font-semibold text-white/60 uppercase">
                           {location.country}
-                          <div className="h-[1px] bg-red-600 mt-4"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right px-4 py-3 w-[110px] text-sm font-medium text-white/60">
-                          {location.revenue}<div className="h-[1px] bg-red-600 mt-4"></div>
+                        <td className="text-right py-3 text-sm font-medium text-white/60">
+                          {location.revenue}<div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right px-4 py-3 w-[90px] pr-[19px] text-sm font-medium text-white/60">
+                        <td className="text-right py-3 pr-[19px] text-sm font-medium text-white/60">
                           {location.orders}
-                        <div className="h-[1px] bg-red-600 mt-4"></div>
+                        <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
                       </tr>
                     ))}
