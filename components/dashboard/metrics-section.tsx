@@ -180,10 +180,10 @@ export const MetricsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col flex-1 px-[19px] mt-[29px] overflow-y-scroll">
-              <div className="flex-1 overflow-y-scroll">
+            <div className="flex flex-col flex-1 pl-[19px] pr-[30px] mt-[29px] overflow-hidden">
+              <div className="flex-1 overflow-y-auto table-scrollable">
                 <table className="w-full table-fixed">
-                  <thead>
+                  <thead className="sticky top-0 z-10">
                     <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
                       <th className="text-left pl-[19px] w-3/5 py-1 rounded-tl-[5px] rounded-bl-[5px]">Top Products</th>
                       <th className="text-right px-2 py-1 w-[80px]">Price</th>
@@ -235,10 +235,10 @@ export const MetricsSection = () => {
                 Try ARKai Ads
               </button>
             </div>
-            <div className="flex flex-col flex-1 px-[19px] mt-[29px] overflow-hidden">
-              <div className="flex-1 overflow-y-scroll">
+            <div className="flex flex-col flex-1 pl-[19px] pr-[30px] mt-[29px] overflow-hidden">
+              <div className="flex-1 overflow-y-auto table-scrollable">
                 <table className="w-full table-fixed">
-                  <thead>
+                  <thead className="sticky top-0 z-10">
                     <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
                       <th className="text-left pl-[19px] rounded-tl-[5px] rounded-bl-[5px] w-2/5">Top Countries</th>
                       <th className="text-right w-[110px]">Revenue</th>
