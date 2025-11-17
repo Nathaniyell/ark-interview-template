@@ -180,7 +180,7 @@ export const MetricsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col flex-1 px-4 mt-[19px] overflow-y-scroll">
+            <div className="flex flex-col flex-1 px-4 mt-[29px] overflow-y-scroll">
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
@@ -235,7 +235,7 @@ export const MetricsSection = () => {
                 Try ARKai Ads
               </button>
             </div>
-            <div className="flex flex-col flex-1 px-4 mt-[19px] overflow-hidden">
+            <div className="flex flex-col flex-1 px-4 mt-[29px] overflow-hidden">
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
