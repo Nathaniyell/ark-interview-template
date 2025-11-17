@@ -220,11 +220,8 @@ export const MetricsSection = () => {
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
                         </td>
 
-                        <td className="text-right py-4 text-sm font-medium text-white/60 relative">
-            
-
-                          {product.revenue}
-                      
+                        <td className="text-right py-4 text-sm font-medium text-white/60 relative">            
+                          {product.revenue}                      
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
                         </td>
                         <td className="text-right py-4 text-sm font-semibold text-white/60 pr-[19px]">
