@@ -195,7 +195,7 @@ export const MetricsSection = () => {
                     {topProducts.map((product) => (
                       <tr
                         key={product.id}
-                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
+                         className="border-b last:border-b-0 [#bfbfbf]/25"
                       >
                         <td className="py-4 pl-[19px]">
                           <div className="flex items-center gap-3">
@@ -249,7 +249,7 @@ export const MetricsSection = () => {
                     {locationMetrics.map((location) => (
                       <tr
                         key={location.country}
-                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
+                        className="border-b last:border-b-0 [#bfbfbf]/25"
                       >
                         <td className="py-3 pl-[19px] text-sm font-semibold text-white/60 uppercase">
                           {location.country}
