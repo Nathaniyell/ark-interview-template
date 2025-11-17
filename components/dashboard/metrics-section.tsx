@@ -156,7 +156,7 @@ export const MetricsSection = () => {
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[38px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[400px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 bg-r h-[65px]">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 bg-r h-[49px]">
               <h2 className="text-sm font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
@@ -180,7 +180,7 @@ export const MetricsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-y-scroll">
+            <div className="flex flex-col flex-1 px-4 mt-[19px] overflow-y-scroll">
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
