@@ -118,7 +118,8 @@ export const MetricsSection = () => {
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[19px] lg:h-full">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
               <h2 className="text-sm font-semibold">
-                Revenue Reports &gt; <span className="text-[#4de209]">2023</span>
+                Revenue Reports &gt;{" "}
+                <span className="text-[#4de209]">2023</span>
               </h2>
               <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
                 {visualizationData.map((data) => (
@@ -150,7 +151,7 @@ export const MetricsSection = () => {
               </div>
             </div>
             <div className="flex-1 min-h-0">
-             <MetricsChart />
+              <MetricsChart />
             </div>
           </div>
         </div>
@@ -185,38 +186,50 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead className="sticky top-0 z-10">
                     <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
-                      <th className="text-left pl-[19px] w-3/5 py-1 rounded-tl-[5px] rounded-bl-[5px]">Top Products</th>
+                      <th className="text-left pl-[19px] w-3/5 py-1 rounded-tl-[5px] rounded-bl-[5px]">
+                        Top Products
+                      </th>
                       <th className="text-right px-2 py-1 w-[80px]">Price</th>
-                      <th className="text-right px-2 py-1 w-[100px]">Revenue</th>
-                      <th className="text-right pr-[19px] py-1 rounded-tr-[5px] rounded-br-[5px] w-[80px]">Orders</th>
+                      <th className="text-right px-2 py-1 w-[100px]">
+                        Revenue
+                      </th>
+                      <th className="text-right pr-[19px] py-1 rounded-tr-[5px] rounded-br-[5px] w-[80px]">
+                        Orders
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {topProducts.map((product) => (
-                      <tr
-                        key={product.id}
-                         className="border-b last:border-b-0 [#bfbfbf]/25"
-                      >
+                      <tr key={product.id} className="">
                         <td className="py-4 pl-[19px]">
                           <div className="flex items-center gap-3">
                             <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
                               {product.initials}
                             </div>
+
                             <div className="flex flex-col gap-1 min-w-0">
                               <span className="font-semibold text-sm lg:text-base text-white/60 truncate">
                                 {product.title}
                               </span>
                             </div>
                           </div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right px-4 py-4 w-[80px] text-sm font-medium text-white/60">
+                        <td className="text-right py-4 text-sm font-medium text-white/60">
                           {product.price}
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
                         </td>
-                        <td className="text-right px-4 py-4 w-[100px] text-sm font-medium text-white/60">
+
+                        <td className="text-right py-4 text-sm font-medium text-white/60 relative">
+            
+
                           {product.revenue}
+                      
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
                         </td>
-                        <td className="text-right py-4 w-[80px] text-sm font-semibold text-white/60 pr-[19px]">
+                        <td className="text-right py-4 text-sm font-semibold text-white/60 pr-[19px]">
                           {product.orders}
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
                         </td>
                       </tr>
                     ))}
@@ -240,27 +253,29 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead className="sticky top-0 z-10">
                     <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
-                      <th className="text-left pl-[19px] rounded-tl-[5px] rounded-bl-[5px] w-2/5">Top Countries</th>
+                      <th className="text-left pl-[19px] rounded-tl-[5px] rounded-bl-[5px] w-2/5">
+                        Top Countries
+                      </th>
                       <th className="text-right w-[110px]">Revenue</th>
-                      <th className="text-right rounded-tr-[5px] rounded-br-[5px] w-[90px] pr-[19px] ">Orders</th>
+                      <th className="text-right rounded-tr-[5px] rounded-br-[5px] w-[90px] pr-[19px] ">
+                        Orders
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {locationMetrics.map((location) => (
-                      <tr
-                        key={location.country}
-                        className=""
-                      >
+                      <tr key={location.country} className="">
                         <td className="py-3 pl-[19px] text-sm font-semibold text-white/60 uppercase">
                           {location.country}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
                         <td className="text-right py-3 text-sm font-medium text-white/60">
-                          {location.revenue}<div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
+                          {location.revenue}
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
                         <td className="text-right py-3 pr-[19px] text-sm font-medium text-white/60">
                           {location.orders}
-                        <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
                       </tr>
                     ))}
