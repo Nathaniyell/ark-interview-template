@@ -240,9 +240,9 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead>
                     <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
-                      <th className="text-left px-4 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
-                      <th className="text-right px-4 py-3 w-[110px]">Revenue</th>
-                      <th className="text-right px-4 py-3 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
+                      <th className="text-left px-2 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
+                      <th className="text-right px-2 py-3 w-[110px]">Revenue</th>
+                      <th className="text-right px-2 py-3 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -251,7 +251,7 @@ export const MetricsSection = () => {
                         key={location.country}
                         className="border-b border-[#bfbfbf]/25 last:border-b-0"
                       >
-                        <td className="px-4 py-3 text-sm font-semibold text-white/60 uppercase">
+                        <td className="py-3 text-sm font-semibold text-white/60 uppercase">
                           {location.country}
                         </td>
                         <td className="text-right px-4 py-3 w-[110px] text-sm font-medium text-white/60">
