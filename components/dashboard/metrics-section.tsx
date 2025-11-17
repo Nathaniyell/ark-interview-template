@@ -184,7 +184,7 @@ export const MetricsSection = () => {
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
-                    <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
+                    <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[37px]">
                       <th className="text-left px-2 py-1 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Products</th>
                       <th className="text-right px-2 py-1 w-[80px]">Price</th>
                       <th className="text-right px-2 py-1 w-[100px]">Revenue</th>
@@ -239,7 +239,7 @@ export const MetricsSection = () => {
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
-                    <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
+                    <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[37px]">
                       <th className="text-left px-2 py-1 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
                       <th className="text-right px-2 py-1 w-[110px]">Revenue</th>
                       <th className="text-right px-2 py-1 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
