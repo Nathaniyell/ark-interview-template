@@ -185,10 +185,10 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead>
                     <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
-                      <th className="text-left px-2 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Products</th>
-                      <th className="text-right px-2 py-3 w-[80px]">Price</th>
-                      <th className="text-right px-2 py-3 w-[100px]">Revenue</th>
-                      <th className="text-right px-2 py-3 rounded-tr-[5px] rounded-br-[5px] w-[80px]">Orders</th>
+                      <th className="text-left px-2 py-1 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Products</th>
+                      <th className="text-right px-2 py-1 w-[80px]">Price</th>
+                      <th className="text-right px-2 py-1 w-[100px]">Revenue</th>
+                      <th className="text-right px-2 py-1 rounded-tr-[5px] rounded-br-[5px] w-[80px]">Orders</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -240,9 +240,9 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead>
                     <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
-                      <th className="text-left px-2 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
-                      <th className="text-right px-2 py-3 w-[110px]">Revenue</th>
-                      <th className="text-right px-2 py-3 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
+                      <th className="text-left px-2 py-1 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
+                      <th className="text-right px-2 py-1 w-[110px]">Revenue</th>
+                      <th className="text-right px-2 py-1 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
                     </tr>
                   </thead>
                   <tbody>
