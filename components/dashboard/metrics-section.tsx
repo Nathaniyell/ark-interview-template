@@ -249,7 +249,7 @@ export const MetricsSection = () => {
                     {locationMetrics.map((location) => (
                       <tr
                         key={location.country}
-                        className="border-b border-[#bfbfbf]/25 last:border-b-0 !px-[190px]"
+                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
                       >
                         <td className="py-3 pl-[19px] text-sm font-semibold text-white/60 uppercase">
                           {location.country}
