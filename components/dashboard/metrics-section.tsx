@@ -226,7 +226,7 @@ export const MetricsSection = () => {
             </div>
           </div>
           <div className="lg:h-[400px] rounded-[12px] border border-[#bfbfbf]/25 text-white flex flex-col overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 border-b border-[#bfbfbf]/25">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 border-b border-[#bfbfbf]/25 h-[49px]">
               <h2 className="text-sm font-semibold">
                 Revenue &amp; Orders by Location &gt;{" "}
                 <span className="text-[#4de209]">March 2024</span>
@@ -235,7 +235,7 @@ export const MetricsSection = () => {
                 Try ARKai Ads
               </button>
             </div>
-            <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-hidden">
+            <div className="flex flex-col flex-1 px-4 mt-[19px] overflow-hidden">
               <div className="flex-1 overflow-y-scroll">
                 <table className="w-full table-fixed">
                   <thead>
