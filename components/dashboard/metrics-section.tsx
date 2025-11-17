@@ -156,7 +156,7 @@ export const MetricsSection = () => {
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[38px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[400px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 bg-r h-[65px]">
               <h2 className="text-sm font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
@@ -197,7 +197,7 @@ export const MetricsSection = () => {
                         key={product.id}
                         className="border-b border-[#bfbfbf]/25 last:border-b-0"
                       >
-                        <td className="px-4 py-4">
+                        <td className="py-4">
                           <div className="flex items-center gap-3">
                             <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
                               {product.initials}
