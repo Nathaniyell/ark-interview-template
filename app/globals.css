@@ -269,6 +269,7 @@ input[type="search"]:focus-visible {
   overflow-y: scroll !important;
   box-sizing: border-box;
   padding-right: 15px;
+  scrollbar-gutter: stable;
 }
 
 .table-scrollable::-webkit-scrollbar {
