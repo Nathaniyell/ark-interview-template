@@ -208,23 +208,23 @@ export const MetricsSection = () => {
                             </div>
 
                             <div className="flex flex-col gap-1 min-w-0">
-                              <span className="text-[11px] text-white/60 truncate">
+                              <span className="text-sm text-white/60 truncate">
                                 {product.title}
                               </span>
                             </div>
                           </div>
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right py-[14px] text-[11px] text-white/60">
+                        <td className="text-right py-[14px] text-sm text-white/60">
                           {product.price}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[29px]"></div>
                         </td>
 
-                        <td className="text-right py-[14px] text-[11px] text-white/60 relative">            
+                        <td className="text-right py-[14px] text-sm text-white/60 relative">            
                           {product.revenue}                      
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[29px]"></div>
                         </td>
-                        <td className="text-right py-[14px] text-[11px] font-semibold text-white/60 pr-[19px]">
+                        <td className="text-right py-[14px] text-sm font-semibold text-white/60 pr-[19px]">
                           {product.orders}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[29px]"></div>
                         </td>
