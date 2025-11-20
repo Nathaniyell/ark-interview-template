@@ -265,10 +265,9 @@ input[type="search"]:focus-visible {
 .table-scrollable {
   scrollbar-width: thin;
   scrollbar-color: #272829 transparent;
-  padding-right: 5px;
-  overflow-y: scroll !important;
+  /* Remove padding-right from here - it causes the scrollbar to be pushed in */
+  overflow-y: auto !important; /* Changed from scroll to auto */
   box-sizing: border-box;
-  padding-right: 15px;
 }
 
 .table-scrollable::-webkit-scrollbar {
@@ -277,6 +276,7 @@ input[type="search"]:focus-visible {
 
 .table-scrollable::-webkit-scrollbar-track {
   background: transparent;
+  margin: 4px 0; /* Add some space from top/bottom */
 }
 
 .table-scrollable::-webkit-scrollbar-thumb {
@@ -287,14 +287,3 @@ input[type="search"]:focus-visible {
 .table-scrollable::-webkit-scrollbar-thumb:hover {
   background-color: #272829;
 }
-
-/* Table row borders that respect content padding */
-.table-scrollable table {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.table-scrollable tbody tr {
-  position: relative;
-}
-
