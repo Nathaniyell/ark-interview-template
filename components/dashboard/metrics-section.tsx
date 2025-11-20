@@ -163,7 +163,7 @@ export const MetricsSection = () => {
                 <span className="font-semibold text-[#4de209]">March 2024</span>
               </h2>
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-[20px] w-full lg:w-[69%]">
-                <p className="text-xs text-[#4de209] bg-[#272829] rounded-[5px] px-4 py-1 text-center lg:text-left">
+                <p className="text-[13px] text-[#4de209] bg-[#272829] rounded-[5px] px-4 py-1 text-center lg:text-left">
                   Get Free $100 ARKai Ad Spend on Your Best Selling Products*
                 </p>
                 <ul className="flex items-center justify-between gap-[12px] text-sm">
@@ -186,14 +186,14 @@ export const MetricsSection = () => {
                 <table className="w-full table-fixed">
                   <thead className="sticky top-0 z-10">
                     <tr className="text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px]">
-                      <th className="text-left pl-[19px] w-3/5 py-1 rounded-tl-[5px] rounded-bl-[5px]">
+                      <th className="text-left pl-[19px] w-1/2 py-1 rounded-tl-[5px] rounded-bl-[5px]">
                         Top Products
                       </th>
-                      <th className="text-right px-2 py-1 w-[80px]">Price</th>
-                      <th className="text-right px-2 py-1 w-[100px]">
+                      <th className="text-center px-2 py-1 w-[100px]">Price</th>
+                      <th className="text-center px-2 py-1 w-[100px]">
                         Revenue
                       </th>
-                      <th className="text-right pr-[19px] py-1 rounded-tr-[5px] rounded-br-[5px] w-[80px]">
+                      <th className="text-center py-1 rounded-tr-[5px] rounded-br-[5px] w-[100px]">
                         Orders
                       </th>
                     </tr>
@@ -215,15 +215,15 @@ export const MetricsSection = () => {
                           </div>
                         </td>
 
-                        <td className="text-right py-[14px] pr-[10px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-center py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {product.price}
                         </td>
 
-                        <td className="text-right py-[14px] pr-[15px] w-[100px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-center py-[14px] w-[100px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {product.revenue}
                         </td>
 
-                        <td className="text-right py-[14px] text-sm text-white/60 pr-[22px] border-b border-[#bfbfbf]/25">
+                        <td className="text-center py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {product.orders}
                         </td>
                       </tr>
@@ -239,7 +239,7 @@ export const MetricsSection = () => {
                 Revenue &amp; Orders by Location &gt;{" "}
                 <span className="text-[#4de209]">March 2024</span>
               </h2>
-              <button className="w-full lg:w-auto rounded-[5px] bg-[#272829] text-[#4de209] text-sm px-3 py-1">
+              <button className="w-full lg:w-auto rounded-[5px] bg-[#272829] text-[#4de209] text-[13px] px-3 py-1">
                 Try ARKai Ads
               </button>
             </div>
@@ -251,8 +251,8 @@ export const MetricsSection = () => {
                       <th className="text-left pl-[19px] rounded-tl-[5px] rounded-bl-[5px] w-2/5">
                         Top Countries
                       </th>
-                      <th className="text-right w-[110px]">Revenue</th>
-                      <th className="text-right rounded-tr-[5px] rounded-br-[5px] w-[90px] pr-[19px] ">
+                      <th className="text-center w-[100px]">Revenue</th>
+                      <th className="text-center rounded-tr-[5px] rounded-br-[5px] w-[100px]">
                         Orders
                       </th>
                     </tr>
@@ -264,11 +264,11 @@ export const MetricsSection = () => {
                           {location.country}
                         </td>
 
-                        <td className="text-right w-[110px] py-[10px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-center w-[100px] py-[10px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {location.revenue}
                         </td>
 
-                        <td className="text-right w-[110px] py-[10px] pr-[20px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-center w-[100px] py-[10px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {location.orders}
                         </td>
                       </tr>
