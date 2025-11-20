@@ -203,30 +203,30 @@ export const MetricsSection = () => {
                       <tr key={product.id} className="">
                         <td className="py-4 pl-[19px]">
                           <div className="flex items-center gap-3">
-                            <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
+                            <div className="w-[38px] h-[38px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
                               {product.initials}
                             </div>
 
                             <div className="flex flex-col gap-1 min-w-0">
-                              <span className="font-semibold text-sm lg:text-base text-white/60 truncate">
+                              <span className="font-semibold text-[11px] lg:text-base text-white/60 truncate">
                                 {product.title}
                               </span>
                             </div>
                           </div>
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right py-4 text-sm font-medium text-white/60">
+                        <td className="text-right py-4 text-[11px] font-medium text-white/60">
                           {product.price}
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
                         </td>
 
-                        <td className="text-right py-4 text-sm font-medium text-white/60 relative">            
+                        <td className="text-right py-4 text-[11px] font-medium text-white/60 relative">            
                           {product.revenue}                      
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
                         </td>
-                        <td className="text-right py-4 text-sm font-semibold text-white/60 pr-[19px]">
+                        <td className="text-right py-4 text-[11px] font-semibold text-white/60 pr-[19px]">
                           {product.orders}
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[38px]"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
                         </td>
                       </tr>
                     ))}
