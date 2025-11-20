@@ -215,12 +215,12 @@ export const MetricsSection = () => {
                           </div>
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right py-4 text-[11px] font-medium text-white/60">
+                        <td className="text-right py-4 text-[11px] text-white/60">
                           {product.price}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
                         </td>
 
-                        <td className="text-right py-4 text-[11px] font-medium text-white/60 relative">            
+                        <td className="text-right py-4 text-[11px] text-white/60 relative">            
                           {product.revenue}                      
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
                         </td>
