@@ -208,7 +208,7 @@ export const MetricsSection = () => {
                             </div>
 
                             <div className="flex flex-col gap-1 min-w-0">
-                              <span className="font-semibold text-[11px] text-white/60 truncate">
+                              <span className="text-[11px] text-white/60 truncate">
                                 {product.title}
                               </span>
                             </div>
