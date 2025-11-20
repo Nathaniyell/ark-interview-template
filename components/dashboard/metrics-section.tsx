@@ -199,38 +199,37 @@ export const MetricsSection = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {topProducts.map((product) => (
-                      <tr key={product.id} className="">
-                        <td className="py-[14px] pl-[19px]">
-                          <div className="flex items-center gap-3">
-                            <div className="w-[38px] h-[38px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
-                              {product.initials}
-                            </div>
+  {topProducts.map((product) => (
+    <tr key={product.id}>
+      <td className="py-[14px] pl-[19px] border-b border-[#bfbfbf]/25">
+        <div className="flex items-center gap-[14px]">
+          <div className="w-[38px] h-[38px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
+            {product.initials}
+          </div>
 
-                            <div className="flex flex-col gap-1 min-w-0">
-                              <span className="text-sm text-white/60 truncate">
-                                {product.title}
-                              </span>
-                            </div>
-                          </div>
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
-                        </td>
-                        <td className="text-right py-[14px] text-sm text-white/60">
-                          {product.price}
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[26px]"></div>
-                        </td>
+          <div className="flex flex-col gap-1 min-w-0">
+            <span className="text-sm text-white/60 truncate">
+              {product.title}
+            </span>
+          </div>
+        </div>
+      </td>
 
-                        <td className="text-right py-[14px] text-sm text-white/60 relative">            
-                          {product.revenue}                      
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[26px]"></div>
-                        </td>
-                        <td className="text-right py-[14px] text-sm text-white/60 pr-[19px]">
-                          {product.orders}
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[26px]"></div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
+      <td className="text-right py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+        {product.price}
+      </td>
+
+      <td className="text-right py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+        {product.revenue}
+      </td>
+
+      <td className="text-right py-[14px] text-sm text-white/60 pr-[19px] border-b border-[#bfbfbf]/25">
+        {product.orders}
+      </td>
+    </tr>
+  ))}
+</tbody>
+
                 </table>
               </div>
             </div>
