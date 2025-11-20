@@ -157,13 +157,13 @@ export const MetricsSection = () => {
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[38px] items-stretch">
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[400px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 bg-r h-[49px]">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4 h-[49px]">
               <h2 className="text-sm font-semibold">
                 Top Products Sold &gt;{" "}
                 <span className="font-semibold text-[#4de209]">March 2024</span>
               </h2>
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-[20px] w-full lg:w-auto">
-                <p className="text-sm text-[#4de209] bg-[#272829] rounded-[5px] px-2 py-1 text-center lg:text-left">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-[20px] w-full lg:w-[69%]">
+                <p className="text-xs text-[#4de209] bg-[#272829] rounded-[5px] px-4 py-1 text-center lg:text-left">
                   Get Free $100 ARKai Ad Spend on Your Best Selling Products*
                 </p>
                 <ul className="flex items-center justify-between gap-[12px] text-sm">
@@ -215,15 +215,15 @@ export const MetricsSection = () => {
                           </div>
                         </td>
 
-                        <td className="text-right py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-right py-[14px] pr-[10px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {product.price}
                         </td>
 
-                        <td className="text-right py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-right py-[14px] pr-[15px] w-[100px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {product.revenue}
                         </td>
 
-                        <td className="text-right py-[14px] text-sm text-white/60 pr-[19px] border-b border-[#bfbfbf]/25">
+                        <td className="text-right py-[14px] text-sm text-white/60 pr-[22px] border-b border-[#bfbfbf]/25">
                           {product.orders}
                         </td>
                       </tr>
@@ -260,15 +260,15 @@ export const MetricsSection = () => {
                   <tbody>
                     {locationMetrics.map((location) => (
                       <tr key={location.country}>
-                        <td className="py-[14px] pl-[19px] text-sm text-white/60 uppercase border-b border-[#bfbfbf]/25">
+                        <td className="py-[10px] pl-[19px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {location.country}
                         </td>
 
-                        <td className="text-right py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-right w-[110px] py-[10px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {location.revenue}
                         </td>
 
-                        <td className="text-right py-[14px] pr-[19px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-right w-[110px] py-[10px] pr-[20px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {location.orders}
                         </td>
                       </tr>
