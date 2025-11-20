@@ -201,7 +201,7 @@ export const MetricsSection = () => {
                   <tbody>
                     {topProducts.map((product) => (
                       <tr key={product.id} className="">
-                        <td className="py-4 pl-[19px]">
+                        <td className="py-[14px] pl-[19px]">
                           <div className="flex items-center gap-3">
                             <div className="w-[38px] h-[38px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
                               {product.initials}
@@ -215,18 +215,18 @@ export const MetricsSection = () => {
                           </div>
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right py-4 text-[11px] text-white/60">
+                        <td className="text-right py-[14px] text-[11px] text-white/60">
                           {product.price}
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[29px]"></div>
                         </td>
 
-                        <td className="text-right py-4 text-[11px] text-white/60 relative">            
+                        <td className="text-right py-[14px] text-[11px] text-white/60 relative">            
                           {product.revenue}                      
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[29px]"></div>
                         </td>
-                        <td className="text-right py-4 text-[11px] font-semibold text-white/60 pr-[19px]">
+                        <td className="text-right py-[14px] text-[11px] font-semibold text-white/60 pr-[19px]">
                           {product.orders}
-                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[30px]"></div>
+                          <div className="h-[1px] bg-[#bfbfbf]/25 mt-[29px]"></div>
                         </td>
                       </tr>
                     ))}
