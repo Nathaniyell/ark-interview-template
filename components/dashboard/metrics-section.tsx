@@ -215,16 +215,16 @@ export const MetricsSection = () => {
                           </div>
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right py-[14px] text-sm font-[500] text-white/60">
+                        <td className="text-right py-[14px] text-sm text-white/60">
                           {product.price}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[26px]"></div>
                         </td>
 
-                        <td className="text-right py-[14px] text-sm font-[500] text-white/60 relative">            
+                        <td className="text-right py-[14px] text-sm text-white/60 relative">            
                           {product.revenue}                      
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[26px]"></div>
                         </td>
-                        <td className="text-right py-[14px] text-sm font-[500] text-white/60 pr-[19px]">
+                        <td className="text-right py-[14px] text-sm text-white/60 pr-[19px]">
                           {product.orders}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-[26px]"></div>
                         </td>
@@ -262,15 +262,15 @@ export const MetricsSection = () => {
                   <tbody>
                     {locationMetrics.map((location) => (
                       <tr key={location.country} className="">
-                        <td className="py-3 pl-[19px] text-sm font-[500]  text-white/60 uppercase">
+                        <td className="py-3 pl-[19px] text-sm  text-white/60 uppercase">
                           {location.country}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right py-3 text-sm font-[500] text-white/60">
+                        <td className="text-right py-3 text-sm text-white/60">
                           {location.revenue}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
-                        <td className="text-right py-3 pr-[19px] text-sm font-[500] text-white/60">
+                        <td className="text-right py-3 pr-[19px] text-sm text-white/60">
                           {location.orders}
                           <div className="h-[1px] bg-[#bfbfbf]/25 mt-2"></div>
                         </td>
