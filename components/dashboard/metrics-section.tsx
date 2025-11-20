@@ -260,15 +260,15 @@ export const MetricsSection = () => {
                   <tbody>
                     {locationMetrics.map((location) => (
                       <tr key={location.country}>
-                        <td className="py-[14px] pl-[19px] text-sm font-[200] text-white/60 uppercase border-b border-[#bfbfbf]/25">
+                        <td className="py-[14px] pl-[19px] text-sm text-white/60 uppercase border-b border-[#bfbfbf]/25">
                           {location.country}
                         </td>
 
-                        <td className="text-right py-[14px] text-sm font-[200] text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-right py-[14px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {location.revenue}
                         </td>
 
-                        <td className="text-right py-[14px] pr-[19px] text-sm font-[200] text-white/60 border-b border-[#bfbfbf]/25">
+                        <td className="text-right py-[14px] pr-[19px] text-sm text-white/60 border-b border-[#bfbfbf]/25">
                           {location.orders}
                         </td>
                       </tr>
