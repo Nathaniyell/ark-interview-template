@@ -205,8 +205,8 @@ export const MetricsSection = () => {
         
         {/* Body - scrollable content */}
         <div className="flex flex-col px-[19px]">
-          {topProducts.map((product) => (
-            <div key={product.id} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_120px_120px]">
+          {topProducts.map((product, index) => (
+            <div key={product.id + index} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_120px_120px]">
               {/* Product Column */}
               <div className="flex items-center min-w-0 py-[14px] pl-[25px] pr-2">
                 <div className="flex items-center gap-[14px] min-w-0 w-full">
@@ -266,8 +266,8 @@ export const MetricsSection = () => {
         
         {/* Body - scrollable content */}
         <div className="flex flex-col px-[19px]">
-          {locationMetrics.map((location) => (
-            <div key={location.country} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_100px]">
+          {locationMetrics.map((location, index) => (
+            <div key={location.country + index} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_100px]">
               {/* Country Column */}
               <div className="flex items-center min-w-0 py-[10px] text-sm text-white/60 pr-2 pl-[22px]">
                 {location.country}
