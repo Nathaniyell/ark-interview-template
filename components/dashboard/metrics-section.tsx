@@ -261,7 +261,7 @@ export const MetricsSection = () => {
         Revenue &amp; Orders by Location &gt;{" "}
         <span className="text-[#4de209] cursor-pointer">March 2024</span>
       </h2>
-      <button className="w-full lg:w-auto rounded-[5px] bg-[#272829] text-[#4de209] text-[13px] px-3 py-1">
+      <button className="w-full lg:w-auto rounded-[5px] bg-[#272829] text-[#4de209] text-[13px] px-3 py-1 cursor-pointer">
         Try ARKai Ads
       </button>
     </div>
