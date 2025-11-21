@@ -67,15 +67,6 @@ export const MetricsSection = () => {
       orders: "157",
       initials: "SK",
     },
-    {
-      id: "scottys-keto-mix",
-      title: "Scotty's Keto Pancake & Waffle Mix - 0 Net Carbs",
-      subtitle: "Grocery · Specialty Foods",
-      price: "$33.99",
-      revenue: "$5,336",
-      orders: "157",
-      initials: "SK",
-    },
   ];
 
   const timeframes = ["Today", "Week", "Month", "Year"];
@@ -200,56 +191,52 @@ export const MetricsSection = () => {
       </div>
     </div>
     <div className="flex flex-col flex-1 overflow-hidden pr-[12px]">
-      {/* Fixed scrolling container - removed padding from here */}
+      {/* Fixed scrolling container */}
       <div className="flex-1 table-scrollable overflow-y-auto">
-        {/* Content with proper padding */}
-        <div className="flex flex-col w-full px-[19px] mt-[29px]">
-          {/* Header */}
-          <div className="sticky top-0 z-10">{
-            /* Use the parent padding; avoid extra negative margins */}
-            <div className="grid grid-cols-[1fr_120px_120px_120px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[22px]">
-              <div>Top Products</div>
-              <div className="flex justify-center items-center w-5/6 ml-auto">Price</div>
-              <div className="flex justify-center items-center w-5/6 ml-auto">Revenue</div>
-              <div className="flex justify-center items-center w-5/6 ml-auto">Orders</div>
-            </div>
+        {/* Header - sticky at top of scrollable container */}
+        <div className="sticky top-0 z-40 px-[19px] pt-[29px] pb-0">
+          <div className="grid grid-cols-[1fr_120px_120px_120px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[22px]">
+            <div>Top Products</div>
+            <div className="flex justify-center items-center w-5/6 ml-auto">Price</div>
+            <div className="flex justify-center items-center w-5/6 ml-auto">Revenue</div>
+            <div className="flex justify-center items-center w-5/6 ml-auto">Orders</div>
           </div>
-          
-          {/* Body */}
-          <div className="flex flex-col"> {/* Rows inherit parent's px */}
-            {topProducts.map((product) => (
-              <div key={product.id} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_120px_120px]">
-                {/* Product Column */}
-                <div className="flex items-center min-w-0 py-[14px] pl-[25px] pr-2">
-                  <div className="flex items-center gap-[14px] min-w-0 w-full">
-                    <div className="w-[38px] h-[38px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
-                      {product.initials}
-                    </div>
-                    <div className="flex flex-col gap-1 min-w-0 flex-1">
-                      <span className="text-sm text-white/60 truncate">
-                        {product.title}
-                      </span>
-                    </div>
+        </div>
+        
+        {/* Body - scrollable content */}
+        <div className="flex flex-col px-[19px]">
+          {topProducts.map((product) => (
+            <div key={product.id} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_120px_120px]">
+              {/* Product Column */}
+              <div className="flex items-center min-w-0 py-[14px] pl-[25px] pr-2">
+                <div className="flex items-center gap-[14px] min-w-0 w-full">
+                  <div className="w-[38px] h-[38px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
+                    {product.initials}
+                  </div>
+                  <div className="flex flex-col gap-1 min-w-0 flex-1">
+                    <span className="text-sm text-white/60 truncate">
+                      {product.title}
+                    </span>
                   </div>
                 </div>
-
-                {/* Price Column */}
-                <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
-                  {product.price}
-                </div>
-
-                {/* Revenue Column */}
-                <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
-                  {product.revenue}
-                </div>
-
-                {/* Orders Column */}
-                <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
-                  {product.orders}
-                </div>
               </div>
-            ))}
-          </div>
+
+              {/* Price Column */}
+              <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
+                {product.price}
+              </div>
+
+              {/* Revenue Column */}
+              <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
+                {product.revenue}
+              </div>
+
+              {/* Orders Column */}
+              <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
+                {product.orders}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -267,39 +254,36 @@ export const MetricsSection = () => {
     </div>
     <div className="flex flex-col flex-1 overflow-hidden pr-3">
       {/* Fixed scrolling container */}
-      <div className="flex-1 table-scrollable overflow-y-auto ">
-        {/* Content with proper padding */}
-          <div className="flex flex-col w-full px-[19px] mt-[29px]">
-          {/* Header */}
-          <div className="sticky top-0 z-10">
-            <div className="grid grid-cols-[1fr_120px_100px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[22px]">
-              <div>Top Countries</div>
-              <div className="flex justify-center items-center">Revenue</div>
-              <div className="flex justify-center items-center">Orders</div>
-            </div>
+      <div className="flex-1 table-scrollable overflow-y-auto">
+        {/* Header - sticky at top of scrollable container */}
+        <div className="sticky top-0 z-10 px-[19px] pt-[29px] pb-0">
+          <div className="grid grid-cols-[1fr_120px_100px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[22px]">
+            <div>Top Countries</div>
+            <div className="flex justify-center items-center">Revenue</div>
+            <div className="flex justify-center items-center">Orders</div>
           </div>
-          
-          {/* Body */}
-          <div className="flex flex-col">
-            {locationMetrics.map((location) => (
-              <div key={location.country} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_100px]">
-                {/* Country Column */}
-                <div className="flex items-center min-w-0 py-[10px] text-sm text-white/60 pr-2 pl-[22px]">
-                  {location.country}
-                </div>
-
-                {/* Revenue Column */}
-                <div className="flex justify-center items-center py-[10px] text-sm text-white/60">
-                  {location.revenue}
-                </div>
-
-                {/* Orders Column */}
-                <div className="flex justify-center items-center py-[10px] text-sm text-white/60">
-                  {location.orders}
-                </div>
+        </div>
+        
+        {/* Body - scrollable content */}
+        <div className="flex flex-col px-[19px]">
+          {locationMetrics.map((location) => (
+            <div key={location.country} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_100px]">
+              {/* Country Column */}
+              <div className="flex items-center min-w-0 py-[10px] text-sm text-white/60 pr-2 pl-[22px]">
+                {location.country}
               </div>
-            ))}
-          </div>
+
+              {/* Revenue Column */}
+              <div className="flex justify-center items-center py-[10px] text-sm text-white/60">
+                {location.revenue}
+              </div>
+
+              {/* Orders Column */}
+              <div className="flex justify-center items-center py-[10px] text-sm text-white/60">
+                {location.orders}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
