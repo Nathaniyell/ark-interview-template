@@ -207,11 +207,11 @@ export const MetricsSection = () => {
           {/* Header */}
           <div className="sticky top-0 z-10">{
             /* Use the parent padding; avoid extra negative margins */}
-            <div className="grid grid-cols-[1fr_120px_120px_120px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[25px]">
+            <div className="grid grid-cols-[1fr_120px_120px_120px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[22px]">
               <div>Top Products</div>
-              <div className="flex justify-center items-center">Price</div>
-              <div className="flex justify-center items-center">Revenue</div>
-              <div className="flex justify-center items-center">Orders</div>
+              <div className="flex justify-center items-center w-5/6 ml-auto">Price</div>
+              <div className="flex justify-center items-center w-5/6 ml-auto">Revenue</div>
+              <div className="flex justify-center items-center w-5/6 ml-auto">Orders</div>
             </div>
           </div>
           
@@ -234,17 +234,17 @@ export const MetricsSection = () => {
                 </div>
 
                 {/* Price Column */}
-                <div className="flex justify-center items-center py-[14px] text-sm text-white/60">
+                <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
                   {product.price}
                 </div>
 
                 {/* Revenue Column */}
-                <div className="flex justify-center items-center py-[14px] text-sm text-white/60">
+                <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
                   {product.revenue}
                 </div>
 
                 {/* Orders Column */}
-                <div className="flex justify-center items-center py-[14px] text-sm text-white/60">
+                <div className="flex justify-center items-center py-[14px] text-sm text-white/60 w-5/6 ml-auto">
                   {product.orders}
                 </div>
               </div>
@@ -272,7 +272,7 @@ export const MetricsSection = () => {
           <div className="flex flex-col w-full px-[19px] mt-[29px]">
           {/* Header */}
           <div className="sticky top-0 z-10">
-            <div className="grid grid-cols-[1fr_120px_100px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[25px]">
+            <div className="grid grid-cols-[1fr_120px_100px] text-xs uppercase tracking-[0.08em] text-white font-semibold bg-[#272829] h-[36.5px] items-center rounded-[5px] pl-[22px]">
               <div>Top Countries</div>
               <div className="flex justify-center items-center">Revenue</div>
               <div className="flex justify-center items-center">Orders</div>
@@ -284,7 +284,7 @@ export const MetricsSection = () => {
             {locationMetrics.map((location) => (
               <div key={location.country} className="grid border-b border-[#bfbfbf]/25 grid-cols-[1fr_120px_100px]">
                 {/* Country Column */}
-                <div className="flex items-center min-w-0 py-[10px] text-sm text-white/60 pr-2 pl-[25px]">
+                <div className="flex items-center min-w-0 py-[10px] text-sm text-white/60 pr-2 pl-[22px]">
                   {location.country}
                 </div>
 
