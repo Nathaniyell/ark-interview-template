@@ -47,7 +47,7 @@ const Page = () => {
           </div>
         </div>
         <MetricsSection />
-        <div className="-mt-[8px]">
+        <div className="-mt-[6px]">
 
         <HighlightsGrid />
         </div>
