@@ -46,11 +46,8 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <MetricsSection />
-        <div className="-mt-[6px]">
-
-        <HighlightsGrid />
-        </div>
+        <MetricsSection />       
+        <HighlightsGrid />       
       </div>
     </div>
   );
