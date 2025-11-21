@@ -47,7 +47,10 @@ const Page = () => {
           </div>
         </div>
         <MetricsSection />
+        <div className="lg:-mt-[12px]">
+
         <HighlightsGrid />
+        </div>
       </div>
     </div>
   );
