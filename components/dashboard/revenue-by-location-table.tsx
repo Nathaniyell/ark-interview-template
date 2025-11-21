@@ -14,12 +14,10 @@ interface RevenueByLocationTableProps {
 }
 
 export const RevenueByLocationTable = ({ locationMetrics }: RevenueByLocationTableProps) => {
-  const [showYearDropdown, setShowYearDropdown] = useState(false);
-  const [showMonthDropdown, setShowMonthDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const [selectedYear, setSelectedYear] = useState(2026);
   const [selectedMonth, setSelectedMonth] = useState("January");
-  const yearDropdownRef = useRef<HTMLDivElement>(null);
-  const monthDropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const months = [
     "January", "February", "March", "April", "May", "June",
@@ -30,11 +28,8 @@ export const RevenueByLocationTable = ({ locationMetrics }: RevenueByLocationTab
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (yearDropdownRef.current && !yearDropdownRef.current.contains(event.target as Node)) {
-        setShowYearDropdown(false);
-      }
-      if (monthDropdownRef.current && !monthDropdownRef.current.contains(event.target as Node)) {
-        setShowMonthDropdown(false);
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
       }
     };
 
@@ -47,72 +42,51 @@ export const RevenueByLocationTable = ({ locationMetrics }: RevenueByLocationTab
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 border-b border-[#bfbfbf]/25 h-[49px]">
         <h2 className="text-sm font-semibold">
           Revenue &amp; Orders by Location &gt;{" "}
-          <span className="relative inline-block">
-            <span 
-              ref={monthDropdownRef}
-              className="text-[#4de209] cursor-pointer relative inline-block"
-              onClick={() => {
-                setShowMonthDropdown(!showMonthDropdown);
-                setShowYearDropdown(false);
-              }}
-            >
-              {selectedMonth}
-              {showMonthDropdown && (
-                <div 
-                  className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[150px] max-h-[200px] overflow-y-auto shadow-lg"
-                >
-                  {months.map((month) => (
-                    <div
-                      key={month}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedMonth(month);
-                        setShowMonthDropdown(false);
-                      }}
-                      className={cn(
-                        "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors",
-                        selectedMonth === month && "text-[#4de209]"
-                      )}
-                    >
-                      {month}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </span>
-            {" "}
-            <span 
-              ref={yearDropdownRef}
-              className="text-[#4de209] cursor-pointer relative inline-block"
-              onClick={() => {
-                setShowYearDropdown(!showYearDropdown);
-                setShowMonthDropdown(false);
-              }}
-            >
-              {selectedYear}
-              {showYearDropdown && (
-                <div 
-                  className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[100px] max-h-[200px] overflow-y-auto shadow-lg"
-                >
-                  {years.map((year) => (
-                    <div
-                      key={year}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedYear(year);
-                        setShowYearDropdown(false);
-                      }}
-                      className={cn(
-                        "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors",
-                        selectedYear === year && "text-[#4de209]"
-                      )}
-                    >
-                      {year}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </span>
+          <span 
+            ref={dropdownRef}
+            className="text-[#4de209] cursor-pointer relative inline-block"
+            onClick={() => setShowDropdown(!showDropdown)}
+          >
+            {selectedMonth} {selectedYear}
+            {showDropdown && (
+              <div 
+                className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[150px] max-h-[200px] overflow-y-auto shadow-lg"
+              >
+                {months.map((month) => (
+                  <div
+                    key={month}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedMonth(month);
+                      setShowDropdown(false);
+                    }}
+                    className={cn(
+                      "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
+                      selectedMonth === month && "text-[#4de209]"
+                    )}
+                  >
+                    {month}
+                  </div>
+                ))}
+                <div className="border-t border-[#bfbfbf]/25 my-1"></div>
+                {years.map((year) => (
+                  <div
+                    key={year}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedYear(year);
+                      setShowDropdown(false);
+                    }}
+                    className={cn(
+                      "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
+                      selectedYear === year && "text-[#4de209]"
+                    )}
+                  >
+                    {year}
+                  </div>
+                ))}
+              </div>
+            )}
           </span>
         </h2>
         <button className="w-full lg:w-auto rounded-[5px] bg-[#272829] text-[#4de209] text-[13px] px-3 py-1 cursor-pointer">

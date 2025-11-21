@@ -73,7 +73,7 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
                         setShowMonthDropdown(false);
                       }}
                       className={cn(
-                        "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors",
+                        "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
                         selectedMonth === month && "text-[#4de209]"
                       )}
                     >
@@ -123,7 +123,7 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
                               setShowYearDropdown(false);
                             }}
                             className={cn(
-                              "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors",
+                              "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
                               selectedYear === year && "text-[#4de209]"
                             )}
                           >
