@@ -137,7 +137,7 @@ export const MetricsSection = () => {
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
               <h2 className="text-sm font-semibold">
                 Revenue Reports &gt;{" "}
-                <span className="text-[#4de209]">2023</span>
+                <span className="text-[#4de209] cursor-pointer">2023</span>
               </h2>
               <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
                 {visualizationData.map((data) => (
@@ -178,10 +178,10 @@ export const MetricsSection = () => {
     <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 pl-4 pr-1 py-4 h-[49px]">
       <h2 className="text-sm font-semibold">
         Top Products Sold &gt;{" "}
-        <span className="font-semibold text-[#4de209]">March 2024</span>
+        <span className="font-semibold text-[#4de209] cursor-pointer">March 2024</span>
       </h2>
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-[20px] w-full lg:w-[69%]">
-        <p className="text-[13px] text-[#4de209] bg-[#272829] rounded-[5px] px-4 py-1 text-center lg:text-left">
+        <p className="text-[13px] text-[#4de209] bg-[#272829] rounded-[5px] px-4 py-1 text-center lg:text-left cursor-pointer">
           Get Free $100 ARKai Ad Spend on Your Best Selling Products*
         </p>
         <ul className="flex items-center justify-between gap-[12px] text-sm">
@@ -259,7 +259,7 @@ export const MetricsSection = () => {
     <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 border-b border-[#bfbfbf]/25 h-[49px]">
       <h2 className="text-sm font-semibold">
         Revenue &amp; Orders by Location &gt;{" "}
-        <span className="text-[#4de209]">March 2024</span>
+        <span className="text-[#4de209] cursor-pointer">March 2024</span>
       </h2>
       <button className="w-full lg:w-auto rounded-[5px] bg-[#272829] text-[#4de209] text-[13px] px-3 py-1">
         Try ARKai Ads
