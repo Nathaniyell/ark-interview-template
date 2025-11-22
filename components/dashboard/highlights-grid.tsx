@@ -120,7 +120,7 @@ export const HighlightsGrid = () => {
                   </div>
                 </div>
                 <div className={cn(
-                  "hover:bg-[#272829] flex items-center gap-2 h-[71px] px-2 w-full cursor-pointer", 
+                  "hover:bg-[#272829] text-white/70 hover:text-[#4de209] flex items-center gap-2 h-[71px] px-2 w-full cursor-pointer", 
                 )}>
                   <span
                     className={cn(
@@ -132,7 +132,7 @@ export const HighlightsGrid = () => {
                   >
                     {item.count}
                   </span>
-                  <p className="text-sm text-white/70 hover:text-[#4de209] flex-1 ">
+                  <p className="text-sm flex-1 ">
                     {item.message}
                   </p>
                 </div>
