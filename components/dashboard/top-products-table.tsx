@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface Product {
   id: string;
@@ -176,8 +177,10 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
                       {product.initials}
                     </div>
                     <div className="flex flex-col gap-1 min-w-0 flex-1">
-                      <span className="text-sm text-white/60 truncate">
-                        {product.title}
+                      <span className="text-sm text-white/60 hover:text-[#4de209] truncate">
+                        <Link href={`#`} className="hover:text-[#4de209]">
+                          {product.title}
+                        </Link>
                       </span>
                     </div>
                   </div>
