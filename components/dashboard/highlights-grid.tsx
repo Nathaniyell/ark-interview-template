@@ -162,8 +162,8 @@ export const HighlightsGrid = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-2 px-5 md:px-0 min-w-0">
-                    <h4 className="text-base font-semibold truncate md:whitespace-normal text-[#4de209] cursor-pointer">
-                      <Link href={`#`} className="hover:text-[#4de209]">
+                    <h4 className="text-base font-semibold truncate md:whitespace-normal  cursor-pointer">
+                      <Link href={`#`} className="">
                         {item.title}
                       </Link>
                     </h4>
