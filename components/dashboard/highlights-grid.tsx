@@ -244,7 +244,7 @@ export const HighlightsGrid = () => {
         </div>
       </div>
       <div className="flex flex-col gap-[19px] -mt-[19px]">
-          <p className=" text-[#4de209] text-sm text-center">Advertisment</p>
+          <p className=" text-[#4de209] text-sm text-center">Advertisement</p>
         <p className="bg-[#272829] rounded-[12px] h-[51px] text-center font-bold grid place-items-center">
           Ship on your own or choose FBA. Visit our fullfilment center and get
           your shipping game on seamlessly!
