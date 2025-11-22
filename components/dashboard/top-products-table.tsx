@@ -36,11 +36,11 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (yearDropdownRef.current && !yearDropdownRef.current.contains(event.target as Node)) {
-        setShowYearDropdown(false);
-      }
       if (monthDropdownRef.current && !monthDropdownRef.current.contains(event.target as Node)) {
         setShowMonthDropdown(false);
+      }
+      if (yearDropdownRef.current && !yearDropdownRef.current.contains(event.target as Node)) {
+        setShowYearDropdown(false);
       }
     };
 
@@ -54,34 +54,72 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
         <div>
           <h2 className="text-sm font-semibold">
             Top Products Sold &gt;{" "}
-            <span 
-              ref={monthDropdownRef}
-              className="font-semibold text-[#4de209] cursor-pointer relative inline-block"
-              onClick={() => setShowMonthDropdown(!showMonthDropdown)}
-            >
-              {selectedMonth} {selectedYear}
-              {showMonthDropdown && (
-                <div 
-                  className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[150px] max-h-[200px] overflow-y-auto shadow-lg"
-                >
-                  {months.map((month) => (
-                    <div
-                      key={month}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedMonth(month);
-                        setShowMonthDropdown(false);
-                      }}
-                      className={cn(
-                        "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
-                        selectedMonth === month && "text-[#4de209]"
-                      )}
-                    >
-                      {month}
-                    </div>
-                  ))}
-                </div>
-              )}
+            <span className="relative inline-block">
+              <span 
+                ref={monthDropdownRef}
+                className="font-semibold text-[#4de209] cursor-pointer relative inline-block"
+                onClick={() => {
+                  setShowMonthDropdown(!showMonthDropdown);
+                  setShowYearDropdown(false);
+                }}
+              >
+                {selectedMonth}
+                {showMonthDropdown && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[150px] max-h-[200px] overflow-y-auto shadow-lg"
+                  >
+                    {months.map((month) => (
+                      <div
+                        key={month}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedMonth(month);
+                          setShowMonthDropdown(false);
+                        }}
+                        className={cn(
+                          "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
+                          selectedMonth === month && "text-[#4de209]"
+                        )}
+                      >
+                        {month}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </span>
+              {" > "}
+              <span 
+                ref={yearDropdownRef}
+                className="font-semibold text-[#4de209] cursor-pointer relative inline-block"
+                onClick={() => {
+                  setShowYearDropdown(!showYearDropdown);
+                  setShowMonthDropdown(false);
+                }}
+              >
+                {selectedYear}
+                {showYearDropdown && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[100px] max-h-[200px] overflow-y-auto shadow-lg"
+                  >
+                    {years.map((year) => (
+                      <div
+                        key={year}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedYear(year);
+                          setShowYearDropdown(false);
+                        }}
+                        className={cn(
+                          "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
+                          selectedYear === year && "text-[#4de209]"
+                        )}
+                      >
+                        {year}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </span>
             </span>
           </h2>
         </div>
@@ -94,61 +132,21 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
           <ul className="flex items-center gap-[12px] text-sm">
             {timeframes.map((label) => (
               <li key={label}>
-                {label === "Year" ? (
-                  <div ref={yearDropdownRef} className="relative">
-                    <button
-                      onClick={() => {
-                        setActiveTimeframe(label);
-                        setShowYearDropdown(!showYearDropdown);
-                      }}
-                      className={cn(
-                        "rounded-[5px] px-2 py-1 min-w-[56px] text-center border border-transparent transition-colors cursor-pointer relative",
-                        activeTimeframe === label
-                          ? "bg-[#272829] text-[#4de209]"
-                          : "bg-transparent text-white/60 hover:text-white"
-                      )}
-                    >
-                      {label}
-                    </button>
-                    {showYearDropdown && (
-                      <div 
-                        className="absolute top-full right-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[100px] max-h-[200px] overflow-y-auto shadow-lg"
-                      >
-                        {years.map((year) => (
-                          <div
-                            key={year}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedYear(year);
-                              setShowYearDropdown(false);
-                            }}
-                            className={cn(
-                              "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
-                              selectedYear === year && "text-[#4de209]"
-                            )}
-                          >
-                            {year}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => {
-                      setActiveTimeframe(label);
-                      setShowYearDropdown(false);
-                    }}
-                    className={cn(
-                      "rounded-[5px] px-2 py-1 min-w-[56px] text-center border border-transparent transition-colors cursor-pointer",
-                      activeTimeframe === label
-                        ? "bg-[#272829] text-[#4de209]"
-                        : "bg-transparent text-white/60 hover:text-white"
-                    )}
-                  >
-                    {label}
-                  </button>
-                )}
+                <button
+                  onClick={() => {
+                    setActiveTimeframe(label);
+                    setShowYearDropdown(false);
+                    setShowMonthDropdown(false);
+                  }}
+                  className={cn(
+                    "rounded-[5px] px-2 py-1 min-w-[56px] text-center border border-transparent transition-colors cursor-pointer",
+                    activeTimeframe === label
+                      ? "bg-[#272829] text-[#4de209]"
+                      : "bg-transparent text-white/60 hover:text-white"
+                  )}
+                >
+                  {label}
+                </button>
               </li>
             ))}
           </ul>
