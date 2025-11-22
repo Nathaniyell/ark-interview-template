@@ -139,7 +139,7 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
                     setShowMonthDropdown(false);
                   }}
                   className={cn(
-                    "rounded-[5px] px-2 py-1 min-w-[56px] text-center border border-transparent transition-colors cursor-pointer",
+                    "rounded-[5px] px-2 py-1 w-[56px] text-center border border-transparent transition-colors cursor-pointer mr-3",
                     activeTimeframe === label
                       ? "bg-[#272829] text-[#4de209]"
                       : "bg-transparent text-white/60 hover:text-white"
