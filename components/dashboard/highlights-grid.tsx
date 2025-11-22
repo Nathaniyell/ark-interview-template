@@ -89,7 +89,7 @@ const news = {
   handle: "@ARKmarketplace",
   message:[
     "Join ARK for a Night of Hope, Education & Encouragement in Jesus at FAITHx Vancouver 2026!", 
-    "Connect with <span style='color: #4de209'>@ARKmarketplace</span> this December 19, 2026 in Vancouver and enjoy music worship, moving media pieces & anointed speakers who will give inspirational FAITHx Talks!",
+    "Connect with <span style='color: #4de209; cursor: pointer;'>@ARKmarketplace</span> this December 19, 2026 in Vancouver and enjoy music worship, moving media pieces & anointed speakers who will give inspirational FAITHx Talks!",
     "Info on where to purchase tickets online coming soon!",
   ],
 
@@ -201,7 +201,7 @@ export const HighlightsGrid = () => {
                   <span className="font-semibold leading-tight">
                     {news.platform}
                   </span>
-                  <span className="text-sm text-[#4de209]">{news.handle}</span>
+                  <span className="text-sm text-[#4de209] cursor-pointer"><Link href={`#`} className="hover:text-[#4de209]">{news.handle}</Link></span>
                 </div>
               </div>
               <button className="text-white/50 leading-none">
