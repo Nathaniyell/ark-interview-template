@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/app/logo.svg";
+import Link from "next/link";
 
 const reminders = [
   {
@@ -119,7 +120,7 @@ export const HighlightsGrid = () => {
                   </div>
                 </div>
                 <div className={cn(
-                  "hover:bg-[#272829] flex items-center gap-2 h-[71px] px-2 w-full", 
+                  "hover:bg-[#272829] flex items-center gap-2 h-[71px] px-2 w-full cursor-pointer", 
                 )}>
                   <span
                     className={cn(
@@ -131,7 +132,7 @@ export const HighlightsGrid = () => {
                   >
                     {item.count}
                   </span>
-                  <p className="text-sm text-white/70 flex-1 ">
+                  <p className="text-sm text-white/70 hover:text-[#4de209] flex-1 ">
                     {item.message}
                   </p>
                 </div>
@@ -161,8 +162,10 @@ export const HighlightsGrid = () => {
                     />
                   </div>
                   <div className="flex flex-col gap-2 px-5 md:px-0 min-w-0">
-                    <h4 className="text-base font-semibold truncate md:whitespace-normal">
-                      {item.title}
+                    <h4 className="text-base font-semibold truncate md:whitespace-normal text-[#4de209] cursor-pointer">
+                      <Link href={`#`} className="hover:text-[#4de209]">
+                        {item.title}
+                      </Link>
                     </h4>
                     <p className="text-sm">
                       Shop <span className="text-[#4de209]">{item.shop}</span>{" "}
