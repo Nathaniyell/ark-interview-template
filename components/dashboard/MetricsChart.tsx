@@ -65,7 +65,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         backgroundColor: "#272829",
         border: "1px solid #272829",
         borderRadius: "8px",
-        // width: "305px",
+        width: "410px",
         // height: "181px",               
         fontFamily: "'Jost', sans-serif",
         display: "flex",
@@ -73,7 +73,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         justifyContent: "center",     
         boxSizing: "border-box",
       }}
-      className="p-[13px]"
+      className="px-[13px] pb-[13px] pt-1"
     >
      
       {/* Current Month Column */}
@@ -85,7 +85,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-r pb-1"
+          className="border-b border-[#bfbfbf]/25 border-r pb-1 text-center"
         >
           {label.toUpperCase()} 2023
         </div>
@@ -95,7 +95,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         <div
           style={{
             backgroundColor: "#121212",
-            width: "134px",
+            width: "180px",
             // height: "53px",
             borderRadius: "5px",
             display: "flex",
@@ -108,7 +108,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
           <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             SALES
           </div>
-          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>       
             {formatCurrency(currentMonth.sales)}
           </div>
         </div>
@@ -117,7 +117,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         <div
           style={{
             backgroundColor: "#121212",
-            width: "134px",
+            width: "180px",
             // height: "53px",
             borderRadius: "5px",
             display: "flex",
@@ -146,7 +146,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-l text-right pb-1"
+          className="border-b border-[#bfbfbf]/25 border-l text-center pb-1"
         >
           YTD 2023
         </div>
@@ -156,7 +156,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         <div
           style={{
             backgroundColor: "#121212",
-              width: "134px",
+              width: "180px",
               // height: "53px",
             borderRadius: "5px",
             display: "flex",
@@ -178,7 +178,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         <div
           style={{
             backgroundColor: "#121212",
-              width: "134px",
+              width: "180px",
               // height: "53px",
             borderRadius: "5px",
             display: "flex",
