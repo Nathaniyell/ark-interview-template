@@ -1,4 +1,5 @@
 "use client";
+import { useState, useRef } from "react";
 import {
   LineChart,
   Line,
@@ -32,7 +33,12 @@ const chartData: ChartDataPoint[] = [
   { month: "Dec", sales: 1200000, orders: 600 },
 ];
 
-const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
+interface CustomTooltipProps extends TooltipProps<number, string> {
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+}
+
+const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: CustomTooltipProps) => {
   if (!active || !payload || !payload.length) return null;
 
   const currentMonthIndex = chartData.findIndex((d) => d.month === label);
@@ -72,8 +78,20 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         alignItems: "center",
         justifyContent: "center",     
         boxSizing: "border-box",
+        pointerEvents: "auto",
       }}
       className="px-[13px] pb-[13px] pt-1"
+      onMouseEnter={(e) => {
+        e.stopPropagation();
+        onMouseEnter?.();
+      }}
+      onMouseLeave={(e) => {
+        e.stopPropagation();
+        onMouseLeave?.();
+      }}
+      onMouseMove={(e) => {
+        e.stopPropagation();
+      }}
     >
      
       {/* Current Month Column */}
@@ -202,6 +220,32 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
 };
 
 const MetricsChart = () => {
+  const [lockedTooltip, setLockedTooltip] = useState<{ label: string; payload: Array<{ value: number; dataKey: string }> } | null>(null);
+  const tooltipTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isHoveringTooltipRef = useRef(false);
+  const lastTooltipDataRef = useRef<{ label: string; payload: Array<{ value: number; dataKey: string }> } | null>(null);
+
+  const handleTooltipMouseEnter = () => {
+    isHoveringTooltipRef.current = true;
+    if (tooltipTimeoutRef.current) {
+      clearTimeout(tooltipTimeoutRef.current);
+      tooltipTimeoutRef.current = null;
+    }
+    // Lock to the last tooltip data when entering
+    if (lastTooltipDataRef.current) {
+      setLockedTooltip(lastTooltipDataRef.current);
+    }
+  };
+
+  const handleTooltipMouseLeave = () => {
+    isHoveringTooltipRef.current = false;
+    // Small delay before unlocking to prevent flickering
+    tooltipTimeoutRef.current = setTimeout(() => {
+      if (!isHoveringTooltipRef.current) {
+        setLockedTooltip(null);
+      }
+    }, 150);
+  };
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -253,7 +297,32 @@ const MetricsChart = () => {
           width={0}
         />
 
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip 
+          content={(props: TooltipProps<number, string>) => {
+            // Store the current tooltip data in ref (no state update during render)
+            if (props.active && props.label && props.payload) {
+              const currentData = { 
+                label: props.label as string, 
+                payload: props.payload as Array<{ value: number; dataKey: string }>
+              };
+              lastTooltipDataRef.current = currentData;
+            }
+            
+            // Use locked tooltip data if available and we're hovering over tooltip
+            const tooltipProps = (lockedTooltip && isHoveringTooltipRef.current)
+              ? { ...props, active: true, label: lockedTooltip.label, payload: lockedTooltip.payload }
+              : props;
+              
+            return (
+              <CustomTooltip 
+                {...tooltipProps}
+                onMouseEnter={handleTooltipMouseEnter}
+                onMouseLeave={handleTooltipMouseLeave}
+              />
+            );
+          }} 
+          shared={false}
+        />
 
         {/* Sales line - uses left Y-axis */}
         <Line
@@ -263,6 +332,7 @@ const MetricsChart = () => {
           stroke="#4de209"
           strokeWidth={2}
           dot={false}
+          activeDot={{ r: 6, fill: "#4de209", strokeWidth: 2, stroke: "#272829" }}
           name="Sales"
         />
 
@@ -275,6 +345,7 @@ const MetricsChart = () => {
           strokeWidth={2}
           strokeOpacity={0.5}
           dot={false}
+          activeDot={{ r: 6, fill: "#4de209", strokeWidth: 2, stroke: "#272829", fillOpacity: 0.5 }}
           name="Orders"
         />
       </LineChart>
