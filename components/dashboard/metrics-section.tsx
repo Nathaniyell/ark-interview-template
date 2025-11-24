@@ -5,6 +5,8 @@ import { TotalProductsSoldCard } from "./total-products-sold-card";
 import { SidebarNav } from "./sidebar-nav";
 import { cn } from "@/lib/utils";
 import MetricsChart from "./MetricsChart";
+import { TopProductsTable } from "./top-products-table";
+import { RevenueByLocationTable } from "./revenue-by-location-table";
 
 export const MetricsSection = () => {
   const visualizationData = [
@@ -58,9 +60,16 @@ export const MetricsSection = () => {
       orders: "157",
       initials: "SK",
     },
+    {
+      id: "scottys-keto-mix",
+      title: "Scotty's Keto Pancake & Waffle Mix - 0 Net Carbs",
+      subtitle: "Grocery · Specialty Foods",
+      price: "$33.99",
+      revenue: "$5,336",
+      orders: "157",
+      initials: "SK",
+    },
   ];
-
-  const timeframes = ["Today", "Week", "Month", "Year"];
 
   const locationMetrics = [
     {
@@ -118,7 +127,8 @@ export const MetricsSection = () => {
           <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 p-4 lg:p-6 text-white flex-1 flex flex-col gap-[19px] lg:h-full">
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
               <h2 className="text-sm font-semibold">
-                Revenue Reports &gt; <span className="text-[#4de209]">2023</span>
+                Revenue Reports &gt;{" "}
+                <span className="text-[#4de209] cursor-pointer">2023</span>
               </h2>
               <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
                 {visualizationData.map((data) => (
@@ -150,123 +160,13 @@ export const MetricsSection = () => {
               </div>
             </div>
             <div className="flex-1 min-h-0">
-             <MetricsChart />
+              <MetricsChart />
             </div>
           </div>
         </div>
         <div className="grid lg:grid-cols-[2fr_1fr] lg:gap-[38px] items-stretch">
-          <div className="bg-transparent rounded-[12px] border border-[#bfbfbf]/25 text-white flex-1 flex flex-col lg:h-[400px] overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-b border-b-[#bfbfbf]/25 px-4 py-4">
-              <h2 className="text-sm font-semibold">
-                Top Products Sold &gt;{" "}
-                <span className="font-semibold text-[#4de209]">March 2024</span>
-              </h2>
-              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-[20px] w-full lg:w-auto">
-                <p className="text-sm text-[#4de209] bg-[#272829] rounded-[5px] px-2 py-1 text-center lg:text-left">
-                  Get Free $100 ARKai Ad Spend on Your Best Selling Products*
-                </p>
-                <ul className="flex items-center justify-between gap-[12px] text-sm">
-                  {timeframes.map((label) => (
-                    <li
-                      key={label}
-                      className={cn(
-                        "rounded-[5px] px-2 py-1 min-w-[56px] text-center bg-transparent text-white/60 border border-transparent transition-colors",
-                        label === "Month" && "bg-[#272829] text-white"
-                      )}
-                    >
-                      {label}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-y-scroll">
-              <div className="flex-1 overflow-y-scroll">
-                <table className="w-full table-fixed">
-                  <thead>
-                    <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
-                      <th className="text-left px-4 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Products</th>
-                      <th className="text-right px-4 py-3 w-[80px]">Price</th>
-                      <th className="text-right px-4 py-3 w-[100px]">Revenue</th>
-                      <th className="text-right px-4 py-3 rounded-tr-[5px] rounded-br-[5px] w-[80px]">Orders</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {topProducts.map((product) => (
-                      <tr
-                        key={product.id}
-                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
-                      >
-                        <td className="px-4 py-4">
-                          <div className="flex items-center gap-3">
-                            <div className="w-[50px] h-[50px] rounded-[8px] bg-[#272829] flex items-center justify-center text-sm font-semibold text-white/70 flex-shrink-0">
-                              {product.initials}
-                            </div>
-                            <div className="flex flex-col gap-1 min-w-0">
-                              <span className="font-semibold text-sm lg:text-base text-white/60 truncate">
-                                {product.title}
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="text-right px-4 py-4 w-[80px] text-sm font-medium text-white/60">
-                          {product.price}
-                        </td>
-                        <td className="text-right px-4 py-4 w-[100px] text-sm font-medium text-white/60">
-                          {product.revenue}
-                        </td>
-                        <td className="text-right px-4 py-4 w-[80px] text-sm font-semibold text-white/60">
-                          {product.orders}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-          <div className="lg:h-[400px] rounded-[12px] border border-[#bfbfbf]/25 text-white flex flex-col overflow-hidden">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-4 py-4 border-b border-[#bfbfbf]/25">
-              <h2 className="text-sm font-semibold">
-                Revenue &amp; Orders by Location &gt;{" "}
-                <span className="text-[#4de209]">March 2024</span>
-              </h2>
-              <button className="w-full lg:w-auto rounded-[5px] bg-[#272829] text-[#4de209] text-sm px-3 py-1">
-                Try ARKai Ads
-              </button>
-            </div>
-            <div className="flex flex-col flex-1 px-4 mt-[30px] overflow-hidden">
-              <div className="flex-1 overflow-y-scroll">
-                <table className="w-full table-fixed">
-                  <thead>
-                    <tr className="text-xs uppercase tracking-[0.08em] text-white/60 font-semibold bg-[#272829] h-[34px]">
-                      <th className="text-left px-4 py-3 rounded-tl-[5px] rounded-bl-[5px] w-auto">Top Countries</th>
-                      <th className="text-right px-4 py-3 w-[110px]">Revenue</th>
-                      <th className="text-right px-4 py-3 rounded-tr-[5px] rounded-br-[5px] w-[90px]">Orders</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {locationMetrics.map((location) => (
-                      <tr
-                        key={location.country}
-                        className="border-b border-[#bfbfbf]/25 last:border-b-0"
-                      >
-                        <td className="px-4 py-3 text-sm font-semibold text-white/60 uppercase">
-                          {location.country}
-                        </td>
-                        <td className="text-right px-4 py-3 w-[110px] text-sm font-medium text-white/60">
-                          {location.revenue}
-                        </td>
-                        <td className="text-right px-4 py-3 w-[90px] text-sm font-medium text-white/60">
-                          {location.orders}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+          <TopProductsTable products={topProducts} />
+          <RevenueByLocationTable locationMetrics={locationMetrics} />
         </div>
       </div>
     </div>

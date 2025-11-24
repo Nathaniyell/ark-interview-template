@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/app/logo.svg";
+import Link from "next/link";
 
 const reminders = [
   {
@@ -88,7 +89,7 @@ const news = {
   handle: "@ARKmarketplace",
   message:[
     "Join ARK for a Night of Hope, Education & Encouragement in Jesus at FAITHx Vancouver 2026!", 
-    "Connect with <span style='color: #4de209'>@ARKmarketplace</span> this December 19, 2026 in Vancouver and enjoy music worship, moving media pieces & anointed speakers who will give inspirational FAITHx Talks!",
+    "Connect with <span style='color: #4de209; cursor: pointer;'>@ARKmarketplace</span> this December 19, 2026 in Vancouver and enjoy music worship, moving media pieces & anointed speakers who will give inspirational FAITHx Talks!",
     "Info on where to purchase tickets online coming soon!",
   ],
 
@@ -119,7 +120,7 @@ export const HighlightsGrid = () => {
                   </div>
                 </div>
                 <div className={cn(
-                  "hover:bg-[#272829] flex items-center gap-2 h-[71px] px-2 w-full", 
+                  "hover:bg-[#272829] text-white/70 hover:text-[#4de209] flex items-center gap-2 h-[71px] px-2 w-full cursor-pointer", 
                 )}>
                   <span
                     className={cn(
@@ -131,7 +132,7 @@ export const HighlightsGrid = () => {
                   >
                     {item.count}
                   </span>
-                  <p className="text-sm text-white/70 flex-1 ">
+                  <p className="text-sm flex-1 ">
                     {item.message}
                   </p>
                 </div>
@@ -165,7 +166,7 @@ export const HighlightsGrid = () => {
                       {item.title}
                     </h4>
                     <p className="text-sm">
-                      Shop <span className="text-[#4de209]">{item.shop}</span>{" "}
+                      Shop <span className="text-[#4de209] cursor-pointer"><Link href={`#`} className="hover:text-[#4de209]">{item.shop}</Link></span>{" "}
                     </p>
                     <span className="text-xs text-white/60">{item.location}</span>
                   </div>
@@ -200,7 +201,7 @@ export const HighlightsGrid = () => {
                   <span className="font-semibold leading-tight">
                     {news.platform}
                   </span>
-                  <span className="text-sm text-[#4de209]">{news.handle}</span>
+                  <span className="text-sm text-[#4de209] cursor-pointer"><Link href={`#`} className="hover:text-[#4de209]">{news.handle}</Link></span>
                 </div>
               </div>
               <button className="text-white/50 leading-none">
@@ -244,7 +245,7 @@ export const HighlightsGrid = () => {
         </div>
       </div>
       <div className="flex flex-col gap-[19px] -mt-[19px]">
-          <p className=" text-[#4de209] text-sm text-center">Advertisment</p>
+          <p className=" text-[#4de209] text-sm text-center cursor-pointer">Advertisement</p>
         <p className="bg-[#272829] rounded-[12px] h-[51px] text-center font-bold grid place-items-center">
           Ship on your own or choose FBA. Visit our fullfilment center and get
           your shipping game on seamlessly!

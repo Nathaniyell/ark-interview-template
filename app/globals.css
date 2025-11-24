@@ -260,3 +260,30 @@ input[type="search"]:focus-visible {
   box-shadow: none !important;
   border: none !important;
 }
+
+/* Custom scrollbar styles for tables */
+.table-scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #272829 transparent;
+  /* Remove padding-right from here - it causes the scrollbar to be pushed in */
+  overflow-y: auto !important; /* Changed from scroll to auto */
+  box-sizing: border-box;
+}
+
+.table-scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0; /* Add some space from top/bottom */
+}
+
+.table-scrollable::-webkit-scrollbar-thumb {
+  background-color: #272829;
+  border-radius: 3px;
+}
+
+.table-scrollable::-webkit-scrollbar-thumb:hover {
+  background-color: #272829;
+}
