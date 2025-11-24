@@ -65,47 +65,51 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         backgroundColor: "#272829",
         border: "1px solid #272829",
         borderRadius: "8px",
-        width: "458px",
-        height: "272px",
-        padding: "19px",
+        // width: "305px",
+        // height: "181px",               
         fontFamily: "'Jost', sans-serif",
         display: "flex",
-        // gap: "19px",
+        alignItems: "center",
+        justifyContent: "center",     
         boxSizing: "border-box",
       }}
+      className="p-[19px]"
     >
+     
       {/* Current Month Column */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1 }}>
+      <div className="" style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1, }}>
         <div
           style={{
             color: "#FFFFFF",
-            fontSize: "27px",
+            fontSize: "18px",
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-r text-center"
+          className="border-b border-[#bfbfbf]/25 border-r"
         >
           {label.toUpperCase()} 2023
         </div>
-        
+        <div className="space-y-[19px]  mr-[19px]">
+
         {/* Sales Card */}
         <div
           style={{
             backgroundColor: "#121212",
-            width: "201px",
-            height: "80px",
+            width: "134px",
+            // height: "53px",
             borderRadius: "8px",
-            padding: "12px",
+            padding: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
-          }}
+          }}        
+          className="mx-auto"
         >
-          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             SALES
           </div>
-          <div style={{ color: "#B0B3B8", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
             {formatCurrency(currentMonth.sales)}
           </div>
         </div>
@@ -114,58 +118,61 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         <div
           style={{
             backgroundColor: "#121212",
-            width: "201px",
-            height: "80px",
+            width: "134px",
+            // height: "53px",
             borderRadius: "8px",
-            padding: "12px",
+            padding: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
           }}
+          className="mx-auto"
         >
-          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             ORDERS
           </div>
-          <div style={{ color: "#488011", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+          <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
             {formatNumber(currentMonth.orders)}
           </div>
+        </div>
         </div>
       </div>
 
       {/* YTD Column */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1 }} className="">
         <div
           style={{
             color: "#FFFFFF",
-            fontSize: "27px",
+            fontSize: "18px",
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-l text-center"
+          className="border-b border-[#bfbfbf]/25 border-l text-right"
         >
           YTD 2023
         </div>
-        
+        <div className="space-y-[19px]">
+
         {/* Sales Card */}
         <div
           style={{
             backgroundColor: "#121212",
-            width: "201px",
-            height: "80px",
+              width: "134px",
+              // height: "53px",
             borderRadius: "8px",
-            padding: "12px",
+            padding: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
-            marginLeft: "19px",
           }}
+          className="mx-auto"
         >
-          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             SALES
           </div>
-          <div style={{ color: "#B0B3B8", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
             {formatCurrency(ytdSales)}
           </div>
         </div>
@@ -174,23 +181,24 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         <div
           style={{
             backgroundColor: "#121212",
-            width: "201px",
-            height: "80px",
+              width: "134px",
+              // height: "53px",
             borderRadius: "8px",
-            padding: "12px",
+            padding: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
-            marginLeft: "19px",
           }}
+          className="mx-auto"
         >
-          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             ORDERS
           </div>
-          <div style={{ color: "#488011", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+          <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
             {formatNumber(ytdOrders)}
           </div>
+        </div>
         </div>
       </div>
     </div>
