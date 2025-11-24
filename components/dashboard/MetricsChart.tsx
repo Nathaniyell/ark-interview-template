@@ -1,4 +1,5 @@
 "use client";
+import { useState, useRef } from "react";
 import {
   LineChart,
   Line,
@@ -33,15 +34,33 @@ const chartData: ChartDataPoint[] = [
   { month: "Dec", sales: 1200000, orders: 600 },
 ];
 
-// Move formatting functions outside component to prevent recreation
-const formatCurrency = (value: number) => {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(value);
-};
+interface CustomTooltipProps extends TooltipProps<number, string> {
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+}
+
+const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: CustomTooltipProps) => {
+  if (!active || !payload || !payload.length) return null;
+
+  const currentMonthIndex = chartData.findIndex((d) => d.month === label);
+  const currentMonth = chartData[currentMonthIndex];
+  
+  // Calculate YTD totals (sum from Jan to current month)
+  const ytdSales = chartData
+    .slice(0, currentMonthIndex + 1)
+    .reduce((sum, d) => sum + d.sales, 0);
+  const ytdOrders = chartData
+    .slice(0, currentMonthIndex + 1)
+    .reduce((sum, d) => sum + d.orders, 0);
+
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
 
 const formatNumber = (value: number) => {
   return new Intl.NumberFormat("en-US").format(value);
@@ -85,47 +104,23 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         boxSizing: "border-box",
         pointerEvents: "auto",
         transform: `translate(calc(-100% - ${offset}px), -50%)`,
+        pointerEvents: "auto",
       }}
       className="px-[13px] pb-[13px] pt-1"
     >
-      {/* Grid layout: 2 columns, header row spans both columns */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "13px" }}>
-        {/* Header Row - spans both columns */}
+     
+      {/* Current Month Column */}
+      <div className="" style={{ display: "flex", flexDirection: "column", gap: "13px", flex: 1, }}>
         <div
           style={{
-            gridColumn: "1 / -1",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            borderBottom: "1px solid rgba(191, 191, 191, 0.25)",
-            paddingBottom: "6px",
+            color: "#FFFFFF",
+            fontSize: "18px",
+            fontWeight: 500,
+            fontFamily: "'Jost', sans-serif",
           }}
+          className="border-b border-[#bfbfbf]/25 border-r pb-1 text-center"
         >
-          <div
-            style={{
-              color: "#FFFFFF",
-              fontSize: "18px",
-              fontWeight: 500,
-              fontFamily: "'Jost', sans-serif",
-              textAlign: "center",
-              borderRight: "1px solid rgba(191, 191, 191, 0.25)",
-              paddingRight: "13px",
-            }}
-          >
-            {label.toUpperCase()} 2023
-          </div>
-          <div
-            style={{
-              color: "#FFFFFF",
-              fontSize: "18px",
-              fontWeight: 500,
-              fontFamily: "'Jost', sans-serif",
-              textAlign: "center",
-              borderLeft: "1px solid rgba(191, 191, 191, 0.25)",
-              paddingLeft: "13px",
-            }}
-          >
-            YTD 2023
-          </div>
+          {label.toUpperCase()} 2023
         </div>
 
         {/* Current Month Column */}
@@ -223,17 +218,32 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
 };
 
 const MetricsChart = () => {
-  // Simplified tooltip - removed state management that was causing re-render loops
-  const tooltipContent = useCallback((props: TooltipProps<number, string>) => {
-    if (props.active) {
-      return (
-        <CustomTooltip 
-          {...(props as TooltipProps<number, string>)}
-        />
-      );
+  const [lockedTooltip, setLockedTooltip] = useState<{ label: string; payload: Array<{ value: number; dataKey: string }> } | null>(null);
+  const tooltipTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isHoveringTooltipRef = useRef(false);
+  const lastTooltipDataRef = useRef<{ label: string; payload: Array<{ value: number; dataKey: string }> } | null>(null);
+
+  const handleTooltipMouseEnter = () => {
+    isHoveringTooltipRef.current = true;
+    if (tooltipTimeoutRef.current) {
+      clearTimeout(tooltipTimeoutRef.current);
+      tooltipTimeoutRef.current = null;
     }
-    return null;
-  }, []);
+    // Lock to the last tooltip data when entering
+    if (lastTooltipDataRef.current) {
+      setLockedTooltip(lastTooltipDataRef.current);
+    }
+  };
+
+  const handleTooltipMouseLeave = () => {
+    isHoveringTooltipRef.current = false;
+    // Small delay before unlocking to prevent flickering
+    tooltipTimeoutRef.current = setTimeout(() => {
+      if (!isHoveringTooltipRef.current) {
+        setLockedTooltip(null);
+      }
+    }, 150);
+  };
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -286,9 +296,30 @@ const MetricsChart = () => {
         />
 
         <Tooltip 
-          content={tooltipContent}
-          allowEscapeViewBox={{ x: true, y: true }}
-          cursor={false}
+          content={(props: TooltipProps<number, string>) => {
+            // Store the current tooltip data in ref (no state update during render)
+            if (props.active && props.label && props.payload) {
+              const currentData = { 
+                label: props.label as string, 
+                payload: props.payload as Array<{ value: number; dataKey: string }>
+              };
+              lastTooltipDataRef.current = currentData;
+            }
+            
+            // Use locked tooltip data if available and we're hovering over tooltip
+            const tooltipProps = (lockedTooltip && isHoveringTooltipRef.current)
+              ? { ...props, active: true, label: lockedTooltip.label, payload: lockedTooltip.payload }
+              : props;
+              
+            return (
+              <CustomTooltip 
+                {...tooltipProps}
+                onMouseEnter={handleTooltipMouseEnter}
+                onMouseLeave={handleTooltipMouseLeave}
+              />
+            );
+          }} 
+          shared={false}
         />
 
         {/* Sales line - uses left Y-axis */}
