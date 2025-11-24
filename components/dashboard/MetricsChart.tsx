@@ -85,7 +85,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-r"
+          className="border-b border-[#bfbfbf]/25 border-r pb-1"
         >
           {label.toUpperCase()} 2023
         </div>
@@ -97,14 +97,13 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             backgroundColor: "#121212",
             width: "134px",
             // height: "53px",
-            borderRadius: "8px",
-            padding: "5px",
+            borderRadius: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
           }}        
-          className="mx-auto"
+          className="mx-auto px-[12px] py-[5px]"
         >
           <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             SALES
@@ -120,14 +119,13 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             backgroundColor: "#121212",
             width: "134px",
             // height: "53px",
-            borderRadius: "8px",
-            padding: "5px",
+            borderRadius: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
           }}
-          className="mx-auto"
+          className="mx-auto px-[12px] py-[5px]"
         >
           <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             ORDERS
@@ -148,7 +146,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-l text-right"
+          className="border-b border-[#bfbfbf]/25 border-l text-right pb-1"
         >
           YTD 2023
         </div>
@@ -160,14 +158,13 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             backgroundColor: "#121212",
               width: "134px",
               // height: "53px",
-            borderRadius: "8px",
-            padding: "5px",
+            borderRadius: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
           }}
-          className="mx-auto"
+     className="mx-auto px-[12px] py-[5px]"
         >
           <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             SALES
@@ -183,14 +180,13 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             backgroundColor: "#121212",
               width: "134px",
               // height: "53px",
-            borderRadius: "8px",
-            padding: "5px",
+            borderRadius: "5px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
           }}
-          className="mx-auto"
+          className="mx-auto px-[12px] py-[5px]"
         >
           <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
             ORDERS
