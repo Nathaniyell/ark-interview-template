@@ -70,7 +70,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         padding: "19px",
         fontFamily: "'Jost', sans-serif",
         display: "flex",
-        gap: "19px",
+        // gap: "19px",
         boxSizing: "border-box",
       }}
     >
@@ -83,7 +83,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-r"
+          className="border-b border-[#bfbfbf]/25 border-r text-center"
         >
           {label.toUpperCase()} 2023
         </div>
@@ -142,7 +142,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             fontWeight: 500,
             fontFamily: "'Jost', sans-serif",
           }}
-          className="border-b border-[#bfbfbf]/25 border-l"
+          className="border-b border-[#bfbfbf]/25 border-l text-center"
         >
           YTD 2023
         </div>
@@ -159,6 +159,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
+            marginLeft: "19px",
           }}
         >
           <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
@@ -181,6 +182,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
+            marginLeft: "19px",
           }}
         >
           <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
