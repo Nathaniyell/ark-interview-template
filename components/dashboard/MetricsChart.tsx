@@ -73,11 +73,11 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         justifyContent: "center",     
         boxSizing: "border-box",
       }}
-      className="p-[19px]"
+      className="p-[12px]"
     >
      
       {/* Current Month Column */}
-      <div className="" style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1, }}>
+      <div className="" style={{ display: "flex", flexDirection: "column", gap: "12px", flex: 1, }}>
         <div
           style={{
             color: "#FFFFFF",
@@ -89,7 +89,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         >
           {label.toUpperCase()} 2023
         </div>
-        <div className="space-y-[19px]  mr-[19px]">
+        <div className="space-y-[12px]  mr-[12px]">
 
         {/* Sales Card */}
         <div
@@ -140,7 +140,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
       </div>
 
       {/* YTD Column */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1 }} className="">
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px", flex: 1 }} className="">
         <div
           style={{
             color: "#FFFFFF",
@@ -152,7 +152,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         >
           YTD 2023
         </div>
-        <div className="space-y-[19px]">
+        <div className="space-y-[12px]">
 
         {/* Sales Card */}
         <div
