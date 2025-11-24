@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   TooltipProps,
 } from "recharts";
+import { useState } from "react";
 import "./metricChart.module.css"
 
 interface ChartDataPoint {
@@ -32,7 +33,7 @@ const chartData: ChartDataPoint[] = [
   { month: "Dec", sales: 1200000, orders: 600 },
 ];
 
-const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
+const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: TooltipProps<number, string> & { onMouseEnter?: () => void; onMouseLeave?: () => void }) => {
   if (!active || !payload || !payload.length) return null;
 
   const currentMonthIndex = chartData.findIndex((d) => d.month === label);
@@ -72,8 +73,11 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         alignItems: "center",
         justifyContent: "center",     
         boxSizing: "border-box",
+        pointerEvents: "auto",
       }}
       className="px-[13px] pb-[13px] pt-1"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
      
       {/* Current Month Column */}
@@ -202,6 +206,8 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
 };
 
 const MetricsChart = () => {
+  const [isHoveringTooltip, setIsHoveringTooltip] = useState(false);
+  const [savedTooltipProps, setSavedTooltipProps] = useState<Partial<TooltipProps<number, string>> | null>(null);
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -253,7 +259,31 @@ const MetricsChart = () => {
           width={0}
         />
 
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip 
+          content={(props) => {
+            if (props.active) {
+              setSavedTooltipProps(props as Partial<TooltipProps<number, string>>);
+            } else if (!isHoveringTooltip) {
+              setSavedTooltipProps(null);
+            }
+            const displayProps = (isHoveringTooltip && savedTooltipProps) ? { ...savedTooltipProps, active: true } : props;
+            if (displayProps.active) {
+              return (
+                <CustomTooltip 
+                  {...(displayProps as TooltipProps<number, string>)}
+                  onMouseEnter={() => setIsHoveringTooltip(true)}
+                  onMouseLeave={() => {
+                    setIsHoveringTooltip(false);
+                    setTimeout(() => setSavedTooltipProps(null), 50);
+                  }}
+                />
+              );
+            }
+            return null;
+          }}
+          allowEscapeViewBox={{ x: true, y: true }}
+          cursor={false}
+        />
 
         {/* Sales line - uses left Y-axis */}
         <Line
@@ -263,6 +293,7 @@ const MetricsChart = () => {
           stroke="#4de209"
           strokeWidth={2}
           dot={false}
+          activeDot={{ r: 8, fill: '#4de209', strokeWidth: 0 }}
           name="Sales"
         />
 
@@ -275,6 +306,7 @@ const MetricsChart = () => {
           strokeWidth={2}
           strokeOpacity={0.5}
           dot={false}
+          activeDot={{ r: 8, fill: '#4de209', strokeWidth: 0, opacity: 0.5 }}
           name="Orders"
         />
       </LineChart>
