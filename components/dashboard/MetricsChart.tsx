@@ -7,24 +7,195 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  TooltipProps,
 } from "recharts";
 import "./metricChart.module.css"
 
+interface ChartDataPoint {
+  month: string;
+  sales: number;
+  orders: number;
+}
+
+const chartData: ChartDataPoint[] = [
+  { month: "Jan", sales: 0, orders: 0 },
+  { month: "Feb", sales: 45000, orders: 240 },
+  { month: "Mar", sales: 120000, orders: 600 },
+  { month: "Apr", sales: 95000, orders: 500 },
+  { month: "May", sales: 180000, orders: 900 },
+  { month: "Jun", sales: 220000, orders: 100 },
+  { month: "Jul", sales: 280000, orders: 100 },
+  { month: "Aug", sales: 350000, orders: 100 },
+  { month: "Sep", sales: 480000, orders: 200 },
+  { month: "Oct", sales: 650000, orders: 300 },
+  { month: "Nov", sales: 850000, orders: 400 },
+  { month: "Dec", sales: 1200000, orders: 600 },
+];
+
+const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
+  if (!active || !payload || !payload.length) return null;
+
+  const currentMonthIndex = chartData.findIndex((d) => d.month === label);
+  const currentMonth = chartData[currentMonthIndex];
+  
+  // Calculate YTD totals (sum from Jan to current month)
+  const ytdSales = chartData
+    .slice(0, currentMonthIndex + 1)
+    .reduce((sum, d) => sum + d.sales, 0);
+  const ytdOrders = chartData
+    .slice(0, currentMonthIndex + 1)
+    .reduce((sum, d) => sum + d.orders, 0);
+
+  const formatCurrency = (value: number) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  };
+
+  const formatNumber = (value: number) => {
+    return new Intl.NumberFormat("en-US").format(value);
+  };
+
+  return (
+    <div
+      style={{
+        backgroundColor: "#272829",
+        border: "1px solid #272829",
+        borderRadius: "8px",
+        width: "458px",
+        height: "272px",
+        padding: "19px",
+        fontFamily: "'Jost', sans-serif",
+        display: "flex",
+        gap: "19px",
+        boxSizing: "border-box",
+      }}
+    >
+      {/* Current Month Column */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1 }}>
+        <div
+          style={{
+            color: "#FFFFFF",
+            fontSize: "27px",
+            fontWeight: 500,
+            fontFamily: "'Jost', sans-serif",
+          }}
+          className="border-b border-[#bfbfbf]/25 border-r"
+        >
+          {label.toUpperCase()} 2023
+        </div>
+        
+        {/* Sales Card */}
+        <div
+          style={{
+            backgroundColor: "#121212",
+            width: "201px",
+            height: "80px",
+            borderRadius: "8px",
+            padding: "12px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+            SALES
+          </div>
+          <div style={{ color: "#B0B3B8", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+            {formatCurrency(currentMonth.sales)}
+          </div>
+        </div>
+
+        {/* Orders Card */}
+        <div
+          style={{
+            backgroundColor: "#121212",
+            width: "201px",
+            height: "80px",
+            borderRadius: "8px",
+            padding: "12px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+            ORDERS
+          </div>
+          <div style={{ color: "#488011", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+            {formatNumber(currentMonth.orders)}
+          </div>
+        </div>
+      </div>
+
+      {/* YTD Column */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "19px", flex: 1 }}>
+        <div
+          style={{
+            color: "#FFFFFF",
+            fontSize: "27px",
+            fontWeight: 500,
+            fontFamily: "'Jost', sans-serif",
+          }}
+          className="border-b border-[#bfbfbf]/25 border-l"
+        >
+          YTD 2023
+        </div>
+        
+        {/* Sales Card */}
+        <div
+          style={{
+            backgroundColor: "#121212",
+            width: "201px",
+            height: "80px",
+            borderRadius: "8px",
+            padding: "12px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+            SALES
+          </div>
+          <div style={{ color: "#B0B3B8", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+            {formatCurrency(ytdSales)}
+          </div>
+        </div>
+
+        {/* Orders Card */}
+        <div
+          style={{
+            backgroundColor: "#121212",
+            width: "201px",
+            height: "80px",
+            borderRadius: "8px",
+            padding: "12px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{ color: "#B0B3B8", fontSize: "18px", fontFamily: "'Jost', sans-serif" }}>
+            ORDERS
+          </div>
+          <div style={{ color: "#488011", fontSize: "24px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+            {formatNumber(ytdOrders)}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const MetricsChart = () => {
-  const chartData = [
-    { month: "Jan", sales: 0, orders: 0 },
-    { month: "Feb", sales: 45000, orders: 240 },
-    { month: "Mar", sales: 120000, orders: 600 },
-    { month: "Apr", sales: 95000, orders: 500 },
-    { month: "May", sales: 180000, orders: 900 },
-    { month: "Jun", sales: 220000, orders: 100 },
-    { month: "Jul", sales: 280000, orders: 100 },
-    { month: "Aug", sales: 350000, orders: 100 },
-    { month: "Sep", sales: 480000, orders: 200 },
-    { month: "Oct", sales: 650000, orders: 300 },
-    { month: "Nov", sales: 850000, orders: 400 },
-    { month: "Dec", sales: 1200000, orders: 600 },
-  ];
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -76,26 +247,7 @@ const MetricsChart = () => {
           width={0}
         />
 
-        <Tooltip
-          contentStyle={{
-            backgroundColor: "#272829",
-            border: "1px solid #272829",
-            borderRadius: "8px",
-            color: "#bfbfbf",
-            fontFamily: "'Jost', sans-serif",
-          }}
-          labelStyle={{ 
-            color: "#bfbfbf",
-            fontFamily: "'Jost', sans-serif"
-          }}
-          formatter={(value: number, name: string) => {
-            if (name === "Orders") return [value, "Orders"];
-            
-            if (value >= 1000000) return [`$${(value / 1000000).toFixed(2)}M`, "Sales"];
-            if (value >= 1000) return [`$${(value / 1000).toFixed(0)}K`, "Sales"];
-            return [`$${value}`, "Sales"];
-          }}
-        />
+        <Tooltip content={<CustomTooltip />} />
 
         {/* Sales line - uses left Y-axis */}
         <Line
