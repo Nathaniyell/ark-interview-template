@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
   TooltipProps,
 } from "recharts";
-import { useState } from "react";
+import { useCallback, useMemo } from "react";
 import "./metricChart.module.css"
 
 interface ChartDataPoint {
@@ -33,32 +33,46 @@ const chartData: ChartDataPoint[] = [
   { month: "Dec", sales: 1200000, orders: 600 },
 ];
 
-const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: TooltipProps<number, string> & { onMouseEnter?: () => void; onMouseLeave?: () => void }) => {
-  if (!active || !payload || !payload.length) return null;
+// Move formatting functions outside component to prevent recreation
+const formatCurrency = (value: number) => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+};
 
-  const currentMonthIndex = chartData.findIndex((d) => d.month === label);
-  const currentMonth = chartData[currentMonthIndex];
-  
-  // Calculate YTD totals (sum from Jan to current month)
-  const ytdSales = chartData
-    .slice(0, currentMonthIndex + 1)
-    .reduce((sum, d) => sum + d.sales, 0);
-  const ytdOrders = chartData
-    .slice(0, currentMonthIndex + 1)
-    .reduce((sum, d) => sum + d.orders, 0);
+const formatNumber = (value: number) => {
+  return new Intl.NumberFormat("en-US").format(value);
+};
 
-  const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(value);
-  };
+const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
+  // Memoize calculations to prevent unnecessary recalculations
+  // Must be called before early return to satisfy React hooks rules
+  const { currentMonth, ytdSales, ytdOrders } = useMemo(() => {
+    if (!label) {
+      return { currentMonth: null, ytdSales: 0, ytdOrders: 0 };
+    }
+    const currentMonthIndex = chartData.findIndex((d) => d.month === label);
+    const currentMonth = chartData[currentMonthIndex];
+    
+    // Calculate YTD totals (sum from Jan to current month)
+    const ytdSales = chartData
+      .slice(0, currentMonthIndex + 1)
+      .reduce((sum, d) => sum + d.sales, 0);
+    const ytdOrders = chartData
+      .slice(0, currentMonthIndex + 1)
+      .reduce((sum, d) => sum + d.orders, 0);
 
-  const formatNumber = (value: number) => {
-    return new Intl.NumberFormat("en-US").format(value);
-  };
+    return { currentMonth, ytdSales, ytdOrders };
+  }, [label]);
+
+  if (!active || !payload || !payload.length || !currentMonth) return null;
+
+  // Calculate transform to position tooltip to the left of the point
+  const tooltipWidth = 410;
+  const offset = 20;
 
   return (
     <div
@@ -66,139 +80,143 @@ const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: T
         backgroundColor: "#272829",
         border: "1px solid #272829",
         borderRadius: "8px",
-        width: "410px",
-        // height: "181px",               
+        width: `${tooltipWidth}px`,
         fontFamily: "'Jost', sans-serif",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",     
         boxSizing: "border-box",
         pointerEvents: "auto",
+        transform: `translate(calc(-100% - ${offset}px), -50%)`,
       }}
       className="px-[13px] pb-[13px] pt-1"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
     >
-     
-      {/* Current Month Column */}
-      <div className="" style={{ display: "flex", flexDirection: "column", gap: "13px", flex: 1, }}>
+      {/* Grid layout: 2 columns, header row spans both columns */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+        {/* Header Row - spans both columns */}
         <div
           style={{
-            color: "#FFFFFF",
-            fontSize: "18px",
-            fontWeight: 500,
-            fontFamily: "'Jost', sans-serif",
+            gridColumn: "1 / -1",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            borderBottom: "1px solid rgba(191, 191, 191, 0.25)",
+            paddingBottom: "6px",
+            marginBottom: "13px",
           }}
-          className="border-b border-[#bfbfbf]/25 border-r pb-1 text-center"
         >
-          {label.toUpperCase()} 2023
-        </div>
-        <div className="space-y-[13px]  mr-[13px]">
-
-        {/* Sales Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
-            width: "180px",
-            // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}        
-          className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            SALES
+          <div
+            style={{
+              color: "#FFFFFF",
+              fontSize: "18px",
+              fontWeight: 500,
+              fontFamily: "'Jost', sans-serif",
+              textAlign: "center",
+              borderRight: "1px solid rgba(191, 191, 191, 0.25)",
+              paddingRight: "13px",
+            }}
+          >
+            {label.toUpperCase()} 2023
           </div>
-          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>       
-            {formatCurrency(currentMonth.sales)}
-          </div>
-        </div>
-
-        {/* Orders Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
-            width: "180px",
-            // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}
-          className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            ORDERS
-          </div>
-          <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
-            {formatNumber(currentMonth.orders)}
+          <div
+            style={{
+              color: "#FFFFFF",
+              fontSize: "18px",
+              fontWeight: 500,
+              fontFamily: "'Jost', sans-serif",
+              textAlign: "center",
+              borderLeft: "1px solid rgba(191, 191, 191, 0.25)",
+              paddingLeft: "13px",
+            }}
+          >
+            YTD 2023
           </div>
         </div>
-        </div>
-      </div>
 
-      {/* YTD Column */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "13px", flex: 1 }} className="">
-        <div
-          style={{
-            color: "#FFFFFF",
-            fontSize: "18px",
-            fontWeight: 500,
-            fontFamily: "'Jost', sans-serif",
-          }}
-          className="border-b border-[#bfbfbf]/25 border-l text-center pb-1"
-        >
-          YTD 2023
-        </div>
-        <div className="space-y-[13px]">
-
-        {/* Sales Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
+        {/* Current Month Column */}
+        <div className="" style={{ display: "flex", flexDirection: "column", gap: "13px", paddingRight: "13px" }}>
+          {/* Sales Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
               width: "180px",
-              // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}
-     className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            SALES
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}        
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              SALES
+            </div>
+            <div style={{ color: "#4de209", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>       
+              {formatCurrency(currentMonth.sales)}
+            </div>
           </div>
-          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
-            {formatCurrency(ytdSales)}
+
+          {/* Orders Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "180px",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              ORDERS
+            </div>
+            <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatNumber(currentMonth.orders)}
+            </div>
           </div>
         </div>
 
-        {/* Orders Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
+        {/* YTD Column */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "13px", paddingLeft: "13px" }}>
+          {/* Sales Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
               width: "180px",
-              // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}
-          className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            ORDERS
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              SALES
+            </div>
+            <div style={{ color: "#4de209", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatCurrency(ytdSales)}
+            </div>
           </div>
-          <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
-            {formatNumber(ytdOrders)}
+
+          {/* Orders Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "180px",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              ORDERS
+            </div>
+            <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatNumber(ytdOrders)}
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
@@ -206,8 +224,17 @@ const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: T
 };
 
 const MetricsChart = () => {
-  const [isHoveringTooltip, setIsHoveringTooltip] = useState(false);
-  const [savedTooltipProps, setSavedTooltipProps] = useState<Partial<TooltipProps<number, string>> | null>(null);
+  // Simplified tooltip - removed state management that was causing re-render loops
+  const tooltipContent = useCallback((props: TooltipProps<number, string>) => {
+    if (props.active) {
+      return (
+        <CustomTooltip 
+          {...(props as TooltipProps<number, string>)}
+        />
+      );
+    }
+    return null;
+  }, []);
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -260,27 +287,7 @@ const MetricsChart = () => {
         />
 
         <Tooltip 
-          content={(props) => {
-            if (props.active) {
-              setSavedTooltipProps(props as Partial<TooltipProps<number, string>>);
-            } else if (!isHoveringTooltip) {
-              setSavedTooltipProps(null);
-            }
-            const displayProps = (isHoveringTooltip && savedTooltipProps) ? { ...savedTooltipProps, active: true } : props;
-            if (displayProps.active) {
-              return (
-                <CustomTooltip 
-                  {...(displayProps as TooltipProps<number, string>)}
-                  onMouseEnter={() => setIsHoveringTooltip(true)}
-                  onMouseLeave={() => {
-                    setIsHoveringTooltip(false);
-                    setTimeout(() => setSavedTooltipProps(null), 50);
-                  }}
-                />
-              );
-            }
-            return null;
-          }}
+          content={tooltipContent}
           allowEscapeViewBox={{ x: true, y: true }}
           cursor={false}
         />
