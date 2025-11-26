@@ -1,5 +1,4 @@
 "use client";
-import { useState, useRef } from "react";
 import {
   LineChart,
   Line,
@@ -10,6 +9,7 @@ import {
   ResponsiveContainer,
   TooltipProps,
 } from "recharts";
+import { useCallback, useMemo } from "react";
 import "./metricChart.module.css"
 
 interface ChartDataPoint {
@@ -33,37 +33,46 @@ const chartData: ChartDataPoint[] = [
   { month: "Dec", sales: 1200000, orders: 600 },
 ];
 
-interface CustomTooltipProps extends TooltipProps<number, string> {
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-}
+// Move formatting functions outside component to prevent recreation
+const formatCurrency = (value: number) => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+};
 
-const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: CustomTooltipProps) => {
-  if (!active || !payload || !payload.length) return null;
+const formatNumber = (value: number) => {
+  return new Intl.NumberFormat("en-US").format(value);
+};
 
-  const currentMonthIndex = chartData.findIndex((d) => d.month === label);
-  const currentMonth = chartData[currentMonthIndex];
-  
-  // Calculate YTD totals (sum from Jan to current month)
-  const ytdSales = chartData
-    .slice(0, currentMonthIndex + 1)
-    .reduce((sum, d) => sum + d.sales, 0);
-  const ytdOrders = chartData
-    .slice(0, currentMonthIndex + 1)
-    .reduce((sum, d) => sum + d.orders, 0);
+const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
+  // Memoize calculations to prevent unnecessary recalculations
+  // Must be called before early return to satisfy React hooks rules
+  const { currentMonth, ytdSales, ytdOrders } = useMemo(() => {
+    if (!label) {
+      return { currentMonth: null, ytdSales: 0, ytdOrders: 0 };
+    }
+    const currentMonthIndex = chartData.findIndex((d) => d.month === label);
+    const currentMonth = chartData[currentMonthIndex];
+    
+    // Calculate YTD totals (sum from Jan to current month)
+    const ytdSales = chartData
+      .slice(0, currentMonthIndex + 1)
+      .reduce((sum, d) => sum + d.sales, 0);
+    const ytdOrders = chartData
+      .slice(0, currentMonthIndex + 1)
+      .reduce((sum, d) => sum + d.orders, 0);
 
-  const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(value);
-  };
+    return { currentMonth, ytdSales, ytdOrders };
+  }, [label]);
 
-  const formatNumber = (value: number) => {
-    return new Intl.NumberFormat("en-US").format(value);
-  };
+  if (!active || !payload || !payload.length || !currentMonth) return null;
+
+  // Calculate transform to position tooltip to the left of the point
+  const tooltipWidth = 410;
+  const offset = 20;
 
   return (
     <div
@@ -71,148 +80,143 @@ const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: C
         backgroundColor: "#272829",
         border: "1px solid #272829",
         borderRadius: "8px",
-        width: "410px",
-        // height: "181px",               
+        width: `${tooltipWidth}px`,
         fontFamily: "'Jost', sans-serif",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",     
         boxSizing: "border-box",
         pointerEvents: "auto",
+        transform: `translate(calc(-100% - ${offset}px), -50%)`,
       }}
       className="px-[13px] pb-[13px] pt-1"
-      onMouseEnter={(e) => {
-        e.stopPropagation();
-        onMouseEnter?.();
-      }}
-      onMouseLeave={(e) => {
-        e.stopPropagation();
-        onMouseLeave?.();
-      }}
-      onMouseMove={(e) => {
-        e.stopPropagation();
-      }}
     >
-     
-      {/* Current Month Column */}
-      <div className="" style={{ display: "flex", flexDirection: "column", gap: "13px", flex: 1, }}>
+      {/* Grid layout: 2 columns, header row spans both columns */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "13px" }}>
+        {/* Header Row - spans both columns */}
         <div
           style={{
-            color: "#FFFFFF",
-            fontSize: "18px",
-            fontWeight: 500,
-            fontFamily: "'Jost', sans-serif",
+            gridColumn: "1 / -1",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            borderBottom: "1px solid rgba(191, 191, 191, 0.25)",
+            paddingBottom: "6px",
+            marginBottom: "13px",
           }}
-          className="border-b border-[#bfbfbf]/25 border-r pb-1 text-center"
         >
-          {label.toUpperCase()} 2023
-        </div>
-        <div className="space-y-[13px]  mr-[13px]">
-
-        {/* Sales Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
-            width: "180px",
-            // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}        
-          className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            SALES
+          <div
+            style={{
+              color: "#FFFFFF",
+              fontSize: "18px",
+              fontWeight: 500,
+              fontFamily: "'Jost', sans-serif",
+              textAlign: "center",
+              borderRight: "1px solid rgba(191, 191, 191, 0.25)",
+              paddingRight: "13px",
+            }}
+          >
+            {label.toUpperCase()} 2023
           </div>
-          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>       
-            {formatCurrency(currentMonth.sales)}
-          </div>
-        </div>
-
-        {/* Orders Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
-            width: "180px",
-            // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}
-          className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            ORDERS
-          </div>
-          <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
-            {formatNumber(currentMonth.orders)}
+          <div
+            style={{
+              color: "#FFFFFF",
+              fontSize: "18px",
+              fontWeight: 500,
+              fontFamily: "'Jost', sans-serif",
+              textAlign: "center",
+              borderLeft: "1px solid rgba(191, 191, 191, 0.25)",
+              paddingLeft: "13px",
+            }}
+          >
+            YTD 2023
           </div>
         </div>
-        </div>
-      </div>
 
-      {/* YTD Column */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "13px", flex: 1 }} className="">
-        <div
-          style={{
-            color: "#FFFFFF",
-            fontSize: "18px",
-            fontWeight: 500,
-            fontFamily: "'Jost', sans-serif",
-          }}
-          className="border-b border-[#bfbfbf]/25 border-l text-center pb-1"
-        >
-          YTD 2023
-        </div>
-        <div className="space-y-[13px]">
-
-        {/* Sales Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
+        {/* Current Month Column */}
+        <div className="" style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
+          {/* Sales Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
               width: "180px",
-              // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}
-     className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            SALES
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}        
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              SALES
+            </div>
+            <div style={{ color: "#4de209", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>       
+              {formatCurrency(currentMonth.sales)}
+            </div>
           </div>
-          <div style={{ color: "#B0B3B8", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
-            {formatCurrency(ytdSales)}
+
+          {/* Orders Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "180px",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              ORDERS
+            </div>
+            <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatNumber(currentMonth.orders)}
+            </div>
           </div>
         </div>
 
-        {/* Orders Card */}
-        <div
-          style={{
-            backgroundColor: "#121212",
+        {/* YTD Column */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
+          {/* Sales Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
               width: "180px",
-              // height: "53px",
-            borderRadius: "5px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            boxSizing: "border-box",
-          }}
-          className="mx-auto px-[12px] py-[5px]"
-        >
-          <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
-            ORDERS
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              SALES
+            </div>
+            <div style={{ color: "#4de209", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatCurrency(ytdSales)}
+            </div>
           </div>
-          <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
-            {formatNumber(ytdOrders)}
+
+          {/* Orders Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "180px",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="mx-auto px-[12px] py-[5px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              ORDERS
+            </div>
+            <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatNumber(ytdOrders)}
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
@@ -220,32 +224,17 @@ const CustomTooltip = ({ active, payload, label, onMouseEnter, onMouseLeave }: C
 };
 
 const MetricsChart = () => {
-  const [lockedTooltip, setLockedTooltip] = useState<{ label: string; payload: Array<{ value: number; dataKey: string }> } | null>(null);
-  const tooltipTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const isHoveringTooltipRef = useRef(false);
-  const lastTooltipDataRef = useRef<{ label: string; payload: Array<{ value: number; dataKey: string }> } | null>(null);
-
-  const handleTooltipMouseEnter = () => {
-    isHoveringTooltipRef.current = true;
-    if (tooltipTimeoutRef.current) {
-      clearTimeout(tooltipTimeoutRef.current);
-      tooltipTimeoutRef.current = null;
+  // Simplified tooltip - removed state management that was causing re-render loops
+  const tooltipContent = useCallback((props: TooltipProps<number, string>) => {
+    if (props.active) {
+      return (
+        <CustomTooltip 
+          {...(props as TooltipProps<number, string>)}
+        />
+      );
     }
-    // Lock to the last tooltip data when entering
-    if (lastTooltipDataRef.current) {
-      setLockedTooltip(lastTooltipDataRef.current);
-    }
-  };
-
-  const handleTooltipMouseLeave = () => {
-    isHoveringTooltipRef.current = false;
-    // Small delay before unlocking to prevent flickering
-    tooltipTimeoutRef.current = setTimeout(() => {
-      if (!isHoveringTooltipRef.current) {
-        setLockedTooltip(null);
-      }
-    }, 150);
-  };
+    return null;
+  }, []);
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -298,30 +287,9 @@ const MetricsChart = () => {
         />
 
         <Tooltip 
-          content={(props: TooltipProps<number, string>) => {
-            // Store the current tooltip data in ref (no state update during render)
-            if (props.active && props.label && props.payload) {
-              const currentData = { 
-                label: props.label as string, 
-                payload: props.payload as Array<{ value: number; dataKey: string }>
-              };
-              lastTooltipDataRef.current = currentData;
-            }
-            
-            // Use locked tooltip data if available and we're hovering over tooltip
-            const tooltipProps = (lockedTooltip && isHoveringTooltipRef.current)
-              ? { ...props, active: true, label: lockedTooltip.label, payload: lockedTooltip.payload }
-              : props;
-              
-            return (
-              <CustomTooltip 
-                {...tooltipProps}
-                onMouseEnter={handleTooltipMouseEnter}
-                onMouseLeave={handleTooltipMouseLeave}
-              />
-            );
-          }} 
-          shared={false}
+          content={tooltipContent}
+          allowEscapeViewBox={{ x: true, y: true }}
+          cursor={false}
         />
 
         {/* Sales line - uses left Y-axis */}
