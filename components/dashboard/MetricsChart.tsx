@@ -7,24 +7,231 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  TooltipProps,
 } from "recharts";
+import { useCallback, useMemo } from "react";
 import "./metricChart.module.css"
 
+interface ChartDataPoint {
+  month: string;
+  sales: number;
+  orders: number;
+}
+
+const chartData: ChartDataPoint[] = [
+  { month: "Jan", sales: 0, orders: 0 },
+  { month: "Feb", sales: 45000, orders: 240 },
+  { month: "Mar", sales: 120000, orders: 600 },
+  { month: "Apr", sales: 95000, orders: 500 },
+  { month: "May", sales: 180000, orders: 900 },
+  { month: "Jun", sales: 220000, orders: 100 },
+  { month: "Jul", sales: 280000, orders: 100 },
+  { month: "Aug", sales: 350000, orders: 100 },
+  { month: "Sep", sales: 480000, orders: 200 },
+  { month: "Oct", sales: 650000, orders: 300 },
+  { month: "Nov", sales: 850000, orders: 400 },
+  { month: "Dec", sales: 1200000, orders: 600 },
+];
+
+// Move formatting functions outside component to prevent recreation
+const formatCurrency = (value: number) => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+};
+
+const formatNumber = (value: number) => {
+  return new Intl.NumberFormat("en-US").format(value);
+};
+
+const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
+  // Memoize calculations to prevent unnecessary recalculations
+  // Must be called before early return to satisfy React hooks rules
+  const { currentMonth, ytdSales, ytdOrders } = useMemo(() => {
+    if (!label) {
+      return { currentMonth: null, ytdSales: 0, ytdOrders: 0 };
+    }
+    const currentMonthIndex = chartData.findIndex((d) => d.month === label);
+    const currentMonth = chartData[currentMonthIndex];
+    
+    // Calculate YTD totals (sum from Jan to current month)
+    const ytdSales = chartData
+      .slice(0, currentMonthIndex + 1)
+      .reduce((sum, d) => sum + d.sales, 0);
+    const ytdOrders = chartData
+      .slice(0, currentMonthIndex + 1)
+      .reduce((sum, d) => sum + d.orders, 0);
+
+    return { currentMonth, ytdSales, ytdOrders };
+  }, [label]);
+
+  if (!active || !payload || !payload.length || !currentMonth) return null;
+
+  // Calculate transform to position tooltip to the left of the point
+  const tooltipWidth = 410;
+  const offset = 20;
+
+  return (
+    <div
+      style={{
+        backgroundColor: "#272829",
+        border: "1px solid #272829",
+        borderRadius: "8px",
+        width: `${tooltipWidth}px`,
+        fontFamily: "'Jost', sans-serif",
+        boxSizing: "border-box",
+        pointerEvents: "auto",
+        transform: `translate(calc(-100% - ${offset}px), -50%)`,
+      }}
+      className="p-[14px]"
+    >
+      {/* Grid layout: 2 columns, header row spans both columns */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+        {/* Header Row - spans both columns */}
+        <div
+          style={{
+            gridColumn: "1 / -1",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            borderBottom: "1px solid rgba(191, 191, 191, 0.25)",
+            paddingBottom: "14px",
+          }}
+        >
+          <div
+            style={{
+              color: "#FFFFFF",
+              fontSize: "18px",
+              fontWeight: 500,
+              fontFamily: "'Jost', sans-serif",
+              textAlign: "center",
+              borderRight: "1px solid rgba(191, 191, 191, 0.25)",
+            }}
+          >
+            {label.toUpperCase()} 2023
+          </div>
+          <div
+            style={{
+              color: "#FFFFFF",
+              fontSize: "18px",
+              fontWeight: 500,
+              fontFamily: "'Jost', sans-serif",
+              textAlign: "center",
+              borderLeft: "1px solid rgba(191, 191, 191, 0.25)",
+            }}
+          >
+            YTD 2023
+          </div>
+        </div>
+
+        {/* Current Month Column */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          {/* Sales Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "100%",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}        
+            className="px-[14px] py-[14px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              SALES
+            </div>
+            <div style={{ color: "#4de209", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>       
+              {formatCurrency(currentMonth.sales)}
+            </div>
+          </div>
+
+          {/* Orders Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "100%",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="px-[14px] py-[14px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              ORDERS
+            </div>
+            <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatNumber(currentMonth.orders)}
+            </div>
+          </div>
+        </div>
+
+        {/* YTD Column */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          {/* Sales Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "100%",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="px-[14px] py-[14px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              SALES
+            </div>
+            <div style={{ color: "#4de209", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatCurrency(ytdSales)}
+            </div>
+          </div>
+
+          {/* Orders Card */}
+          <div
+            style={{
+              backgroundColor: "#121212",
+              width: "100%",
+              borderRadius: "5px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+            }}
+            className="px-[14px] py-[14px]"
+          >
+            <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
+              ORDERS
+            </div>
+            <div style={{ color: "#488011", fontSize: "16px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+              {formatNumber(ytdOrders)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const MetricsChart = () => {
-  const chartData = [
-    { month: "Jan", sales: 0, orders: 0 },
-    { month: "Feb", sales: 45000, orders: 240 },
-    { month: "Mar", sales: 120000, orders: 600 },
-    { month: "Apr", sales: 95000, orders: 500 },
-    { month: "May", sales: 180000, orders: 900 },
-    { month: "Jun", sales: 220000, orders: 100 },
-    { month: "Jul", sales: 280000, orders: 100 },
-    { month: "Aug", sales: 350000, orders: 100 },
-    { month: "Sep", sales: 480000, orders: 200 },
-    { month: "Oct", sales: 650000, orders: 300 },
-    { month: "Nov", sales: 850000, orders: 400 },
-    { month: "Dec", sales: 1200000, orders: 600 },
-  ];
+  // Simplified tooltip - removed state management that was causing re-render loops
+  const tooltipContent = useCallback((props: TooltipProps<number, string>) => {
+    if (props.active) {
+      return (
+        <CustomTooltip 
+          {...(props as TooltipProps<number, string>)}
+        />
+      );
+    }
+    return null;
+  }, []);
 
   return (
     <ResponsiveContainer width="100%" height="100%">
@@ -76,25 +283,10 @@ const MetricsChart = () => {
           width={0}
         />
 
-        <Tooltip
-          contentStyle={{
-            backgroundColor: "#272829",
-            border: "1px solid #272829",
-            borderRadius: "8px",
-            color: "#bfbfbf",
-            fontFamily: "'Jost', sans-serif",
-          }}
-          labelStyle={{ 
-            color: "#bfbfbf",
-            fontFamily: "'Jost', sans-serif"
-          }}
-          formatter={(value: number, name: string) => {
-            if (name === "Orders") return [value, "Orders"];
-            
-            if (value >= 1000000) return [`$${(value / 1000000).toFixed(2)}M`, "Sales"];
-            if (value >= 1000) return [`$${(value / 1000).toFixed(0)}K`, "Sales"];
-            return [`$${value}`, "Sales"];
-          }}
+        <Tooltip 
+          content={tooltipContent}
+          allowEscapeViewBox={{ x: true, y: true }}
+          cursor={false}
         />
 
         {/* Sales line - uses left Y-axis */}
@@ -105,6 +297,7 @@ const MetricsChart = () => {
           stroke="#4de209"
           strokeWidth={2}
           dot={false}
+          activeDot={{ r: 8, fill: '#4de209', strokeWidth: 0 }}
           name="Sales"
         />
 
@@ -117,6 +310,7 @@ const MetricsChart = () => {
           strokeWidth={2}
           strokeOpacity={0.5}
           dot={false}
+          activeDot={{ r: 8, fill: '#4de209', strokeWidth: 0, opacity: 0.5 }}
           name="Orders"
         />
       </LineChart>
