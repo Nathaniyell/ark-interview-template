@@ -98,7 +98,6 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             gridTemplateColumns: "1fr 1fr",
             borderBottom: "1px solid rgba(191, 191, 191, 0.25)",
             paddingBottom: "6px",
-            marginBottom: "13px",
           }}
         >
           <div
