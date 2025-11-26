@@ -89,7 +89,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
       className="px-[13px] pb-[13px] pt-1"
     >
       {/* Grid layout: 2 columns, header row spans both columns */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "13px" }}>
         {/* Header Row - spans both columns */}
         <div
           style={{
@@ -98,7 +98,6 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             gridTemplateColumns: "1fr 1fr",
             borderBottom: "1px solid rgba(191, 191, 191, 0.25)",
             paddingBottom: "6px",
-            marginBottom: "13px",
           }}
         >
           <div
@@ -130,7 +129,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         </div>
 
         {/* Current Month Column */}
-        <div className="" style={{ display: "flex", flexDirection: "column", gap: "13px", paddingRight: "13px" }}>
+        <div className="-mr-[2px]" style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
           {/* Sales Card */}
           <div
             style={{
@@ -175,7 +174,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         </div>
 
         {/* YTD Column */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "13px", paddingLeft: "13px" }}>
+        <div className="-ml-[2px]" style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
           {/* Sales Card */}
           <div
             style={{
