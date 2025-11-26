@@ -86,7 +86,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         pointerEvents: "auto",
         transform: `translate(calc(-100% - ${offset}px), -50%)`,
       }}
-      className="px-[13px] pb-[13px] pt-2"
+      className="p-[13px]"
     >
       {/* Grid layout: 2 columns, header row spans both columns */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "13px" }}>
@@ -97,7 +97,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             borderBottom: "1px solid rgba(191, 191, 191, 0.25)",
-            paddingBottom: "6px",
+            paddingBottom: "13px",
           }}
         >
           <div
@@ -108,7 +108,6 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               fontFamily: "'Jost', sans-serif",
               textAlign: "center",
               borderRight: "1px solid rgba(191, 191, 191, 0.25)",
-              paddingRight: "13px",
             }}
           >
             {label.toUpperCase()} 2023
@@ -121,7 +120,6 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               fontFamily: "'Jost', sans-serif",
               textAlign: "center",
               borderLeft: "1px solid rgba(191, 191, 191, 0.25)",
-              paddingLeft: "13px",
             }}
           >
             YTD 2023
@@ -129,19 +127,19 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         </div>
 
         {/* Current Month Column */}
-        <div className="-mr-[2px]" style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
           {/* Sales Card */}
           <div
             style={{
               backgroundColor: "#121212",
-              width: "180px",
+              width: "100%",
               borderRadius: "5px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}        
-            className="mx-auto px-[12px] py-[5px]"
+            className="px-[13px] py-[13px]"
           >
             <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
               SALES
@@ -155,14 +153,14 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
           <div
             style={{
               backgroundColor: "#121212",
-              width: "180px",
+              width: "100%",
               borderRadius: "5px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}
-            className="mx-auto px-[12px] py-[5px]"
+            className="px-[13px] py-[13px]"
           >
             <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
               ORDERS
@@ -174,19 +172,19 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         </div>
 
         {/* YTD Column */}
-        <div className="-ml-[2px]" style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
           {/* Sales Card */}
           <div
             style={{
               backgroundColor: "#121212",
-              width: "180px",
+              width: "100%",
               borderRadius: "5px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}
-            className="mx-auto px-[12px] py-[5px]"
+            className="px-[13px] py-[13px]"
           >
             <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
               SALES
@@ -200,14 +198,14 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
           <div
             style={{
               backgroundColor: "#121212",
-              width: "180px",
+              width: "100%",
               borderRadius: "5px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}
-            className="mx-auto px-[12px] py-[5px]"
+            className="px-[13px] py-[13px]"
           >
             <div style={{ color: "#B0B3B8", fontSize: "12px", fontFamily: "'Jost', sans-serif" }}>
               ORDERS
