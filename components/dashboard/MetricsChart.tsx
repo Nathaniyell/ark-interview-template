@@ -86,7 +86,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
         pointerEvents: "auto",
         transform: `translate(calc(-100% - ${offset}px), -50%)`,
       }}
-      className="p-[14px]"
+      className="px-[14px] py-[14px]"
     >
       {/* Grid layout: 2 columns, header row spans both columns */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
