@@ -24,12 +24,12 @@ export function MetricCard({
         className
       )}
     >
-      <div className="flex items-center justify-between">
-        <div className="flex flex-col gap-1">
-        <p className="text-2xl font-semibold">{value}</p>
-        <h3 className="font-medium text-[#b0b3b8]">{title}</h3>
+      <div className="flex items-center justify-betwee">
+        <div className="flex flex-col gap-1 bg-red-500">
+        <p className="text-2xl font-semibold leading-none">{value}</p>
+        <h3 className="font-medium text-[#b0b3b8] leading-none">{title}</h3>
         </div>
-        <div className="w-12 h-12 rounded-[5px] bg-[#272829] flex items-center justify-center">
+        <div className="w-12 h-[45px] rounded-[5px] bg-[#272829] flex items-center justify-center">
           {icon}
         </div>
       </div>
