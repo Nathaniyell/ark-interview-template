@@ -27,7 +27,7 @@ export function MetricCard({
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-1">
         <p className="text-2xl font-semibold">{value}</p>
-        <h3 className="font-medium text-[#d8d8d8]">{title}</h3>
+        <h3 className="font-medium text-[#b0b3b8]">{title}</h3>
         </div>
         <div className="w-12 h-12 rounded-[5px] bg-[#272829] flex items-center justify-center">
           {icon}
