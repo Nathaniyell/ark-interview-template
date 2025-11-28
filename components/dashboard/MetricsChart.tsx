@@ -246,7 +246,7 @@ const MetricsChart = () => {
         <XAxis
           dataKey="month"
           stroke="#b0b3b8"
-          tick={{ fill: "#b0b3b8", fontSize: 12, fontFamily: "'Jost', sans-serif" }}
+          tick={{ fill: "#b0b3b8", fontSize: 13, fontFamily: "'Jost', sans-serif" }}
           axisLine={false}
           tickLine={false}
           dy={20}
@@ -260,7 +260,7 @@ const MetricsChart = () => {
         <YAxis
           yAxisId="left"
           stroke="#b0b3b8"
-          tick={{ fill: "#b0b3b8", fontSize: 12, fontFamily: "'Jost', sans-serif" }}
+          tick={{ fill: "#b0b3b8", fontSize: 13, fontFamily: "'Jost', sans-serif" }}
           axisLine={false}
           tickLine={false}
           tickFormatter={(value) => {
