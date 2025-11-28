@@ -108,6 +108,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               fontFamily: "'Jost', sans-serif",
               textAlign: "center",
               borderRight: "1px solid rgba(191, 191, 191, 0.25)",
+              lineHeight: "1",
             }}
           >
             {label.toUpperCase()} 2023
@@ -120,6 +121,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               fontFamily: "'Jost', sans-serif",
               textAlign: "center",
               borderLeft: "1px solid rgba(191, 191, 191, 0.25)",
+              lineHeight: "1",
             }}
           >
             YTD 2023
@@ -139,12 +141,12 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}        
-            className="px-[14px] py-[14px]"
+            className="px-[14px] py-[14px] space-y-2"
           >
-            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif" }}>
+            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif", lineHeight: "1" }}>
               SALES
             </div>
-            <div style={{ color: "#4de209", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>       
+            <div style={{ color: "#4de209", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500, lineHeight: "1" }}>       
               {formatCurrency(currentMonth.sales)}
             </div>
           </div>
@@ -160,12 +162,12 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}
-            className="px-[14px] py-[14px]"
+            className="px-[14px] py-[14px] space-y-2"
           >
-            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif" }}>
+            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif", lineHeight: "1" }}>
               ORDERS
             </div>
-            <div style={{ color: "#488011", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+            <div style={{ color: "#488011", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500, lineHeight: "1" }}>
               {formatNumber(currentMonth.orders)}
             </div>
           </div>
@@ -184,12 +186,12 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}
-            className="px-[14px] py-[14px]"
+            className="px-[14px] py-[14px] space-y-2"
           >
-            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif" }}>
+            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif", lineHeight: "1" }}>
               SALES
             </div>
-            <div style={{ color: "#4de209", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+            <div style={{ color: "#4de209", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500, lineHeight: "1" }}>
               {formatCurrency(ytdSales)}
             </div>
           </div>
@@ -205,12 +207,12 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
               justifyContent: "space-between",
               boxSizing: "border-box",
             }}
-            className="px-[14px] py-[14px]"
+            className="px-[14px] py-[14px] space-y-2"
           >
-            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif" }}>
+            <div style={{ color: "#B0B3B8", fontSize: "14px", fontFamily: "'Jost', sans-serif", lineHeight: "1" }}>
               ORDERS
             </div>
-            <div style={{ color: "#488011", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+            <div style={{ color: "#488011", fontSize: "18px", fontFamily: "'Jost', sans-serif", fontWeight: 500, lineHeight: "1" }}>
               {formatNumber(ytdOrders)}
             </div>
           </div>
