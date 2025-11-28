@@ -29,7 +29,7 @@ const Page = () => {
               <Bell size={26} />
               <span className="w-2 h-2 rounded-full bg-[#4de209] absolute top-0 right-1"></span>
             </div>
-            <div className="bg-[#4de209] cursor-pointer hover:bg-[#3e730a] rounded-full px-6 h-[31px] flex items-center justify-center text-black group font-bold gap-2 transition-colors">
+            <div className="bg-[#4dd209] cursor-pointer hover:bg-[#3e730a] rounded-full px-6 h-[31px] flex items-center justify-center text-black group font-bold gap-2 transition-colors">
               <p className="group-hover:text-white transition-colors">
                 Create New Listing
               </p>
