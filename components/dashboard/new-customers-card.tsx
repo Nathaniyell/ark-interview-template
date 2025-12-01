@@ -8,7 +8,7 @@ interface NewCustomersCardProps {
 
 export function NewCustomersCard({
   value = "328",
-  change = "9.97%",
+  change = "0.39%",
 }: NewCustomersCardProps) {
   return (
     <MetricCard
@@ -16,6 +16,7 @@ export function NewCustomersCard({
       value={value}
       change={change}
       icon={<Users size={24} />}
+      negativeChange={true}
     />
   );
 }
