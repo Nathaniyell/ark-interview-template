@@ -170,7 +170,7 @@ export const MetricsSection = () => {
                 {visualizationData.map((data) => (
                   <div
                     key={data.title}
-                    className="w-fit h-[30px] flex items-center gap-2 bg-[#272829] rounded-[5px] py-2 pl-4 pr-4"
+                    className="w-fit h-[30px] flex items-center gap-2 bg-[#272829] rounded-[5px] py-2 pl-4 pr-4 lg:pl-5 lg:pr-5"
                   >
                     <div
                       className={cn(
