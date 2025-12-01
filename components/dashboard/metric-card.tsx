@@ -36,10 +36,10 @@ export function MetricCard({
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <div className={cn("flex items-center gap-1 text-sm bg-[#272829] h-[30px] rounded-[5px] px-4 w-fit lg:w-full", negativeChange ? "text-[#ff0000]" : "text-[#4de209]")}>
+        <div className={cn("flex items-center gap-1 text-sm bg-[#272829] h-[30px] rounded-[5px] px-4 w-fit lg:w-full", negativeChange ? "text-[#ff1111]" : "text-[#4de209]")}>
           {negativeChange ? <ArrowDown size={16} /> : <ArrowUp size={16} />}
           <span>{change}</span>{" "}
-          <span className={cn("text-[#d8d8d8]", negativeChange ? "text-[#ff0000]" : "text-[#4de209]")}>over last month</span>
+          <span className={cn("text-[#d8d8d8]", negativeChange ? "text-[#ff1111]" : "text-[#4de209]")}>over last month</span>
         </div>
       </div>
     </div>
