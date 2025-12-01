@@ -8,12 +8,13 @@ import { cn } from "@/lib/utils";
 import MetricsChart from "./MetricsChart";
 import { TopProductsTable, years } from "./top-products-table";
 import { RevenueByLocationTable } from "./revenue-by-location-table";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export const MetricsSection = () => {
   const [selectedYear, setSelectedYear] = useState(2026);
   const [showYearDropdown, setShowYearDropdown] = useState(false);
   const yearDropdownRef = useRef<HTMLSpanElement>(null);
+  const dropdownMenuRef = useRef<HTMLDivElement>(null);
   const visualizationData = [
     {
       title: "Sales",
@@ -118,6 +119,27 @@ export const MetricsSection = () => {
       orders: "98",
     },
   ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        showYearDropdown &&
+        yearDropdownRef.current &&
+        !yearDropdownRef.current.contains(event.target as Node)
+      ) {
+        setShowYearDropdown(false);
+      }
+    };
+
+    if (showYearDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showYearDropdown]);
+
   return (
     <div className="relative flex flex-row gap-4 lg:gap-[38px]">
       <SidebarNav />
@@ -143,6 +165,7 @@ export const MetricsSection = () => {
                 {selectedYear}
                 {showYearDropdown && (
                   <div 
+                    ref={dropdownMenuRef}
                     className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-fit max-h-[200px] overflow-y-auto shadow-lg"
                   >
                     {years.map((year) => (
