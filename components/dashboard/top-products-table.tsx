@@ -18,6 +18,7 @@ interface TopProductsTableProps {
   products: Product[];
 }
 
+export const years = Array.from({ length: 10 }, (_, i) => 2026 - i);
 export const TopProductsTable = ({ products }: TopProductsTableProps) => {
   const [activeTimeframe, setActiveTimeframe] = useState("Month");
   const [showYearDropdown, setShowYearDropdown] = useState(false);
@@ -32,7 +33,6 @@ export const TopProductsTable = ({ products }: TopProductsTableProps) => {
     "July", "August", "September", "October", "November", "December"
   ];
 
-  const years = Array.from({ length: 10 }, (_, i) => 2026 - i);
   const timeframes = ["Today", "Week", "Month", "Year"];
 
   useEffect(() => {

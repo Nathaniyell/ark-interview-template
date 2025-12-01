@@ -1,3 +1,4 @@
+"use client";
 import { TotalRevenuesCard } from "./total-revenues-card";
 import { TotalOrdersCard } from "./total-orders-card";
 import { NewCustomersCard } from "./new-customers-card";
@@ -5,10 +6,14 @@ import { TotalProductsSoldCard } from "./total-products-sold-card";
 import { SidebarNav } from "./sidebar-nav";
 import { cn } from "@/lib/utils";
 import MetricsChart from "./MetricsChart";
-import { TopProductsTable } from "./top-products-table";
+import { TopProductsTable, years } from "./top-products-table";
 import { RevenueByLocationTable } from "./revenue-by-location-table";
+import { useRef, useState } from "react";
 
 export const MetricsSection = () => {
+  const [selectedYear, setSelectedYear] = useState(2026);
+  const [showYearDropdown, setShowYearDropdown] = useState(false);
+  const yearDropdownRef = useRef<HTMLSpanElement>(null);
   const visualizationData = [
     {
       title: "Sales",
@@ -128,7 +133,38 @@ export const MetricsSection = () => {
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-[30px] justify-between mb-4">
               <h2 className="text-sm font-semibold">
                 Revenue Reports &gt;{" "}
-                <span className="text-[#4de209] cursor-pointer">2023</span>
+                <span 
+                ref={yearDropdownRef}
+                className="font-semibold text-[#4de209] cursor-pointer relative inline-block"
+                onClick={() => {
+                  setShowYearDropdown(!showYearDropdown);
+                }}
+              >
+                {selectedYear}
+                {showYearDropdown && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[100px] max-h-[200px] overflow-y-auto shadow-lg"
+                  >
+                    {years.map((year) => (
+                      <div
+                        key={year}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedYear(year);
+                          setShowYearDropdown(false);
+                          yearDropdownRef.current?.blur();
+                        }}
+                        className={cn(
+                          "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
+                          selectedYear === year && "text-[#4de209]"
+                        )}
+                      >
+                        {year}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </span>
               </h2>
               <div className="flex flex-col sm:flex-row gap-3 lg:gap-[20px]">
                 {visualizationData.map((data) => (
