@@ -59,7 +59,7 @@ export const RevenueByLocationTable = ({ locationMetrics }: RevenueByLocationTab
               {selectedMonth}
               {showMonthDropdown && (
                 <div 
-                  className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[150px] max-h-[200px] overflow-y-auto shadow-lg"
+                  className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-fit max-h-[200px] overflow-y-auto shadow-lg"
                 >
                   {months.map((month) => (
                     <div
@@ -68,6 +68,7 @@ export const RevenueByLocationTable = ({ locationMetrics }: RevenueByLocationTab
                         e.stopPropagation();
                         setSelectedMonth(month);
                         setShowMonthDropdown(false);
+                        monthDropdownRef.current?.blur();
                       }}
                       className={cn(
                         "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
@@ -92,7 +93,7 @@ export const RevenueByLocationTable = ({ locationMetrics }: RevenueByLocationTab
               {selectedYear}
               {showYearDropdown && (
                 <div 
-                  className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-[100px] max-h-[200px] overflow-y-auto shadow-lg"
+                  className="absolute top-full left-0 mt-2 bg-[#272829] rounded-[5px] border border-[#bfbfbf]/25 z-50 min-w-fit max-h-[200px] overflow-y-auto shadow-lg"
                 >
                   {years.map((year) => (
                     <div
@@ -101,6 +102,7 @@ export const RevenueByLocationTable = ({ locationMetrics }: RevenueByLocationTab
                         e.stopPropagation();
                         setSelectedYear(year);
                         setShowYearDropdown(false);
+                        yearDropdownRef.current?.blur();
                       }}
                       className={cn(
                         "px-4 py-2 text-sm cursor-pointer hover:bg-[#3a3b3c] transition-colors text-white",
